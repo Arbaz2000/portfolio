@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import styled from "styled-components";
 
@@ -17,6 +18,10 @@ const Card = () => {
           opportunities in the tech world—game development is definitely on my
           radar for the future!
         </div>
+        <div className="bottom-right">
+          I've worked on projects and I am
+          <br /> skilled with new technologies. 😁✌️
+        </div>
       </div>
     </StyledWrapper>
   );
@@ -27,19 +32,21 @@ const StyledWrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh; /* Full viewport height */
-
   margin: 0;
+  transition: all 0.3s ease; /* Smooth transition on resizing */
 
   .card {
     font-family: Montserrat, sans-serif;
-    width: 80%;
+    width: 70%;
     height: 80%;
     translate: -6px -6px;
     background: #1ac2ff;
     border: 3px solid #000000;
     box-shadow: 12px 12px 0 #000000;
     overflow: hidden;
-    transition: all 0.3s ease;
+    position: relative;
+    // transition: all 0.3s ease;
+    transition: width 0.5s ease, height 0.5s ease;
   }
 
   .head {
@@ -86,6 +93,16 @@ const StyledWrapper = styled.div`
 
   .card:hover {
     translate: -6px;
+  }
+
+  .bottom-right {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: black;
+    text-align: right;
   }
 `;
 
