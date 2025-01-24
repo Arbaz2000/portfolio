@@ -12,9 +12,15 @@ const Card = () => {
         <div className="content">
           <Link href="\projects\watercanProject">
             <ProjectCard
-              projectName="Weather App"
-              description="A real-time weather forecasting app built with React."
-              techStack={["React", "OpenWeather API", "CSS"]}
+              projectName="Watercan Project"
+              description="Inventory management system for water delivery."
+              techStack={[
+                "React",
+                "React Native",
+                "MongoDB",
+                "AWS",
+                "REST API",
+              ]}
             />
           </Link>
         </div>

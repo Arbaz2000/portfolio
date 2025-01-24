@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styled from "styled-components";
 
@@ -50,7 +51,7 @@ const StyledWrapper = styled.div`
     font-size: 3vw; /* Set font size based on viewport width */
     font-weight: 900;
     width: auto;
-   /* Margin set as percentage of container's height */
+    /* Margin set as percentage of container's height */
     color: #000000;
   }
 
@@ -64,7 +65,7 @@ const StyledWrapper = styled.div`
 
   .button {
     padding: 5px 10px;
-    
+
     border: 3px solid #000000;
     box-shadow: 3px 3px 0 #000000;
     font-weight: 750;
