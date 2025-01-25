@@ -1,39 +1,26 @@
+"use client"
 import React from "react";
 import styled from "styled-components";
 
-const Card = () => {
+// Define types for the props
+interface CardProps {
+  links: { label: string; url: string }[]; // An array of objects with label and url
+  coverText: string; // Text to display on the cover
+}
+
+const Card: React.FC<CardProps> = ({ links, coverText }) => {
   return (
     <StyledWrapper>
       <div className="book">
-        <strong>
-          <a
-            href="https://github.com/harshendraup/WaterCan-web"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Web
-          </a>
-        </strong>
-        <strong>
-          <a
-            href="https://github.com/kajal-sharma007/WaterCanApp"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            App
-          </a>
-        </strong>
-        <strong>
-          <a
-            href="https://github.com/Arbaz2000/WaterCan-Backend"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Backend
-          </a>
-        </strong>
+        {links.map((link, index) => (
+          <strong key={index}>
+            <a href={link.url} target="_blank" rel="noopener noreferrer">
+              {link.label}
+            </a>
+          </strong>
+        ))}
         <div className="cover">
-          <p>View on GitHub</p>
+          <p>{coverText}</p>
         </div>
       </div>
     </StyledWrapper>
@@ -55,7 +42,7 @@ const StyledWrapper = styled.div`
     -webkit-perspective: 2000px;
     perspective: 2000px;
     display: flex;
-    flex-direction: column; /* This will stack the links vertically */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #000;
@@ -93,14 +80,14 @@ const StyledWrapper = styled.div`
   }
 
   a {
-    margin: 5px 0; /* Space between links */
+    margin: 5px 0;
     text-decoration: none;
     color: #000;
     font-size: 16px;
   }
 
   a:hover {
-    color: #0077cc; /* Change color on hover */
+    color: #0077cc;
   }
 `;
 

@@ -5,6 +5,12 @@ import { FaWater } from "react-icons/fa"; // Water icon
 import Flipcard from "@/component/filpcard";
 import Image from "next/image";
 
+ const links = [
+   { label: "Web", url: "https://github.com/harshendraup/WaterCan-web" },
+   { label: "App", url: "https://github.com/kajal-sharma007/WaterCanApp" },
+   { label: "Backend", url: "https://github.com/Arbaz2000/WaterCan-Backend" },
+ ];
+
 const Card = () => {
   return (
     <StyledWrapper>
@@ -32,7 +38,7 @@ const CardComponent = () => (
       </div>
     </div>
     <div>
-      <Flipcard />
+      <Flipcard links={links} coverText="View on GitHub" />
     </div>
   </div>
 );
