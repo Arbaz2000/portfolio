@@ -1,17 +1,29 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Card = () => {
+  const [modalVisible, setModalVisible] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
+
   const handleDownloadCV = () => {
     const link = document.createElement("a");
     link.href = "/pdf/Arbaz_Resume.pdf";
     link.download = "Arbaz_Khan_CV.pdf";
     link.click();
+
+    setModalMessage("CV has been downloaded!");
+    setModalVisible(true);
+    setTimeout(() => setModalVisible(false), 1000);
   };
 
-  const handleContactMe = () => {
-    window.location.href = "mailto:khanarbaz27@outlook.com";
+  const handleCopyEmail = () => {
+    const email = "khanarbaz27@outlook.com";
+    navigator.clipboard.writeText(email);
+
+    setModalMessage(`Email copied to clipboard! ${email}`);
+    setModalVisible(true);
+    setTimeout(() => setModalVisible(false), 1000);
   };
 
   return (
@@ -23,15 +35,30 @@ const Card = () => {
           ideas to life with scalable and efficient solutions!
           <br />
           <br />
-          <button className="button" onClick={handleContactMe}>
+          <button
+            className="button"
+            onClick={handleCopyEmail}
+            title="This will copy the email address"
+          >
             Contact Me
           </button>
           {"   "}
-          <button className="button" onClick={handleDownloadCV}>
+          <button
+            className="button"
+            onClick={handleDownloadCV}
+            title="This will download the PDF"
+          >
             Want the CV?
           </button>
         </div>
       </div>
+      {modalVisible && (
+        <ModalWrapper>
+          <div className="modal">
+            <p>{modalMessage}</p>
+          </div>
+        </ModalWrapper>
+      )}
     </StyledWrapper>
   );
 };
@@ -86,23 +113,41 @@ const StyledWrapper = styled.div`
   // Mobile responsiveness
   @media (max-width: 768px) {
     .card {
-      width: 90vw; // Take up 90% of the viewport width on smaller screens
-      height: auto; // Make height auto to prevent overflow
+      width: 90vw;
+      height: auto;
     }
 
     .head {
-      font-size: 6vw; // Reduce font size for smaller screens
+      font-size: 6vw;
     }
 
     .content {
-      font-size: 4vw; // Adjust font size
+      font-size: 4vw;
       margin-top: 10%;
     }
 
     .button {
-      font-size: 4vw; // Increase button text size for mobile
-      padding: 10px 15px; // Adjust padding for mobile
+      font-size: 4vw;
+      padding: 10px 15px;
     }
+  }
+`;
+
+const ModalWrapper = styled.div`
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  .modal {
+    font-size: 1.5rem;
   }
 `;
 
