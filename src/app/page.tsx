@@ -15,7 +15,7 @@ export default function Home() {
     // Set a timeout to hide the loader after 3 seconds
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 100);
 
     // Cleanup the timeout on component unmount
     return () => clearTimeout(timer);
@@ -28,14 +28,20 @@ export default function Home() {
   return (
     <>
       <HomeSection />
-      <AboutSection />
+
+      <div className="mb-20">
+        <AboutSection />
+      </div>
+
       <SkillsSection />
+
       <ProjectsSection />
-      <div className="flex justify-center items-center w-auto">
-        <div className="flex-grow basis-1/3 ml-24">
+
+      <div className="flex justify-center items-center w-full mt-5 flex-col md:flex-row">
+        <div className="flex-grow basis-full md:basis-1/3 md:ml-24">
           <WhatIamon />
         </div>
-        <div className="flex-grow basis-2/3">
+        <div className="flex-grow basis-full md:basis-2/3">
           <ShareYourReview />
         </div>
       </div>

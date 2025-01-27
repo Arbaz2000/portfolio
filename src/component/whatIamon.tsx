@@ -61,7 +61,7 @@ const StyledWrapper = styled.div`
   gap: 1rem;
   .card {
     font-family: Montserrat, sans-serif;
-    width: 90%;
+    width: auto;
     // height:auto;
     translate: -6px -6px;
     background: #ff66a3;

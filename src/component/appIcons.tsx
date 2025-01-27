@@ -51,6 +51,17 @@ const StyledWrapper = styled.div`
   justify-content: center;
   gap: 3rem;
   padding: 3rem;
+
+  /* Make the icons wrap and scale down on small screens */
+  @media (max-width: 768px) {
+    gap: 1rem; /* Smaller gap on mobile */
+    padding: 2rem; /* Reduced padding */
+  }
+
+  @media (max-width: 480px) {
+    gap: 0.5rem; /* Even smaller gap for extra small screens */
+    padding: 1rem; /* Reduced padding further */
+  }
 `;
 
 const IconWrapper = styled.div`
@@ -63,6 +74,15 @@ const IconWrapper = styled.div`
     transition: transform 0.3s;
     cursor: pointer;
     margin-bottom: 0.5rem; /* Space between icon and tooltip */
+
+    /* Responsive icon size */
+    @media (max-width: 768px) {
+      font-size: 60px; /* Smaller icons on tablets and small screens */
+    }
+
+    @media (max-width: 480px) {
+      font-size: 50px; /* Even smaller icons on mobile */
+    }
   }
 
   .icon:hover {
@@ -89,16 +109,11 @@ const IconWrapper = styled.div`
     transform: translateY(-10px); /* Show the tooltip on hover */
   }
 
-  /* Responsiveness */
+  /* Tooltip responsiveness */
   @media (max-width: 768px) {
-    .icon {
-      size: 60px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .icon {
-      size: 50px;
+    .tooltip {
+      font-size: 0.75rem; /* Smaller tooltip text on mobile */
+      bottom: 120%; /* Adjust position of tooltip on smaller screens */
     }
   }
 `;

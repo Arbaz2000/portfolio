@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import React from "react";
 import styled from "styled-components";
 import Iconrack from "@/component/appIcons"; // Ensure correct import path for Iconrack
@@ -24,16 +25,28 @@ const StyledWrapper = styled.div`
   margin: 0;
   transition: all 0.3s ease;
 
+  /* Responsiveness for the card wrapper */
+  @media (max-width: 768px) {
+    height: auto; /* Let the height adjust automatically for smaller screens */
+    padding: 20px; /* Add padding to prevent content from touching edges */
+  }
+
   .card {
     font-family: Montserrat, sans-serif;
-    width: 90%;
-    height: 85%;
+    width:90%; /* Original width for large screens */
+    height: auto;
     background: #eb7711;
     border: 3px solid #000000;
     box-shadow: 12px 12px 0 #000000;
     overflow: hidden;
     position: relative;
     transition: all 0.3s ease;
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 768px) {
+      width: 100%; /* Full width on smaller screens */
+      box-shadow: 6px 6px 0 #000000; /* Lighter shadow on mobile */
+    }
   }
 
   .head {
@@ -46,7 +59,13 @@ const StyledWrapper = styled.div`
     padding: 5px 12px;
     color: #000000;
     border-bottom: 3px solid #000000;
-    text-align: left; /* Ensure the heading is centered */
+    text-align: left; /* Ensure the heading is aligned left */
+
+    /* Responsive font size */
+    @media (max-width: 768px) {
+      font-size: 36px; /* Smaller font size for smaller screens */
+      padding: 5px 10px; /* Reduced padding for mobile */
+    }
   }
 
   .content {
@@ -58,6 +77,12 @@ const StyledWrapper = styled.div`
     font-size: 28px;
     font-weight: 600;
     color: #000000;
+
+    /* Responsive font size */
+    @media (max-width: 768px) {
+      font-size: 20px; /* Smaller font size for mobile */
+      padding: 10px; /* Add padding on mobile */
+    }
   }
 
   .card:hover {

@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import React from "react";
 import styled from "styled-components";
 
@@ -18,9 +19,11 @@ const Card = () => {
           opportunities in the tech world—game development is definitely on my
           radar for the future!
         </div>
-        <div className="bottom-right">
-          I've worked on projects and I am
-          <br /> skilled with new technologies. 😁✌️
+        <div className="flex mt-10">
+          <p className="bottom-right">
+            I've worked on projects and I am
+            <br /> skilled with new technologies. 😁✌️
+          </p>
         </div>
       </div>
     </StyledWrapper>
@@ -31,22 +34,30 @@ const StyledWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height */
   margin: 0;
-  transition: all 0.3s ease; /* Smooth transition on resizing */
+  transition: all 0.3s ease;
+
+  @media (max-width: 768px) {
+    height: auto; /* Let the height adjust automatically for smaller screens */
+    padding: 20px; /* Add padding to prevent content from touching edges */
+  }
 
   .card {
     font-family: Montserrat, sans-serif;
-    width: 70%;
-    height: 80%;
-    translate: -6px -6px;
+    width: 70%; /* Original width for large screens */
+    height: auto;
     background: #1ac2ff;
     border: 3px solid #000000;
     box-shadow: 12px 12px 0 #000000;
     overflow: hidden;
     position: relative;
-    // transition: all 0.3s ease;
-    transition: width 0.5s ease, height 0.5s ease;
+    transition: all 0.3s ease;
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 768px) {
+      width: 100%; /* Full width on smaller screens */
+      box-shadow: 6px 6px 0 #000000; /* Lighter shadow on mobile */
+    }
   }
 
   .head {
@@ -59,14 +70,28 @@ const StyledWrapper = styled.div`
     padding: 5px 12px;
     color: #000000;
     border-bottom: 3px solid #000000;
+    text-align: left; /* Ensure the heading is aligned left */
+
+    /* Responsive font size */
+    @media (max-width: 768px) {
+      font-size: 36px; /* Smaller font size for smaller screens */
+      padding: 5px 10px; /* Reduced padding for mobile */
+    }
   }
 
   .content {
-    width: 80%;
+    width: 100%;
     padding: 20px 20px;
     font-size: 28px;
     font-weight: 600;
     color: #000000;
+    overflow-y: auto; /* Prevent content overflow */
+
+    /* Adjust font size and padding for mobile screens */
+    @media (max-width: 768px) {
+      font-size: 18px; /* Smaller font size on mobile */
+      padding: 10px 15px;
+    }
   }
 
   .button {
@@ -78,6 +103,11 @@ const StyledWrapper = styled.div`
     background: #4ade80;
     transition: all 0.3s ease;
     cursor: pointer;
+
+    /* Adjust button padding for mobile screens */
+    @media (max-width: 768px) {
+      padding: 8px 16px;
+    }
   }
 
   .button:hover {
@@ -96,13 +126,21 @@ const StyledWrapper = styled.div`
   }
 
   .bottom-right {
-    position: absolute;
-    bottom: 10px;
+    padding: 1%;
+    bottom: 20px; /* Add some space to avoid overlap */
     right: 10px;
     font-size: 20px;
     font-weight: 700;
     color: black;
     text-align: right;
+    width: 100%; /* Ensure it doesn't overlap or extend beyond the card's width */
+
+    /* Adjust font size and position for mobile screens */
+    @media (max-width: 768px) {
+      font-size: 16px; /* Smaller font size on mobile */
+      bottom: 15px; /* Move text further down for mobile */
+      right: 15px; /* Move text further down for mobile */
+    }
   }
 `;
 

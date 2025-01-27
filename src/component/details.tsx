@@ -5,13 +5,13 @@ import styled from "styled-components";
 const Card = () => {
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/pdf/Arbaz_Resume.pdf"; // Fixed the path to start from the root.
+    link.href = "/pdf/Arbaz_Resume.pdf";
     link.download = "Arbaz_Khan_CV.pdf";
     link.click();
   };
 
   const handleContactMe = () => {
-    window.location.href = "mailto:khanarbaz27@outlook.com"; // Replace with your email
+    window.location.href = "mailto:khanarbaz27@outlook.com";
   };
 
   return (
@@ -39,8 +39,8 @@ const Card = () => {
 const StyledWrapper = styled.div`
   .card {
     font-family: Montserrat, sans-serif;
-    width: 70vh; /* Adjust to percentage */
-    height: 70vh; /* Use viewport height to make it responsive */
+    width: 70vh;
+    height: 70vh;
     overflow: hidden;
     transition: all 0.3s ease;
     position: relative;
@@ -48,24 +48,22 @@ const StyledWrapper = styled.div`
 
   .head {
     font-family: Montserrat, sans-serif;
-    font-size: 3vw; /* Set font size based on viewport width */
+    font-size: 3vw;
     font-weight: 900;
     width: auto;
-    /* Margin set as percentage of container's height */
     color: #000000;
   }
 
   .content {
-    padding: 3% 4%; /* Padding set as percentage of container */
-    font-size: 2vw; /* Font size adjusted to viewport width */
+    padding: 3% 4%;
+    font-size: 2vw;
     font-weight: 600;
     color: #000000;
-    margin-top: 15%; /* Margin-top as percentage of container's height */
+    margin-top: 15%;
   }
 
   .button {
     padding: 5px 10px;
-
     border: 3px solid #000000;
     box-shadow: 3px 3px 0 #000000;
     font-weight: 750;
@@ -81,8 +79,30 @@ const StyledWrapper = styled.div`
   }
 
   .button:active {
-    translate: 2% 2%; /* Translate for active state as percentage */
+    translate: 2% 2%;
     box-shadow: 0 0 0 #000000;
+  }
+
+  // Mobile responsiveness
+  @media (max-width: 768px) {
+    .card {
+      width: 90vw; // Take up 90% of the viewport width on smaller screens
+      height: auto; // Make height auto to prevent overflow
+    }
+
+    .head {
+      font-size: 6vw; // Reduce font size for smaller screens
+    }
+
+    .content {
+      font-size: 4vw; // Adjust font size
+      margin-top: 10%;
+    }
+
+    .button {
+      font-size: 4vw; // Increase button text size for mobile
+      padding: 10px 15px; // Adjust padding for mobile
+    }
   }
 `;
 

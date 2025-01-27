@@ -92,6 +92,7 @@ const Card = () => {
               techStack={["Next.js", "React", "SEO"]}
             />
           </Link>
+
           <div className="bottom-right">
             I have extensive experience providing freelance services,
             <br />
@@ -108,14 +109,14 @@ const StyledWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding: 5% 5%;
   margin: 0;
   transition: all 0.3s ease;
 
   .card {
     font-family: Montserrat, sans-serif;
     width: 90%;
-    height: 85%;
+    height: auto;
     border: 3px solid #000000;
     box-shadow: 12px 12px 0 #000000;
     overflow: hidden;
@@ -142,21 +143,18 @@ const StyledWrapper = styled.div`
     justify-content: start;
     align-items: flex-start;
     width: 100%;
-    height: calc(100% - 80px);
+    height: auto;
     font-size: 28px;
     font-weight: 600;
     color: #000000;
     background: #ef4444;
-    overflow-y: auto; /* Changed from scroll to auto */
+    overflow-y: auto;
     padding: 30px;
-    gap: 30px; /* Adjust as needed */
-    column-gap: 10px; /* Column gap adjustment */
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    gap: 30px; /* Space between project cards */
   }
 
   .content::-webkit-scrollbar {
-    display: none; /* Keep this if you want to hide the scrollbar */
+    display: none; /* Hide scrollbar */
   }
 
   .card:hover {
@@ -164,24 +162,61 @@ const StyledWrapper = styled.div`
   }
 
   .content > .project-card {
-    flex: 1 1 48%;
+    flex: 1 1 48%; /* By default, each project takes up 48% of width */
   }
 
   .bottom-right {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
+
+    bottom: 20px;
     font-size: 20px;
     font-weight: 700;
     color: black;
-    text-align: right;
+    text-align: center;
     margin-top: 10%;
   }
 
   /* Media queries for responsiveness */
+  @media (max-width: 1024px) {
+    .content > .project-card {
+      flex: 1 1 48%; /* Make project cards stack on smaller screens */
+    }
+  }
+
   @media (max-width: 768px) {
     .content > .project-card {
       flex: 1 1 100%; /* Stack cards on smaller screens */
+    }
+
+    .head {
+      font-size: 30px; /* Smaller font size for mobile screens */
+      padding: 10px;
+    }
+
+    .content {
+      padding: 20px;
+      gap: 20px; /* Smaller gap on mobile */
+    }
+
+    .bottom-right {
+      font-size: 16px;
+      bottom: 15px; /* Adjust the position of bottom text */
+      right: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .head {
+      font-size: 24px; /* Even smaller font size for very small screens */
+    }
+
+    .content {
+      padding: 15px;
+    }
+
+    .bottom-right {
+      font-size: 14px;
+      bottom: 10px;
+      right: 5px;
     }
   }
 `;

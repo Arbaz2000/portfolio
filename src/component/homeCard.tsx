@@ -11,10 +11,10 @@ const Card = () => {
         <div className="content">
           <div className="image-container">
             <Image
-              src="/me.png" // Fixed the path here
+              src="/me.png"
               alt="Next.js logo"
-              layout="fill" // Makes the image fill the container
-              objectFit="cover" // Ensures the image covers the area without distorting the aspect ratio
+              layout="fill"
+              objectFit="cover"
               priority
             />
           </div>
@@ -27,47 +27,65 @@ const Card = () => {
 const StyledWrapper = styled.div`
   .card {
     font-family: Montserrat, sans-serif;
-    width: 70vh; /* Adjust to percentage */
-    height: 70vh; /* Use viewport height to make it responsive */
+    width: 70vh;
+    height: 70vh;
     background: #ff66a3;
     border: 3px solid #000000;
     box-shadow: 12px 12px 0 #000000;
     overflow: hidden;
     transition: all 0.3s ease;
-    position: relative; /* Ensure the image fills the container */
+    position: relative;
   }
 
   .head {
     font-family: Montserrat, sans-serif;
-    font-size: 2vw; /* Responsive font size */
+    font-size: 2vw;
     font-weight: 900;
     width: 100%;
-    height: 10%; /* Adjust based on the card height */
+    height: 10%;
     background: #ffffff;
-    padding: 2% 3%; /* Use percentage for padding */
+    padding: 2% 3%;
     color: #000000;
     border-bottom: 3px solid #000000;
-    position: relative; /* Ensure proper stacking context */
+    position: relative;
   }
 
   .content {
-    padding: 2% 3%; /* Use percentage for padding */
-    font-size: 3vw; /* Adjust font size responsively */
+    padding: 2% 3%;
+    font-size: 3vw;
     font-weight: 600;
-    position: relative; /* Ensure proper stacking context */
+    position: relative;
   }
 
   .image-container {
-    position: relative; /* Ensures the Image component can use layout="fill" */
+    position: relative;
     width: 100%;
-    height: 60vh; /* Adjust based on your requirements */
+    height: 60vh;
     overflow: hidden;
   }
 
   .card:hover {
-    transform: translateY(
-      -6px
-    ); /* Use translateY instead of translate for better control */
+    transform: translateY(-6px);
+  }
+
+  // Mobile responsiveness
+  @media (max-width: 768px) {
+    .card {
+      width: 90vw; // Make the card take up 90% of viewport width on mobile
+      height: auto; // Adjust height for mobile
+    }
+
+    .head {
+      font-size: 5vw; // Reduce font size on smaller screens
+    }
+
+    .content {
+      font-size: 4vw; // Adjust content font size
+    }
+
+    .image-container {
+      height: 40vh; // Adjust image container height for mobile
+    }
   }
 `;
 
