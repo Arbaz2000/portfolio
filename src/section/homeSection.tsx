@@ -1,5 +1,4 @@
-"use client";
-
+import React, { CSSProperties } from "react";
 import Card from "@/component/homeCard";
 import CardDetails from "@/component/details";
 import Git from "@/component/socials/gitSection";
@@ -23,7 +22,7 @@ export default function HomeSection() {
   );
 }
 
-const styles = {
+const styles: { [key: string]: CSSProperties } = {
   container: {
     display: "flex",
     justifyContent: "center",
@@ -37,12 +36,12 @@ const styles = {
     top: "20px",
     right: "20px",
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "row" as "row", // Explicitly define it as a valid FlexDirection value
     gap: "10px",
   },
   content: {
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "row", // Should be a valid value, such as "row" or "column"
     justifyContent: "center",
     alignItems: "center",
     gap: "10%", // Gap between CardDetails and Card

@@ -5,6 +5,8 @@ import AboutSection from "@/section/aboutSection";
 import SkillsSection from "@/section/skillsSection";
 import ProjectsSection from "@/section/projectsSection";
 import Loader from "@/component/loader";
+import WhatIamon from "@/component/whatIamon";
+import ShareYourReview from "@/component/shareYourReview";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -29,6 +31,14 @@ export default function Home() {
       <AboutSection />
       <SkillsSection />
       <ProjectsSection />
+      <div className="flex justify-center items-center w-auto">
+        <div className="flex-grow basis-1/3 ml-24">
+          <WhatIamon />
+        </div>
+        <div className="flex-grow basis-2/3">
+          <ShareYourReview />
+        </div>
+      </div>
     </>
   );
 }

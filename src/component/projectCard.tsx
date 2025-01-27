@@ -5,7 +5,7 @@ import styled from "styled-components";
 // Define types for props
 interface CardProps {
   projectName: string;
-  description: string;
+  description: React.ReactNode;
   techStack: string[];
 }
 
@@ -34,7 +34,7 @@ const Card: React.FC<CardProps> = ({ projectName, description, techStack }) => {
 const StyledWrapper = styled.div`
   /*Neo Brutalism project card*/
   .card {
-    width: 240px;
+    width: auto;
     background: #00ffa0;
     padding: 1rem;
     border-radius: 1rem;
@@ -83,6 +83,7 @@ const StyledWrapper = styled.div`
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
+      width: auto;
     }
 
     li {

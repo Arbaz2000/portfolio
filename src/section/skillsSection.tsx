@@ -46,7 +46,7 @@ const StyledWrapper = styled.div`
     padding: 5px 12px;
     color: #000000;
     border-bottom: 3px solid #000000;
-    text-align: center; /* Ensure the heading is centered */
+    text-align: left; /* Ensure the heading is centered */
   }
 
   .content {
