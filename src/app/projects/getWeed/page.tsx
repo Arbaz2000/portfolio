@@ -52,14 +52,14 @@ const ProjectOverview = () => (
   <div className="project-overview">
     <h3>Project Overview</h3>
     <p>
-      <strong>Get Weed</strong> is a comprehensive inventory management
-      system designed for the cannabis industry. It includes three mobile apps:
-      a Shop Owner app, a Delivery app, and a Customer app. Shop owners can list
+      <strong>Get Weed</strong> is a comprehensive inventory management system
+      designed for the cannabis industry. It includes three mobile apps: a Shop
+      Owner app, a Delivery app, and a Customer app. Shop owners can list
       products, manage inventory, and provide product details. Delivery drivers
-      use the Delivery app to deliver products to customers at specific locations.
-      The system integrates Map APIs for delivery navigation and includes charts
-      for the dashboard. I was responsible for designing the UI in Figma and
-      integrating APIs into the apps.
+      use the Delivery app to deliver products to customers at specific
+      locations. The system integrates Map APIs for delivery navigation and
+      includes charts for the dashboard. I was responsible for designing the UI
+      in Figma and integrating APIs into the apps.
     </p>
     <h4>Tech Stack</h4>
     <ul>
@@ -72,7 +72,6 @@ const ProjectOverview = () => (
       <li>
         <strong>APIs:</strong> REST APIs for data integration
       </li>
-      
     </ul>
   </div>
 );
@@ -88,12 +87,12 @@ const MoreDetails = () => (
       </p>
       <ul>
         <li>
-          <strong>Shop Owner App:</strong> Allows users to manage their shop, 
+          <strong>Shop Owner App:</strong> Allows users to manage their shop,
           list products, and provide detailed information about each item.
         </li>
         <li>
-          <strong>Delivery App:</strong> Enables delivery drivers to navigate
-          to customer locations using integrated map APIs for efficient route
+          <strong>Delivery App:</strong> Enables delivery drivers to navigate to
+          customer locations using integrated map APIs for efficient route
           planning.
         </li>
         <li>
@@ -108,8 +107,8 @@ const MoreDetails = () => (
         The system includes a dynamic dashboard with charts to visualize key
         metrics. Real-time data is provided via integrated REST APIs, ensuring
         seamless communication between the apps. The applications are designed
-        for efficiency and user-friendliness, offering a smooth experience
-        for all users.
+        for efficiency and user-friendliness, offering a smooth experience for
+        all users.
       </p>
     </div>
     <h4 className="mt-4">Key Features</h4>
@@ -127,98 +126,116 @@ const MoreDetails = () => (
         make purchases.
       </li>
       <li>
-        <strong>Charts on Dashboard:</strong> Visual representation of inventory,
-        sales, and delivery metrics.
+        <strong>Charts on Dashboard:</strong> Visual representation of
+        inventory, sales, and delivery metrics.
       </li>
       <li>
         <strong>REST APIs:</strong> Integrated for seamless data communication
         between the frontend apps.
       </li>
       <li>
-        <strong>Figma to UI:</strong> Full UI design done in Figma and integrated
-        into the mobile apps.
+        <strong>Figma to UI:</strong> Full UI design done in Figma and
+        integrated into the mobile apps.
       </li>
     </ul>
   </div>
 );
-
-
 
 // Images Section
 const ImagesSection = () => (
   <div className="images-section">
     <h4>App Screenshots</h4>
     <div className="images">
-      <Image
-        src="/projectImages/getWeed/registorShopowner.jpg" // Fixed the path here
-        alt="App Login Screenshot"
-        width={500} // Default width
-        height={300} // Default height
-        priority
-      />
-      <Image
-        src="/projectImages/getWeed/shopOwner.jpg" // Fixed the path here
-        alt="Web Screenshot"
-        width={1000} // Default width
-        height={300} // Default height
-        priority
-      />
-      <Image
-        src="/projectImages/getWeed/shopOwnerDashboard.jpg" // Fixed the path here
-        alt="App Login Screenshot"
-        width={500} // Default width
-        height={300} // Default height
-        priority
-      />
-      <Image
-        src="/projectImages/getWeed/shopownerProfile.jpg" // Fixed the path here
-        alt="App Login Screenshot"
-        width={500} // Default width
-        height={300} // Default height
-        priority
-      />
-      <Image
-        src="/projectImages/getWeed/chat.jpg" // Fixed the path here
-        alt="Web Screenshot"
-        width={1000} // Default width
-        height={300} // Default height
-        priority
-      />
-      <Image
-        src="/projectImages/getWeed/chatting.jpg" // Fixed the path here
-        alt="App Login Screenshot"
-        width={500} // Default width
-        height={300} // Default height
-        priority
-      />
-      <Image
-        src="/projectImages/getWeed/dirliveryDashboard.jpg" // Fixed the path here
-        alt="Web Screenshot"
-        width={1000} // Default width
-        height={300} // Default height
-        priority
-      />
-      <Image
-        src="/projectImages/getWeed/driverprofile.jpg" // Fixed the path here
-        alt="App Login Screenshot"
-        width={500} // Default width
-        height={300} // Default height
-        priority
-      />
-      <Image
-        src="/projectImages/getWeed/history.jpg" // Fixed the path here
-        alt="Web Screenshot"
-        width={1000} // Default width
-        height={300} // Default height
-        priority
-      />
-      <Image
-        src="/projectImages/getWeed/login.jpg" // Fixed the path here
-        alt="App Login Screenshot"
-        width={500} // Default width
-        height={300} // Default height
-        priority
-      />
+      <div className="image-wrapper">
+        <Image
+          src="/projectImages/getWeed/registorShopowner.jpg" // Fixed the path here
+          alt="App Login Screenshot"
+          width={500} // Default width
+          height={300} // Default height
+          priority
+        />
+      </div>
+      <div className="image-wrapper">
+        <Image
+          src="/projectImages/getWeed/shopOwner.jpg" // Fixed the path here
+          alt="Web Screenshot"
+          width={1000} // Default width
+          height={300} // Default height
+          priority
+        />
+      </div>
+      <div className="image-wrapper">
+        <Image
+          src="/projectImages/getWeed/shopOwnerDashboard.jpg" // Fixed the path here
+          alt="App Login Screenshot"
+          width={500} // Default width
+          height={300} // Default height
+          priority
+        />
+      </div>
+      <div className="image-wrapper">
+        <Image
+          src="/projectImages/getWeed/shopownerProfile.jpg" // Fixed the path here
+          alt="App Login Screenshot"
+          width={500} // Default width
+          height={300} // Default height
+          priority
+        />
+      </div>
+      <div className="image-wrapper">
+        <Image
+          src="/projectImages/getWeed/chat.jpg" // Fixed the path here
+          alt="Web Screenshot"
+          width={1000} // Default width
+          height={300} // Default height
+          priority
+        />
+      </div>
+      <div className="image-wrapper">
+        <Image
+          src="/projectImages/getWeed/chatting.jpg" // Fixed the path here
+          alt="App Login Screenshot"
+          width={500} // Default width
+          height={300} // Default height
+          priority
+        />
+      </div>
+      <div className="image-wrapper">
+        <Image
+          src="/projectImages/getWeed/dirliveryDashboard.jpg" // Fixed the path here
+          alt="Web Screenshot"
+          width={1000} // Default width
+          height={300} // Default height
+          priority
+        />
+      </div>
+      <div className="image-wrapper">
+        <Image
+          src="/projectImages/getWeed/driverprofile.jpg" // Fixed the path here
+          alt="App Login Screenshot"
+          width={500} // Default width
+          height={300} // Default height
+          priority
+        />
+      </div>
+      <div className="image-wrapper">
+        <Image
+          src="/projectImages/getWeed/history.jpg" // Fixed the path here
+          alt="Web Screenshot"
+          width={1000} // Default width
+          height={300} // Default height
+          priority
+        />
+      </div>
+      <div className="image-wrapper">
+        <Image
+          src="/projectImages/getWeed/login.jpg" // Fixed the path here
+          alt="App Login Screenshot"
+          width={500} // Default width
+          height={300} // Default height
+          priority
+        />
+      </div>
     </div>
   </div>
 );
@@ -322,20 +339,32 @@ const StyledWrapper = styled.div`
   }
 
   .images-section img {
-    width: auto;
-    max-width: 500px;
+    width: 100%; /* Allow images to scale with container width */
+    max-width: 500px; /* Ensure images do not exceed this width */
     height: auto;
     max-height: 200px;
     border-radius: 0.5rem;
     box-shadow: 0.2rem 0.2rem var(--secondary-color);
-    transition: transform 0.3s ease-in-out; /* Smooth transition for scaling */
-    transform-origin: center center; /* Start zooming from the center of the image */
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center center;
+    object-fit: cover; /* Ensure the image fills the container without distortion */
   }
 
   .images-section img:hover {
-    transform: scale(1.5); /* Zoom in effect */
-    transition: transform 0.3s ease-in-out; /* Apply smooth transition on hover */
-    z-index: 10; /* Ensures the zoomed image stays on top */
+    transform: scale(1.5);
+    transition: transform 0.3s ease-in-out;
+    z-index: 10;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .images-section img {
+      max-width: 100%; /* Ensure images are full width on smaller screens */
+      max-height: 150px; /* Adjust max height for smaller screens */
+    }
+    .images-section img:hover {
+      transform: scale(3.1);
+    }
   }
 
   @media (max-width: 768px) {

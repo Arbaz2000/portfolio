@@ -244,20 +244,29 @@ const StyledWrapper = styled.div`
   }
 
   .images-section img {
-    width: auto;
-    max-width: 500px;
+    width: 100%; /* Allow images to scale with container width */
+    max-width: 500px; /* Ensure images do not exceed this width */
     height: auto;
     max-height: 200px;
     border-radius: 0.5rem;
     box-shadow: 0.2rem 0.2rem var(--secondary-color);
-    transition: transform 0.3s ease-in-out; /* Smooth transition for scaling */
-    transform-origin: center center; /* Start zooming from the center of the image */
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center center;
+    object-fit: cover; /* Ensure the image fills the container without distortion */
   }
 
   .images-section img:hover {
-    transform: scale(1.5); /* Zoom in effect */
-    transition: transform 0.3s ease-in-out; /* Apply smooth transition on hover */
-    z-index: 10; /* Ensures the zoomed image stays on top */
+    transform: scale(1.5);
+    transition: transform 0.3s ease-in-out;
+    z-index: 10;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .images-section img {
+      max-width: 100%; /* Ensure images are full width on smaller screens */
+      max-height: 150px; /* Adjust max height for smaller screens */
+    }
   }
 
   @media (max-width: 768px) {
