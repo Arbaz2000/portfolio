@@ -22,9 +22,9 @@ const Card = () => {
       const response = await axios.post(
         "https://api.emailjs.com/api/v1.0/email/send",
         {
-          service_id: "service_jmp565m",
-          template_id: "template_ffozwf6",
-          user_id: "U8XSNr6_z568VSE5-",
+          service_id: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+          template_id: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+          user_id: process.env.NEXT_PUBLIC_EMAILJS_USER_ID,
           template_params: templateParams,
         }
       );
