@@ -1,14 +1,13 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-import { FaWater } from "react-icons/fa"; // Water icon
+import { FaSuitcase, FaWater } from "react-icons/fa"; // Water icon
 import Flipcard from "@/component/filpcard";
 import Image from "next/image";
 
 const links = [
-  { label: "Web", url: "https://github.com/harshendraup/WaterCan-web" },
-  { label: "App", url: "https://github.com/kajal-sharma007/WaterCanApp" },
-  { label: "Backend", url: "https://github.com/Arbaz2000/WaterCan-Backend" },
+  { label: "Web", url: "https://github.com/Arbaz2000/cultural-glam" },
+
 ];
 
 const Card = () => {
@@ -26,15 +25,16 @@ const Card = () => {
   );
 };
 
+
 // Card Component - For the project card at the top
 const CardComponent = () => (
   <div className="card">
     <div className="card-header">
       <div className="project-icon">
-        <FaWater size={50} color="white" />
+        <FaSuitcase size={50} color="white" />
       </div>
       <div className="project-name">
-        <p>Get Weed</p>
+        <p>Tours & Travel</p>
       </div>
     </div>
     <div>
@@ -48,27 +48,18 @@ const ProjectOverview = () => (
   <div className="project-overview">
     <h3>Project Overview</h3>
     <p>
-      <strong>WaterCan</strong> is a comprehensive inventory management system
-      for delivering water. It includes both a web app for plant owners and a
-      mobile app for delivery drivers. The system helps manage deliveries, track
-      inventory, and optimize routes.
+      This website is created in <strong>Next.js</strong>, utilizing its SEO-friendly features to ensure better visibility. It includes multiple pages, which showcase the tools and travel packages provided by the company. Built using <strong>React</strong> and deployed through <strong>Vercel</strong>, the site offers a seamless user experience. The website also displays reviews from previous users of the travel agency, helping potential clients make informed decisions.
     </p>
     <h4>Tech Stack</h4>
     <ul>
       <li>
-        <strong>Frontend (Web App):</strong> React
+        <strong>Frontend:</strong> React
       </li>
       <li>
-        <strong>Frontend (Mobile App):</strong> React Native
+        <strong>Framework:</strong> Next.js
       </li>
       <li>
-        <strong>Backend:</strong> Node.js
-      </li>
-      <li>
-        <strong>Database:</strong> MongoDB (NoSQL)
-      </li>
-      <li>
-        <strong>Deployment:</strong> AWS EC2 (Backend), AWS S3 (Web App)
+        <strong>Deployment:</strong> Vercel
       </li>
     </ul>
   </div>
@@ -80,56 +71,44 @@ const MoreDetails = () => (
     <div>
       <h4>How It Works</h4>
       <p>
-        WaterCan optimizes the workflow for both plant owners and delivery
-        drivers:
+        This platform provides detailed travel packages, as well as customer reviews for prospective travelers:
       </p>
       <ul>
         <li>
-          <strong>Plant Owners:</strong> Admin rights for route management and
-          inventory control.
+          <strong>Travel Packages:</strong> Users can browse and book different travel packages, each with detailed information.
         </li>
         <li>
-          <strong>Delivery Drivers:</strong> Navigation via mobile app with
-          integrated maps.
+          <strong>Customer Reviews:</strong> Previous clients can share their feedback, helping others make better travel decisions.
         </li>
         <li>
-          <strong>Transaction Management:</strong> All transactions are logged
-          for transparency.
+          <strong>SEO-Optimized:</strong> With Next.js, the website is fully optimized for search engines to help attract more visitors.
         </li>
       </ul>
     </div>
     <div>
       <h4 className="mt-4">More Details</h4>
       <p>
-        WaterCan ensures efficient and accurate delivery, with features like
-        real-time tracking and route optimization. The system is powered by
-        Node.js and MongoDB, with the mobile and web apps built using React
-        technologies.
+        The website leverages the power of Next.js for fast page loading and SEO optimization. It showcases various travel tools and packages for users, while also incorporating customer reviews to build trust and transparency. Hosted and deployed on Vercel for reliable performance and scalability.
       </p>
     </div>
     <h4 className="mt-4">Key Features</h4>
     <ul>
       <li>
-        <strong>React Web App:</strong> Used by plant owners to manage inventory
-        and deliveries.
+        <strong>Next.js Framework:</strong> Provides optimized routing and SEO features.
       </li>
       <li>
-        <strong>React Native Mobile App:</strong> For drivers to manage tasks
-        and deliveries.
+        <strong>React Frontend:</strong> Powers the dynamic components and user interface.
       </li>
       <li>
-        <strong>Node.js Backend:</strong> Handles transactions, users, and
-        routes.
+        <strong>Customer Reviews:</strong> Displays feedback from past users to ensure transparency.
       </li>
       <li>
-        <strong>MongoDB Database:</strong> Stores customer and transaction data.
-      </li>
-      <li>
-        <strong>AWS Hosting:</strong> Deployed on EC2 and S3 for scalability.
+        <strong>Vercel Deployment:</strong> Ensures fast, reliable, and scalable hosting.
       </li>
     </ul>
   </div>
 );
+
 
 // Images Section
 const ImagesSection = () => (
@@ -137,23 +116,37 @@ const ImagesSection = () => (
     <h4>App Screenshots</h4>
     <div className="images">
       <Image
-        src="/projectImages/watercanweb.png" // Fixed the path here
+        src="/projectImages/toursAndTravel/home.png" // Fixed the path here
         alt="Web Screenshot"
         width={1000} // Default width
         height={300} // Default height
         priority
       />
       <Image
-        src="/projectImages/appLogin.jpg" // Fixed the path here
-        alt="App Login Screenshot"
-        width={500} // Default width
+        src="/projectImages/toursAndTravel/home2.png" // Fixed the path here
+        alt="Web Screenshot"
+        width={1000} // Default width
         height={300} // Default height
         priority
       />
       <Image
-        src="/projectImages/appMap.jpg" // Fixed the path here
-        alt="App Map Screenshot"
-        width={500} // Default width
+        src="/projectImages/toursAndTravel/enjoy.png" // Fixed the path here
+        alt="Web Screenshot"
+        width={1000} // Default width
+        height={300} // Default height
+        priority
+      />
+      <Image
+        src="/projectImages/toursAndTravel/explore.png" // Fixed the path here
+        alt="Web Screenshot"
+        width={1000} // Default width
+        height={300} // Default height
+        priority
+      />
+      <Image
+        src="/projectImages/toursAndTravel/contactus.png" // Fixed the path here
+        alt="Web Screenshot"
+        width={1000} // Default width
         height={300} // Default height
         priority
       />
@@ -166,7 +159,7 @@ const ClientNote = () => (
   <div className="client-note">
     <p>
       <strong>Note:</strong> This project was created for a client to help
-      manage their water delivery system more efficiently.
+     Attract more users towards their business.
     </p>
   </div>
 );
@@ -176,12 +169,12 @@ const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #30c6fc;
+  background-color: #d38a36;
   padding: 2rem;
   gap: 1rem;
 
   /* Color Variables */
-  --primary-color: #306dfc;
+  --primary-color: #75472b;
   --secondary-color: #05060f;
   --text-color: white;
   --border-radius: 1rem;

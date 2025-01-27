@@ -1,299 +1,401 @@
-"use client";
+"use client"
 import React from "react";
 import styled from "styled-components";
-import { FaWater } from "react-icons/fa"; // Water icon
-import Flipcard from "@/component/filpcard";
-import Image from "next/image";
 
-const links = [
-  { label: "Web", url: "https://github.com/harshendraup/WaterCan-web" },
-  { label: "App", url: "https://github.com/kajal-sharma007/WaterCanApp" },
-  { label: "Backend", url: "https://github.com/Arbaz2000/WaterCan-Backend" },
-];
-
-const Card = () => {
+const Loader = () => {
   return (
     <StyledWrapper>
-      <div className="card-container">
-        <CardComponent />
-        <ProjectOverview />
+      <p className="absolute mt-80 left-1/2 transform -translate-x-1/2 text-2xl font-bold">
+        this is a project which is confidential🤐 !!!
+      </p>
+      <div
+        aria-label="Orange and tan hamster running in a metal wheel"
+        role="img"
+        className="wheel-and-hamster"
+      >
+        <div className="wheel" />
+        <div className="hamster">
+          <div className="hamster__body">
+            <div className="hamster__head">
+              <div className="hamster__ear" />
+              <div className="hamster__eye" />
+              <div className="hamster__nose" />
+            </div>
+            <div className="hamster__limb hamster__limb--fr" />
+            <div className="hamster__limb hamster__limb--fl" />
+            <div className="hamster__limb hamster__limb--br" />
+            <div className="hamster__limb hamster__limb--bl" />
+            <div className="hamster__tail" />
+          </div>
+        </div>
+        <div className="spoke" />
       </div>
-
-      <MoreDetails />
-      <ImagesSection />
-      <ClientNote />
     </StyledWrapper>
   );
 };
 
-// Card Component - For the project card at the top
-const CardComponent = () => (
-  <div className="card">
-    <div className="card-header">
-      <div className="project-icon">
-        <FaWater size={50} color="white" />
-      </div>
-      <div className="project-name">
-        <p>Get Weed</p>
-      </div>
-    </div>
-    <div>
-      <Flipcard links={links} coverText="View on GitHub" />
-    </div>
-  </div>
-);
-
-// Project Overview Section
-const ProjectOverview = () => (
-  <div className="project-overview">
-    <h3>Project Overview</h3>
-    <p>
-      <strong>WaterCan</strong> is a comprehensive inventory management system
-      for delivering water. It includes both a web app for plant owners and a
-      mobile app for delivery drivers. The system helps manage deliveries, track
-      inventory, and optimize routes.
-    </p>
-    <h4>Tech Stack</h4>
-    <ul>
-      <li>
-        <strong>Frontend (Web App):</strong> React
-      </li>
-      <li>
-        <strong>Frontend (Mobile App):</strong> React Native
-      </li>
-      <li>
-        <strong>Backend:</strong> Node.js
-      </li>
-      <li>
-        <strong>Database:</strong> MongoDB (NoSQL)
-      </li>
-      <li>
-        <strong>Deployment:</strong> AWS EC2 (Backend), AWS S3 (Web App)
-      </li>
-    </ul>
-  </div>
-);
-
-// More Details Section
-const MoreDetails = () => (
-  <div className="more-details">
-    <div>
-      <h4>How It Works</h4>
-      <p>
-        WaterCan optimizes the workflow for both plant owners and delivery
-        drivers:
-      </p>
-      <ul>
-        <li>
-          <strong>Plant Owners:</strong> Admin rights for route management and
-          inventory control.
-        </li>
-        <li>
-          <strong>Delivery Drivers:</strong> Navigation via mobile app with
-          integrated maps.
-        </li>
-        <li>
-          <strong>Transaction Management:</strong> All transactions are logged
-          for transparency.
-        </li>
-      </ul>
-    </div>
-    <div>
-      <h4 className="mt-4">More Details</h4>
-      <p>
-        WaterCan ensures efficient and accurate delivery, with features like
-        real-time tracking and route optimization. The system is powered by
-        Node.js and MongoDB, with the mobile and web apps built using React
-        technologies.
-      </p>
-    </div>
-    <h4 className="mt-4">Key Features</h4>
-    <ul>
-      <li>
-        <strong>React Web App:</strong> Used by plant owners to manage inventory
-        and deliveries.
-      </li>
-      <li>
-        <strong>React Native Mobile App:</strong> For drivers to manage tasks
-        and deliveries.
-      </li>
-      <li>
-        <strong>Node.js Backend:</strong> Handles transactions, users, and
-        routes.
-      </li>
-      <li>
-        <strong>MongoDB Database:</strong> Stores customer and transaction data.
-      </li>
-      <li>
-        <strong>AWS Hosting:</strong> Deployed on EC2 and S3 for scalability.
-      </li>
-    </ul>
-  </div>
-);
-
-// Images Section
-const ImagesSection = () => (
-  <div className="images-section">
-    <h4>App Screenshots</h4>
-    <div className="images">
-      <Image
-        src="/projectImages/watercanweb.png" // Fixed the path here
-        alt="Web Screenshot"
-        width={1000} // Default width
-        height={300} // Default height
-        priority
-      />
-      <Image
-        src="/projectImages/appLogin.jpg" // Fixed the path here
-        alt="App Login Screenshot"
-        width={500} // Default width
-        height={300} // Default height
-        priority
-      />
-      <Image
-        src="/projectImages/appMap.jpg" // Fixed the path here
-        alt="App Map Screenshot"
-        width={500} // Default width
-        height={300} // Default height
-        priority
-      />
-    </div>
-  </div>
-);
-
-// Client Note Section
-const ClientNote = () => (
-  <div className="client-note">
-    <p>
-      <strong>Note:</strong> This project was created for a client to help
-      manage their water delivery system more efficiently.
-    </p>
-  </div>
-);
-
-// Styled Wrapper Component with variables for shared styles
 const StyledWrapper = styled.div`
+  background-color: black;
+  color: white;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background-color: #30c6fc;
-  padding: 2rem;
-  gap: 1rem;
-
-  /* Color Variables */
-  --primary-color: #306dfc;
-  --secondary-color: #05060f;
-  --text-color: white;
-  --border-radius: 1rem;
-  --shadow: 0.4rem 0.4rem #05060f;
-
-  /* Card Styling */
-  .card-container {
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    gap: 1rem;
+  overflow: hidden;
+  position: relative;
+  .wheel-and-hamster {
+    --dur: 1s;
+    position: relative;
+    width: 12em;
+    height: 12em;
+    font-size: 14px;
   }
 
-  .card {
-    width: 250px;
-    background: var(--primary-color);
-    padding: 1rem;
-    border-radius: var(--border-radius);
-    border: 0.5vmin solid var(--secondary-color);
-    box-shadow: var(--shadow);
-    color: black;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  .wheel,
+  .hamster,
+  .hamster div,
+  .spoke {
+    position: absolute;
   }
 
-  .card-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .project-icon {
-    background-color: var(--secondary-color);
+  .wheel,
+  .spoke {
     border-radius: 50%;
-    padding: 0.5rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
-  .project-name p {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--text-color);
+  .wheel {
+    background: radial-gradient(
+      100% 100% at center,
+      hsla(0, 0%, 60%, 0) 47.8%,
+      hsl(0, 0%, 60%) 48%
+    );
+    z-index: 2;
   }
 
-  /* Common Section Styling */
-  .project-overview,
-  .more-details,
-  .images-section,
-  .repo-section,
-  .client-note {
-    width: 90%;
-    background: #faf9f6;
-    padding: 1rem;
-    border-radius: var(--border-radius);
-    border: 0.5vmin solid var(--secondary-color);
-    box-shadow: var(--shadow);
-    color: black;
+  .hamster {
+    animation: hamster var(--dur) ease-in-out infinite;
+    top: 50%;
+    left: calc(50% - 3.5em);
+    width: 7em;
+    height: 3.75em;
+    transform: rotate(4deg) translate(-0.8em, 1.85em);
+    transform-origin: 50% 0;
+    z-index: 1;
   }
 
-  .project-overview h3,
-  .more-details h4,
-  .images-section h4,
-  .repo-section h4,
-  .client-note p {
-    font-size: 1.5rem;
-    font-weight: bold; /* Ensures the headings are bold */
+  .hamster__head {
+    animation: hamsterHead var(--dur) ease-in-out infinite;
+    background: hsl(30, 90%, 55%);
+    border-radius: 70% 30% 0 100% / 40% 25% 25% 60%;
+    box-shadow: 0 -0.25em 0 hsl(30, 90%, 80%) inset,
+      0.75em -1.55em 0 hsl(30, 90%, 90%) inset;
+    top: 0;
+    left: -2em;
+    width: 2.75em;
+    height: 2.5em;
+    transform-origin: 100% 50%;
   }
 
-  /* Images Section */
-  .images-section .images {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 1rem;
+  .hamster__ear {
+    animation: hamsterEar var(--dur) ease-in-out infinite;
+    background: hsl(0, 90%, 85%);
+    border-radius: 50%;
+    box-shadow: -0.25em 0 hsl(30, 90%, 55%) inset;
+    top: -0.25em;
+    right: -0.25em;
+    width: 0.75em;
+    height: 0.75em;
+    transform-origin: 50% 75%;
   }
 
-  .images-section img {
-    width: auto;
-    max-width: 500px;
-    height: auto;
-    max-height: 200px;
-    border-radius: 0.5rem;
-    box-shadow: 0.2rem 0.2rem var(--secondary-color);
-    transition: transform 0.3s ease-in-out; /* Smooth transition for scaling */
-    transform-origin: center center; /* Start zooming from the center of the image */
+  .hamster__eye {
+    animation: hamsterEye var(--dur) linear infinite;
+    background-color: hsl(0, 0%, 0%);
+    border-radius: 50%;
+    top: 0.375em;
+    left: 1.25em;
+    width: 0.5em;
+    height: 0.5em;
   }
 
-  .images-section img:hover {
-    transform: scale(1.5); /* Zoom in effect */
-    transition: transform 0.3s ease-in-out; /* Apply smooth transition on hover */
-    z-index: 10; /* Ensures the zoomed image stays on top */
+  .hamster__nose {
+    background: hsl(0, 90%, 75%);
+    border-radius: 35% 65% 85% 15% / 70% 50% 50% 30%;
+    top: 0.75em;
+    left: 0;
+    width: 0.2em;
+    height: 0.25em;
   }
 
-  @media (max-width: 768px) {
-    .card-container {
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
+  .hamster__body {
+    animation: hamsterBody var(--dur) ease-in-out infinite;
+    background: hsl(30, 90%, 90%);
+    border-radius: 50% 30% 50% 30% / 15% 60% 40% 40%;
+    box-shadow: 0.1em 0.75em 0 hsl(30, 90%, 55%) inset,
+      0.15em -0.5em 0 hsl(30, 90%, 80%) inset;
+    top: 0.25em;
+    left: 2em;
+    width: 4.5em;
+    height: 3em;
+    transform-origin: 17% 50%;
+    transform-style: preserve-3d;
+  }
+
+  .hamster__limb--fr,
+  .hamster__limb--fl {
+    clip-path: polygon(0 0, 100% 0, 70% 80%, 60% 100%, 0% 100%, 40% 80%);
+    top: 2em;
+    left: 0.5em;
+    width: 1em;
+    height: 1.5em;
+    transform-origin: 50% 0;
+  }
+
+  .hamster__limb--fr {
+    animation: hamsterFRLimb var(--dur) linear infinite;
+    background: linear-gradient(hsl(30, 90%, 80%) 80%, hsl(0, 90%, 75%) 80%);
+    transform: rotate(15deg) translateZ(-1px);
+  }
+
+  .hamster__limb--fl {
+    animation: hamsterFLLimb var(--dur) linear infinite;
+    background: linear-gradient(hsl(30, 90%, 90%) 80%, hsl(0, 90%, 85%) 80%);
+    transform: rotate(15deg);
+  }
+
+  .hamster__limb--br,
+  .hamster__limb--bl {
+    border-radius: 0.75em 0.75em 0 0;
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 30%,
+      70% 90%,
+      70% 100%,
+      30% 100%,
+      40% 90%,
+      0% 30%
+    );
+    top: 1em;
+    left: 2.8em;
+    width: 1.5em;
+    height: 2.5em;
+    transform-origin: 50% 30%;
+  }
+
+  .hamster__limb--br {
+    animation: hamsterBRLimb var(--dur) linear infinite;
+    background: linear-gradient(hsl(30, 90%, 80%) 90%, hsl(0, 90%, 75%) 90%);
+    transform: rotate(-25deg) translateZ(-1px);
+  }
+
+  .hamster__limb--bl {
+    animation: hamsterBLLimb var(--dur) linear infinite;
+    background: linear-gradient(hsl(30, 90%, 90%) 90%, hsl(0, 90%, 85%) 90%);
+    transform: rotate(-25deg);
+  }
+
+  .hamster__tail {
+    animation: hamsterTail var(--dur) linear infinite;
+    background: hsl(0, 90%, 85%);
+    border-radius: 0.25em 50% 50% 0.25em;
+    box-shadow: 0 -0.2em 0 hsl(0, 90%, 75%) inset;
+    top: 1.5em;
+    right: -0.5em;
+    width: 1em;
+    height: 0.5em;
+    transform: rotate(30deg) translateZ(-1px);
+    transform-origin: 0.25em 0.25em;
+  }
+
+  .spoke {
+    animation: spoke var(--dur) linear infinite;
+    background: radial-gradient(
+        100% 100% at center,
+        hsl(0, 0%, 60%) 4.8%,
+        hsla(0, 0%, 60%, 0) 5%
+      ),
+      linear-gradient(
+          hsla(0, 0%, 55%, 0) 46.9%,
+          hsl(0, 0%, 65%) 47% 52.9%,
+          hsla(0, 0%, 65%, 0) 53%
+        )
+        50% 50% / 99% 99% no-repeat;
+  }
+
+  /* Animations */
+  @keyframes hamster {
+    from,
+    to {
+      transform: rotate(4deg) translate(-0.8em, 1.85em);
     }
 
-    .card,
-    .project-overview,
-    .more-details,
-    .images-section,
-    .repo-section,
-    .client-note {
-      width: 100%;
-      max-width: 350px;
+    50% {
+      transform: rotate(0) translate(-0.8em, 1.85em);
+    }
+  }
+
+  @keyframes hamsterHead {
+    from,
+    25%,
+    50%,
+    75%,
+    to {
+      transform: rotate(0);
+    }
+
+    12.5%,
+    37.5%,
+    62.5%,
+    87.5% {
+      transform: rotate(8deg);
+    }
+  }
+
+  @keyframes hamsterEye {
+    from,
+    90%,
+    to {
+      transform: scaleY(1);
+    }
+
+    95% {
+      transform: scaleY(0);
+    }
+  }
+
+  @keyframes hamsterEar {
+    from,
+    25%,
+    50%,
+    75%,
+    to {
+      transform: rotate(0);
+    }
+
+    12.5%,
+    37.5%,
+    62.5%,
+    87.5% {
+      transform: rotate(12deg);
+    }
+  }
+
+  @keyframes hamsterBody {
+    from,
+    25%,
+    50%,
+    75%,
+    to {
+      transform: rotate(0);
+    }
+
+    12.5%,
+    37.5%,
+    62.5%,
+    87.5% {
+      transform: rotate(-2deg);
+    }
+  }
+
+  @keyframes hamsterFRLimb {
+    from,
+    25%,
+    50%,
+    75%,
+    to {
+      transform: rotate(50deg) translateZ(-1px);
+    }
+
+    12.5%,
+    37.5%,
+    62.5%,
+    87.5% {
+      transform: rotate(-30deg) translateZ(-1px);
+    }
+  }
+
+  @keyframes hamsterFLLimb {
+    from,
+    25%,
+    50%,
+    75%,
+    to {
+      transform: rotate(-30deg);
+    }
+
+    12.5%,
+    37.5%,
+    62.5%,
+    87.5% {
+      transform: rotate(50deg);
+    }
+  }
+
+  @keyframes hamsterBRLimb {
+    from,
+    25%,
+    50%,
+    75%,
+    to {
+      transform: rotate(-60deg) translateZ(-1px);
+    }
+
+    12.5%,
+    37.5%,
+    62.5%,
+    87.5% {
+      transform: rotate(20deg) translateZ(-1px);
+    }
+  }
+
+  @keyframes hamsterBLLimb {
+    from,
+    25%,
+    50%,
+    75%,
+    to {
+      transform: rotate(20deg);
+    }
+
+    12.5%,
+    37.5%,
+    62.5%,
+    87.5% {
+      transform: rotate(-60deg);
+    }
+  }
+
+  @keyframes hamsterTail {
+    from,
+    25%,
+    50%,
+    75%,
+    to {
+      transform: rotate(30deg) translateZ(-1px);
+    }
+
+    12.5%,
+    37.5%,
+    62.5%,
+    87.5% {
+      transform: rotate(10deg) translateZ(-1px);
+    }
+  }
+
+  @keyframes spoke {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(-1turn);
     }
   }
 `;
 
-export default Card;
+export default Loader;

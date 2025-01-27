@@ -4,11 +4,15 @@ import styled from "styled-components";
 import { FaWater } from "react-icons/fa"; // Water icon
 import Flipcard from "@/component/filpcard";
 import Image from "next/image";
+import { SiAccuweather, SiLeaflet } from "react-icons/si";
 
 const links = [
-  { label: "Web", url: "https://github.com/harshendraup/WaterCan-web" },
-  { label: "App", url: "https://github.com/kajal-sharma007/WaterCanApp" },
-  { label: "Backend", url: "https://github.com/Arbaz2000/WaterCan-Backend" },
+  { label: "Customer", url: "https://github.com/Arbaz2000/WaterCan-Backend" },
+  {
+    label: "Shop-Owner",
+    url: "https://github.com/kajal-sharma007/WaterCanApp",
+  },
+  { label: "Delivery ", url: "https://github.com/Arbaz2000/WaterCan-Backend" },
 ];
 
 const Card = () => {
@@ -31,7 +35,7 @@ const CardComponent = () => (
   <div className="card">
     <div className="card-header">
       <div className="project-icon">
-        <FaWater size={50} color="white" />
+        <SiLeaflet size={50} color="white" />
       </div>
       <div className="project-name">
         <p>Get Weed</p>
@@ -48,28 +52,27 @@ const ProjectOverview = () => (
   <div className="project-overview">
     <h3>Project Overview</h3>
     <p>
-      <strong>WaterCan</strong> is a comprehensive inventory management system
-      for delivering water. It includes both a web app for plant owners and a
-      mobile app for delivery drivers. The system helps manage deliveries, track
-      inventory, and optimize routes.
+      <strong>Get Weed</strong> is a comprehensive inventory management
+      system designed for the cannabis industry. It includes three mobile apps:
+      a Shop Owner app, a Delivery app, and a Customer app. Shop owners can list
+      products, manage inventory, and provide product details. Delivery drivers
+      use the Delivery app to deliver products to customers at specific locations.
+      The system integrates Map APIs for delivery navigation and includes charts
+      for the dashboard. I was responsible for designing the UI in Figma and
+      integrating APIs into the apps.
     </p>
     <h4>Tech Stack</h4>
     <ul>
       <li>
-        <strong>Frontend (Web App):</strong> React
+        <strong>Frontend (Shop Owner & Customer App):</strong> React Native
       </li>
       <li>
-        <strong>Frontend (Mobile App):</strong> React Native
+        <strong>Frontend (Delivery App):</strong> React Native
       </li>
       <li>
-        <strong>Backend:</strong> Node.js
+        <strong>APIs:</strong> REST APIs for data integration
       </li>
-      <li>
-        <strong>Database:</strong> MongoDB (NoSQL)
-      </li>
-      <li>
-        <strong>Deployment:</strong> AWS EC2 (Backend), AWS S3 (Web App)
-      </li>
+      
     </ul>
   </div>
 );
@@ -80,56 +83,66 @@ const MoreDetails = () => (
     <div>
       <h4>How It Works</h4>
       <p>
-        WaterCan optimizes the workflow for both plant owners and delivery
-        drivers:
+        <strong>Get Weed</strong> optimizes the cannabis delivery process
+        through three distinct apps:
       </p>
       <ul>
         <li>
-          <strong>Plant Owners:</strong> Admin rights for route management and
-          inventory control.
+          <strong>Shop Owner App:</strong> Allows users to manage their shop, 
+          list products, and provide detailed information about each item.
         </li>
         <li>
-          <strong>Delivery Drivers:</strong> Navigation via mobile app with
-          integrated maps.
+          <strong>Delivery App:</strong> Enables delivery drivers to navigate
+          to customer locations using integrated map APIs for efficient route
+          planning.
         </li>
         <li>
-          <strong>Transaction Management:</strong> All transactions are logged
-          for transparency.
+          <strong>Customer App:</strong> Lets customers browse products and
+          place orders for delivery.
         </li>
       </ul>
     </div>
     <div>
       <h4 className="mt-4">More Details</h4>
       <p>
-        WaterCan ensures efficient and accurate delivery, with features like
-        real-time tracking and route optimization. The system is powered by
-        Node.js and MongoDB, with the mobile and web apps built using React
-        technologies.
+        The system includes a dynamic dashboard with charts to visualize key
+        metrics. Real-time data is provided via integrated REST APIs, ensuring
+        seamless communication between the apps. The applications are designed
+        for efficiency and user-friendliness, offering a smooth experience
+        for all users.
       </p>
     </div>
     <h4 className="mt-4">Key Features</h4>
     <ul>
       <li>
-        <strong>React Web App:</strong> Used by plant owners to manage inventory
-        and deliveries.
+        <strong>Shop Owner App:</strong> List products, manage inventory, and
+        provide detailed descriptions of items.
       </li>
       <li>
-        <strong>React Native Mobile App:</strong> For drivers to manage tasks
-        and deliveries.
+        <strong>Delivery App:</strong> Navigation with map APIs for optimized
+        delivery routes.
       </li>
       <li>
-        <strong>Node.js Backend:</strong> Handles transactions, users, and
-        routes.
+        <strong>Customer App:</strong> Browse products, view descriptions, and
+        make purchases.
       </li>
       <li>
-        <strong>MongoDB Database:</strong> Stores customer and transaction data.
+        <strong>Charts on Dashboard:</strong> Visual representation of inventory,
+        sales, and delivery metrics.
       </li>
       <li>
-        <strong>AWS Hosting:</strong> Deployed on EC2 and S3 for scalability.
+        <strong>REST APIs:</strong> Integrated for seamless data communication
+        between the frontend apps.
+      </li>
+      <li>
+        <strong>Figma to UI:</strong> Full UI design done in Figma and integrated
+        into the mobile apps.
       </li>
     </ul>
   </div>
 );
+
+
 
 // Images Section
 const ImagesSection = () => (
@@ -137,22 +150,71 @@ const ImagesSection = () => (
     <h4>App Screenshots</h4>
     <div className="images">
       <Image
-        src="/projectImages/watercanweb.png" // Fixed the path here
-        alt="Web Screenshot"
-        width={1000} // Default width
-        height={300} // Default height
-        priority
-      />
-      <Image
-        src="/projectImages/appLogin.jpg" // Fixed the path here
+        src="/projectImages/getWeed/registorShopowner.jpg" // Fixed the path here
         alt="App Login Screenshot"
         width={500} // Default width
         height={300} // Default height
         priority
       />
       <Image
-        src="/projectImages/appMap.jpg" // Fixed the path here
-        alt="App Map Screenshot"
+        src="/projectImages/getWeed/shopOwner.jpg" // Fixed the path here
+        alt="Web Screenshot"
+        width={1000} // Default width
+        height={300} // Default height
+        priority
+      />
+      <Image
+        src="/projectImages/getWeed/shopOwnerDashboard.jpg" // Fixed the path here
+        alt="App Login Screenshot"
+        width={500} // Default width
+        height={300} // Default height
+        priority
+      />
+      <Image
+        src="/projectImages/getWeed/shopownerProfile.jpg" // Fixed the path here
+        alt="App Login Screenshot"
+        width={500} // Default width
+        height={300} // Default height
+        priority
+      />
+      <Image
+        src="/projectImages/getWeed/chat.jpg" // Fixed the path here
+        alt="Web Screenshot"
+        width={1000} // Default width
+        height={300} // Default height
+        priority
+      />
+      <Image
+        src="/projectImages/getWeed/chatting.jpg" // Fixed the path here
+        alt="App Login Screenshot"
+        width={500} // Default width
+        height={300} // Default height
+        priority
+      />
+      <Image
+        src="/projectImages/getWeed/dirliveryDashboard.jpg" // Fixed the path here
+        alt="Web Screenshot"
+        width={1000} // Default width
+        height={300} // Default height
+        priority
+      />
+      <Image
+        src="/projectImages/getWeed/driverprofile.jpg" // Fixed the path here
+        alt="App Login Screenshot"
+        width={500} // Default width
+        height={300} // Default height
+        priority
+      />
+      <Image
+        src="/projectImages/getWeed/history.jpg" // Fixed the path here
+        alt="Web Screenshot"
+        width={1000} // Default width
+        height={300} // Default height
+        priority
+      />
+      <Image
+        src="/projectImages/getWeed/login.jpg" // Fixed the path here
+        alt="App Login Screenshot"
         width={500} // Default width
         height={300} // Default height
         priority
@@ -165,8 +227,7 @@ const ImagesSection = () => (
 const ClientNote = () => (
   <div className="client-note">
     <p>
-      <strong>Note:</strong> This project was created for a client to help
-      manage their water delivery system more efficiently.
+      <strong>Note:</strong> This project was created for a client.
     </p>
   </div>
 );
@@ -176,12 +237,12 @@ const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #30c6fc;
+  background-color: #3cb336;
   padding: 2rem;
   gap: 1rem;
 
   /* Color Variables */
-  --primary-color: #306dfc;
+  --primary-color: #056e00;
   --secondary-color: #05060f;
   --text-color: white;
   --border-radius: 1rem;

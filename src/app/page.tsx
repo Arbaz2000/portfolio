@@ -15,7 +15,7 @@ export default function Home() {
     // Set a timeout to hide the loader after 3 seconds
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
 
     // Cleanup the timeout on component unmount
     return () => clearTimeout(timer);

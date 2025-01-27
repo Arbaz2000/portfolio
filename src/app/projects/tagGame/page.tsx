@@ -1,14 +1,12 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-import { FaWater } from "react-icons/fa"; // Water icon
+import { FaGamepad, FaWater } from "react-icons/fa"; // Water icon
 import Flipcard from "@/component/filpcard";
 import Image from "next/image";
 
 const links = [
-  { label: "Web", url: "https://github.com/harshendraup/WaterCan-web" },
-  { label: "App", url: "https://github.com/kajal-sharma007/WaterCanApp" },
-  { label: "Backend", url: "https://github.com/Arbaz2000/WaterCan-Backend" },
+  { label: "Unity-hub", url: "https://github.com/Arbaz2000/Tag-Game" },
 ];
 
 const Card = () => {
@@ -31,14 +29,14 @@ const CardComponent = () => (
   <div className="card">
     <div className="card-header">
       <div className="project-icon">
-        <FaWater size={50} color="white" />
+        <FaGamepad size={50} color="white" />
       </div>
       <div className="project-name">
-        <p>Get Weed</p>
+        <p>3D Tag Game</p>
       </div>
     </div>
     <div>
-      <Flipcard links={links} coverText="View on GitHub" />
+      <Flipcard links={links} coverText="Play the Game" />
     </div>
   </div>
 );
@@ -48,27 +46,25 @@ const ProjectOverview = () => (
   <div className="project-overview">
     <h3>Project Overview</h3>
     <p>
-      <strong>WaterCan</strong> is a comprehensive inventory management system
-      for delivering water. It includes both a web app for plant owners and a
-      mobile app for delivery drivers. The system helps manage deliveries, track
-      inventory, and optimize routes.
+      <strong>3D Tag Game</strong> is an exciting 3D game built in Unity, where
+      players engage in a game of tag with an AI bot. The objective is to
+      collect all the Orbs on the screen before the bot catches the player. The
+      environment contains various obstacles, some of which are movable, to make
+      the gameplay more challenging.
     </p>
     <h4>Tech Stack</h4>
     <ul>
       <li>
-        <strong>Frontend (Web App):</strong> React
+        <strong>Game Engine:</strong> Unity
       </li>
       <li>
-        <strong>Frontend (Mobile App):</strong> React Native
+        <strong>Programming Language:</strong> C#
       </li>
       <li>
-        <strong>Backend:</strong> Node.js
+        <strong>Game Type:</strong> 3D Game (Single-player)
       </li>
       <li>
-        <strong>Database:</strong> MongoDB (NoSQL)
-      </li>
-      <li>
-        <strong>Deployment:</strong> AWS EC2 (Backend), AWS S3 (Web App)
+        <strong>Executable Game:</strong> Playable locally
       </li>
     </ul>
   </div>
@@ -80,56 +76,47 @@ const MoreDetails = () => (
     <div>
       <h4>How It Works</h4>
       <p>
-        WaterCan optimizes the workflow for both plant owners and delivery
-        drivers:
+        The game revolves around a player trying to avoid being caught by an AI bot while collecting all the Orbs scattered around the environment:
       </p>
       <ul>
         <li>
-          <strong>Plant Owners:</strong> Admin rights for route management and
-          inventory control.
+          <strong>Player:</strong> Controls the character and collects Orbs while avoiding the bot.
         </li>
         <li>
-          <strong>Delivery Drivers:</strong> Navigation via mobile app with
-          integrated maps.
+          <strong>AI Bot:</strong> Follows the player and tries to catch them. If the bot catches the player, they lose.
         </li>
         <li>
-          <strong>Transaction Management:</strong> All transactions are logged
-          for transparency.
+          <strong>Obstacles:</strong> Various 3D obstacles, including movable ones, that block the bot's and player's movements.
         </li>
       </ul>
     </div>
     <div>
       <h4 className="mt-4">More Details</h4>
       <p>
-        WaterCan ensures efficient and accurate delivery, with features like
-        real-time tracking and route optimization. The system is powered by
-        Node.js and MongoDB, with the mobile and web apps built using React
-        technologies.
+        The game was developed in Unity using C# scripting. The main features include AI pathfinding, player control using standard Unity input methods, and dynamic obstacle behavior. The goal is to create an engaging and challenging experience for players as they try to collect all Orbs before being tagged by the bot.
       </p>
     </div>
     <h4 className="mt-4">Key Features</h4>
     <ul>
       <li>
-        <strong>React Web App:</strong> Used by plant owners to manage inventory
-        and deliveries.
+        <strong>3D Gameplay:</strong> The game is fully 3D with dynamic environments and obstacles.
       </li>
       <li>
-        <strong>React Native Mobile App:</strong> For drivers to manage tasks
-        and deliveries.
+        <strong>AI Bot:</strong> Intelligent AI bot that hunts the player.
       </li>
       <li>
-        <strong>Node.js Backend:</strong> Handles transactions, users, and
-        routes.
+        <strong>Movable Obstacles:</strong> Obstacles that add an extra layer of strategy to the gameplay.
       </li>
       <li>
-        <strong>MongoDB Database:</strong> Stores customer and transaction data.
+        <strong>Collectible Orbs:</strong> Players need to collect all the Orbs to win.
       </li>
       <li>
-        <strong>AWS Hosting:</strong> Deployed on EC2 and S3 for scalability.
+        <strong>Unity & C#:</strong> Developed in Unity using C# for scripting and game logic.
       </li>
     </ul>
   </div>
 );
+
 
 // Images Section
 const ImagesSection = () => (
@@ -137,21 +124,21 @@ const ImagesSection = () => (
     <h4>App Screenshots</h4>
     <div className="images">
       <Image
-        src="/projectImages/watercanweb.png" // Fixed the path here
+        src="/projectImages/tagGame/home.png" // Fixed the path here
         alt="Web Screenshot"
         width={1000} // Default width
         height={300} // Default height
         priority
       />
       <Image
-        src="/projectImages/appLogin.jpg" // Fixed the path here
+        src="/projectImages/tagGame/lose.png"
         alt="App Login Screenshot"
         width={500} // Default width
         height={300} // Default height
         priority
       />
       <Image
-        src="/projectImages/appMap.jpg" // Fixed the path here
+        src="/projectImages/tagGame/play.png"
         alt="App Map Screenshot"
         width={500} // Default width
         height={300} // Default height
@@ -165,8 +152,7 @@ const ImagesSection = () => (
 const ClientNote = () => (
   <div className="client-note">
     <p>
-      <strong>Note:</strong> This project was created for a client to help
-      manage their water delivery system more efficiently.
+      <strong>Note:</strong> This project was created for fun and learning experience.
     </p>
   </div>
 );
@@ -176,7 +162,7 @@ const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #30c6fc;
+  background-color: #157fae;
   padding: 2rem;
   gap: 1rem;
 

@@ -1,14 +1,13 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-import { FaWater } from "react-icons/fa"; // Water icon
+import { FaPenFancy, FaWater } from "react-icons/fa"; // Water icon
 import Flipcard from "@/component/filpcard";
 import Image from "next/image";
+import { FaPen, FaPenClip } from "react-icons/fa6";
 
 const links = [
-  { label: "Web", url: "https://github.com/harshendraup/WaterCan-web" },
-  { label: "App", url: "https://github.com/kajal-sharma007/WaterCanApp" },
-  { label: "Backend", url: "https://github.com/Arbaz2000/WaterCan-Backend" },
+  { label: "Web", url: "https://github.com/Arbaz2000/krikal-EDU" },
 ];
 
 const Card = () => {
@@ -31,10 +30,10 @@ const CardComponent = () => (
   <div className="card">
     <div className="card-header">
       <div className="project-icon">
-        <FaWater size={50} color="white" />
+        <FaPenClip size={50} color="white" />
       </div>
       <div className="project-name">
-        <p>Get Weed</p>
+        <p>Krikal Education</p>
       </div>
     </div>
     <div>
@@ -48,27 +47,31 @@ const ProjectOverview = () => (
   <div className="project-overview">
     <h3>Project Overview</h3>
     <p>
-      <strong>WaterCan</strong> is a comprehensive inventory management system
-      for delivering water. It includes both a web app for plant owners and a
-      mobile app for delivery drivers. The system helps manage deliveries, track
-      inventory, and optimize routes.
+      <strong>Krikal Education</strong> is an interactive educational platform
+      that helps users prepare for interviews by simulating real-world interview
+      scenarios. It uses the Gemini API to conduct mock interviews and provides
+      users with feedback and a rating based on the AI's expertise. The website
+      is built with Next.js and completely developed with TypeScript, ensuring
+      great performance, type safety, and SEO friendliness. It is hosted on
+      Amplify for efficient and reliable deployment.
     </p>
     <h4>Tech Stack</h4>
     <ul>
       <li>
-        <strong>Frontend (Web App):</strong> React
+        <strong>Frontend:</strong> Next.js (SEO Optimized)
       </li>
       <li>
-        <strong>Frontend (Mobile App):</strong> React Native
+        <strong>Frontend Language:</strong> TypeScript (for type safety)
       </li>
       <li>
-        <strong>Backend:</strong> Node.js
+        <strong>Backend:</strong> Node.js (API integration with Gemini AI)
       </li>
       <li>
-        <strong>Database:</strong> MongoDB (NoSQL)
+        <strong>Database:</strong> MongoDB (for user profiles and interview
+        logs)
       </li>
       <li>
-        <strong>Deployment:</strong> AWS EC2 (Backend), AWS S3 (Web App)
+        <strong>Hosting:</strong> AWS Amplify (for scalable hosting)
       </li>
     </ul>
   </div>
@@ -80,52 +83,56 @@ const MoreDetails = () => (
     <div>
       <h4>How It Works</h4>
       <p>
-        WaterCan optimizes the workflow for both plant owners and delivery
-        drivers:
+        Krikal Education allows users to practice and improve their interview
+        skills:
       </p>
       <ul>
         <li>
-          <strong>Plant Owners:</strong> Admin rights for route management and
-          inventory control.
+          <strong>AI Interviewer:</strong> Uses the Gemini API to conduct mock
+          interviews.
         </li>
         <li>
-          <strong>Delivery Drivers:</strong> Navigation via mobile app with
-          integrated maps.
+          <strong>Real-Time Feedback:</strong> The AI rates the user’s
+          performance and provides tips.
         </li>
         <li>
-          <strong>Transaction Management:</strong> All transactions are logged
-          for transparency.
+          <strong>Performance Analysis:</strong> Detailed feedback and ratings
+          based on AI expertise.
         </li>
       </ul>
     </div>
     <div>
       <h4 className="mt-4">More Details</h4>
       <p>
-        WaterCan ensures efficient and accurate delivery, with features like
-        real-time tracking and route optimization. The system is powered by
-        Node.js and MongoDB, with the mobile and web apps built using React
-        technologies.
+        Krikal Education is designed for users to hone their interview skills.
+        It’s powered by Gemini API for advanced AI capabilities, while Next.js
+        ensures the website is fast, responsive, and optimized for search
+        engines. Developed entirely in TypeScript for type safety and better
+        code quality. Hosted on AWS Amplify, the site is both scalable and
+        secure.
       </p>
     </div>
     <h4 className="mt-4">Key Features</h4>
     <ul>
       <li>
-        <strong>React Web App:</strong> Used by plant owners to manage inventory
-        and deliveries.
+        <strong>Gemini AI Interviewer:</strong> Conducts mock interviews and
+        rates the user's performance.
       </li>
       <li>
-        <strong>React Native Mobile App:</strong> For drivers to manage tasks
-        and deliveries.
+        <strong>TypeScript:</strong> The entire project is developed in
+        TypeScript for better code reliability and type safety.
       </li>
       <li>
-        <strong>Node.js Backend:</strong> Handles transactions, users, and
-        routes.
+        <strong>SEO Friendly:</strong> Built with Next.js for optimal search
+        engine visibility.
       </li>
       <li>
-        <strong>MongoDB Database:</strong> Stores customer and transaction data.
+        <strong>MongoDB Database:</strong> Stores user profiles and interview
+        records.
       </li>
       <li>
-        <strong>AWS Hosting:</strong> Deployed on EC2 and S3 for scalability.
+        <strong>AWS Hosting:</strong> Deployed on Amplify for a fast and
+        scalable platform.
       </li>
     </ul>
   </div>
@@ -137,23 +144,44 @@ const ImagesSection = () => (
     <h4>App Screenshots</h4>
     <div className="images">
       <Image
-        src="/projectImages/watercanweb.png" // Fixed the path here
+        src="/projectImages/krikaledu/home.png" // Fixed the path here
         alt="Web Screenshot"
         width={1000} // Default width
         height={300} // Default height
         priority
       />
       <Image
-        src="/projectImages/appLogin.jpg" // Fixed the path here
-        alt="App Login Screenshot"
-        width={500} // Default width
+        src="/projectImages/krikaledu/home1.png" // Fixed the path here
+        alt="Web Screenshot"
+        width={1000} // Default width
         height={300} // Default height
         priority
       />
       <Image
-        src="/projectImages/appMap.jpg" // Fixed the path here
-        alt="App Map Screenshot"
-        width={500} // Default width
+        src="/projectImages/krikaledu/home3.png" // Fixed the path here
+        alt="Web Screenshot"
+        width={1000} // Default width
+        height={300} // Default height
+        priority
+      />
+      <Image
+        src="/projectImages/krikaledu/home4.png" // Fixed the path here
+        alt="Web Screenshot"
+        width={1000} // Default width
+        height={300} // Default height
+        priority
+      />
+      <Image
+        src="/projectImages/krikaledu/home5.png" // Fixed the path here
+        alt="Web Screenshot"
+        width={1000} // Default width
+        height={300} // Default height
+        priority
+      />
+      <Image
+        src="/projectImages/krikaledu/home6.png" // Fixed the path here
+        alt="Web Screenshot"
+        width={1000} // Default width
         height={300} // Default height
         priority
       />
@@ -165,8 +193,7 @@ const ImagesSection = () => (
 const ClientNote = () => (
   <div className="client-note">
     <p>
-      <strong>Note:</strong> This project was created for a client to help
-      manage their water delivery system more efficiently.
+      <strong>Note:</strong> This project was created for a client
     </p>
   </div>
 );
@@ -176,12 +203,12 @@ const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #30c6fc;
+  background-color: #023c86;
   padding: 2rem;
   gap: 1rem;
 
   /* Color Variables */
-  --primary-color: #306dfc;
+  --primary-color: #2c427d;
   --secondary-color: #05060f;
   --text-color: white;
   --border-radius: 1rem;

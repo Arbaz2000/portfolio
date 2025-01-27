@@ -1,15 +1,14 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-import { FaWater } from "react-icons/fa"; // Water icon
+import { FaShoppingCart, FaWater } from "react-icons/fa"; // Water icon
 import Flipcard from "@/component/filpcard";
 import Image from "next/image";
 
 const links = [
   { label: "Web", url: "https://github.com/harshendraup/WaterCan-web" },
-  { label: "App", url: "https://github.com/kajal-sharma007/WaterCanApp" },
-  { label: "Backend", url: "https://github.com/Arbaz2000/WaterCan-Backend" },
-];
+  { label: "Admin-Panel", url: "https://github.com/kajal-sharma007/WaterCanApp" },
+]
 
 const Card = () => {
   return (
@@ -31,10 +30,10 @@ const CardComponent = () => (
   <div className="card">
     <div className="card-header">
       <div className="project-icon">
-        <FaWater size={50} color="white" />
+        <FaShoppingCart size={50} color="white" />
       </div>
       <div className="project-name">
-        <p>Get Weed</p>
+        <p>Ecommerce Platform</p>
       </div>
     </div>
     <div>
@@ -48,27 +47,24 @@ const ProjectOverview = () => (
   <div className="project-overview">
     <h3>Project Overview</h3>
     <p>
-      <strong>WaterCan</strong> is a comprehensive inventory management system
-      for delivering water. It includes both a web app for plant owners and a
-      mobile app for delivery drivers. The system helps manage deliveries, track
-      inventory, and optimize routes.
+      <strong>Ecommerce Platform</strong> is a comprehensive online store management system where an admin panel manages product inventory, product edition, and removal. The platform uses AWS EC2 for backend services and AWS S3 for storing product images. I played a significant role in enhancing the UI of the admin panel, improving the user experience, and adding functionalities such as transaction histories, charts, and user location tracking for marketing insights.
     </p>
     <h4>Tech Stack</h4>
     <ul>
       <li>
-        <strong>Frontend (Web App):</strong> React
+        <strong>Frontend:</strong> React
       </li>
       <li>
-        <strong>Frontend (Mobile App):</strong> React Native
+        <strong>Styling:</strong> Bootstrap
       </li>
       <li>
-        <strong>Backend:</strong> Node.js
+        <strong>Backend:</strong> Node.js (EC2)
       </li>
       <li>
-        <strong>Database:</strong> MongoDB (NoSQL)
+        <strong>Database:</strong> MySQL
       </li>
       <li>
-        <strong>Deployment:</strong> AWS EC2 (Backend), AWS S3 (Web App)
+        <strong>Cloud Storage:</strong> AWS S3 (Product Images)
       </li>
     </ul>
   </div>
@@ -80,56 +76,50 @@ const MoreDetails = () => (
     <div>
       <h4>How It Works</h4>
       <p>
-        WaterCan optimizes the workflow for both plant owners and delivery
-        drivers:
+        This eCommerce platform is designed to streamline the management of products and transactions:
       </p>
       <ul>
         <li>
-          <strong>Plant Owners:</strong> Admin rights for route management and
-          inventory control.
+          <strong>Admin Panel:</strong> Used for managing product inventory, editing or removing products, and viewing transaction histories.
         </li>
         <li>
-          <strong>Delivery Drivers:</strong> Navigation via mobile app with
-          integrated maps.
+          <strong>UI Enhancements:</strong> Focused on improving the user experience within the admin panel using React and Bootstrap.
         </li>
         <li>
-          <strong>Transaction Management:</strong> All transactions are logged
-          for transparency.
+          <strong>User Location Tracking:</strong> Provides insights for marketing research by tracking user location data.
         </li>
       </ul>
     </div>
     <div>
       <h4 className="mt-4">More Details</h4>
       <p>
-        WaterCan ensures efficient and accurate delivery, with features like
-        real-time tracking and route optimization. The system is powered by
-        Node.js and MongoDB, with the mobile and web apps built using React
-        technologies.
+        The platform’s admin panel allows for easy and efficient management of products, transactions, and user data. The UI has been optimized for better usability, with Bootstrap ensuring a responsive and mobile-friendly layout. The backend is powered by Node.js, while product images are stored securely on AWS S3, with real-time data management from MongoDB.
       </p>
     </div>
     <h4 className="mt-4">Key Features</h4>
     <ul>
       <li>
-        <strong>React Web App:</strong> Used by plant owners to manage inventory
-        and deliveries.
+        <strong>Admin Panel:</strong> Allows the admin to manage product listings, track transactions, and view analytics.
       </li>
       <li>
-        <strong>React Native Mobile App:</strong> For drivers to manage tasks
-        and deliveries.
+        <strong>UI Enhancements:</strong> Improved UI in the admin panel using React and Bootstrap for better navigation and accessibility.
       </li>
       <li>
-        <strong>Node.js Backend:</strong> Handles transactions, users, and
-        routes.
+        <strong>User Location Tracking:</strong> Tracks user location for targeted marketing and analytics.
       </li>
       <li>
-        <strong>MongoDB Database:</strong> Stores customer and transaction data.
+        <strong>Node.js Backend:</strong> Handles API requests, user authentication, and transactions.
       </li>
       <li>
-        <strong>AWS Hosting:</strong> Deployed on EC2 and S3 for scalability.
+        <strong>mySql Database:</strong> Stores product, user, and transaction data for easy retrieval and management.
+      </li>
+      <li>
+        <strong>AWS Hosting:</strong> Deployed on EC2 for the backend and S3 for secure image storage.
       </li>
     </ul>
   </div>
 );
+
 
 // Images Section
 const ImagesSection = () => (
@@ -137,22 +127,15 @@ const ImagesSection = () => (
     <h4>App Screenshots</h4>
     <div className="images">
       <Image
-        src="/projectImages/watercanweb.png" // Fixed the path here
+        src="/projectImages/hirangna/homePage.jpg" // Fixed the path here
         alt="Web Screenshot"
         width={1000} // Default width
         height={300} // Default height
         priority
       />
       <Image
-        src="/projectImages/appLogin.jpg" // Fixed the path here
+        src="/projectImages/hirangna/login.jpg" // Fixed the path here
         alt="App Login Screenshot"
-        width={500} // Default width
-        height={300} // Default height
-        priority
-      />
-      <Image
-        src="/projectImages/appMap.jpg" // Fixed the path here
-        alt="App Map Screenshot"
         width={500} // Default width
         height={300} // Default height
         priority
@@ -176,12 +159,12 @@ const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #30c6fc;
+  background-color: #fff0da;
   padding: 2rem;
   gap: 1rem;
 
   /* Color Variables */
-  --primary-color: #306dfc;
+  --primary-color: #b2776f;
   --secondary-color: #05060f;
   --text-color: white;
   --border-radius: 1rem;

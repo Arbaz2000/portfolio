@@ -6,9 +6,10 @@ import Flipcard from "@/component/filpcard";
 import Image from "next/image";
 
 const links = [
-  { label: "Web", url: "https://github.com/harshendraup/WaterCan-web" },
-  { label: "App", url: "https://github.com/kajal-sharma007/WaterCanApp" },
-  { label: "Backend", url: "https://github.com/Arbaz2000/WaterCan-Backend" },
+  {
+    label: "Web",
+    url: "https://github.com/Arbaz2000/cultural-glam/tree/cultural-glam",
+  },
 ];
 
 const Card = () => {
@@ -21,7 +22,7 @@ const Card = () => {
 
       <MoreDetails />
       <ImagesSection />
-      <ClientNote />
+     
     </StyledWrapper>
   );
 };
@@ -34,7 +35,7 @@ const CardComponent = () => (
         <FaWater size={50} color="white" />
       </div>
       <div className="project-name">
-        <p>Get Weed</p>
+        <p>E-Commerce Boilerplate</p>
       </div>
     </div>
     <div>
@@ -48,27 +49,29 @@ const ProjectOverview = () => (
   <div className="project-overview">
     <h3>Project Overview</h3>
     <p>
-      <strong>WaterCan</strong> is a comprehensive inventory management system
-      for delivering water. It includes both a web app for plant owners and a
-      mobile app for delivery drivers. The system helps manage deliveries, track
-      inventory, and optimize routes.
+      <strong>E-Commerce Boilerplate</strong> is a fully responsive and
+      customizable e-commerce application built using <strong>Next.js</strong>.
+      The project provides a ready-to-use structure for building online stores,
+      with integrated payment functionality and support for various device
+      resolutions (both mobile and desktop). It is hosted on{" "}
+      <strong>AWS Amplify</strong>, ensuring scalability and ease of deployment.
     </p>
     <h4>Tech Stack</h4>
     <ul>
       <li>
-        <strong>Frontend (Web App):</strong> React
+        <strong>Frontend:</strong> Next.js (React)
       </li>
       <li>
-        <strong>Frontend (Mobile App):</strong> React Native
+        <strong>Payment Integration:</strong> Stripe API
       </li>
       <li>
-        <strong>Backend:</strong> Node.js
+        <strong>Deployment:</strong> AWS Amplify (Frontend & Backend)
       </li>
       <li>
-        <strong>Database:</strong> MongoDB (NoSQL)
+        <strong>Database:</strong> MongoDB (NoSQL) or any other preferred DB
       </li>
       <li>
-        <strong>Deployment:</strong> AWS EC2 (Backend), AWS S3 (Web App)
+        <strong>Authentication:</strong> AWS Cognito (for user management)
       </li>
     </ul>
   </div>
@@ -80,56 +83,73 @@ const MoreDetails = () => (
     <div>
       <h4>How It Works</h4>
       <p>
-        WaterCan optimizes the workflow for both plant owners and delivery
-        drivers:
+        This e-commerce boilerplate streamlines the process of setting up an
+        online store. It includes user authentication, product catalog, shopping
+        cart functionality, and order processing. Key features include:
       </p>
       <ul>
         <li>
-          <strong>Plant Owners:</strong> Admin rights for route management and
-          inventory control.
+          <strong>Responsive Design:</strong> The application is designed to be
+          fully responsive, adapting seamlessly to both mobile devices and
+          larger screens.
         </li>
         <li>
-          <strong>Delivery Drivers:</strong> Navigation via mobile app with
-          integrated maps.
+          <strong>Payment Integration:</strong> Stripe integration for secure
+          payment processing.
         </li>
         <li>
-          <strong>Transaction Management:</strong> All transactions are logged
-          for transparency.
+          <strong>Real-time Updates:</strong> Automatic updates of inventory and
+          order status.
+        </li>
+        <li>
+          <strong>Admin Dashboard:</strong> Admin panel for managing products,
+          orders, and user information.
         </li>
       </ul>
     </div>
     <div>
       <h4 className="mt-4">More Details</h4>
       <p>
-        WaterCan ensures efficient and accurate delivery, with features like
-        real-time tracking and route optimization. The system is powered by
-        Node.js and MongoDB, with the mobile and web apps built using React
-        technologies.
+        The application is built using <strong>Next.js</strong>, which provides
+        server-side rendering (SSR) for faster loading times and better SEO
+        performance. The entire project is hosted and managed through{" "}
+        <strong>AWS Amplify</strong>, which handles both frontend and backend
+        processes. This ensures that the application is highly scalable and
+        easily deployed. The project also includes basic CRUD operations for
+        managing products and orders, as well as payment processing using the{" "}
+        <strong>Stripe API</strong>.
       </p>
     </div>
     <h4 className="mt-4">Key Features</h4>
     <ul>
       <li>
-        <strong>React Web App:</strong> Used by plant owners to manage inventory
-        and deliveries.
+        <strong>Responsive Design:</strong> Fully responsive across all devices,
+        ensuring a smooth user experience on mobile, tablet, and desktop.
       </li>
       <li>
-        <strong>React Native Mobile App:</strong> For drivers to manage tasks
-        and deliveries.
+        <strong>Stripe Payment Integration:</strong> Secure, easy-to-implement
+        payment gateway for seamless transactions.
       </li>
       <li>
-        <strong>Node.js Backend:</strong> Handles transactions, users, and
-        routes.
+        <strong>Authentication with AWS Cognito:</strong> Secure user
+        authentication and authorization for customers.
       </li>
       <li>
-        <strong>MongoDB Database:</strong> Stores customer and transaction data.
+        <strong>Product Management:</strong> Easily manage products, inventory,
+        and product details via an admin dashboard.
       </li>
       <li>
-        <strong>AWS Hosting:</strong> Deployed on EC2 and S3 for scalability.
+        <strong>Order Tracking:</strong> Users can track their orders in
+        real-time from checkout to delivery.
+      </li>
+      <li>
+        <strong>AWS Amplify Hosting:</strong> Scalable hosting solution for
+        frontend and backend.
       </li>
     </ul>
   </div>
 );
+
 
 // Images Section
 const ImagesSection = () => (
@@ -137,51 +157,63 @@ const ImagesSection = () => (
     <h4>App Screenshots</h4>
     <div className="images">
       <Image
-        src="/projectImages/watercanweb.png" // Fixed the path here
+        src="/projectImages/ecommerceBoilerPlate/Ehome.png" // Fixed the path here
         alt="Web Screenshot"
         width={1000} // Default width
-        height={300} // Default height
+        height={400} // Default height
         priority
       />
       <Image
-        src="/projectImages/appLogin.jpg" // Fixed the path here
-        alt="App Login Screenshot"
-        width={500} // Default width
-        height={300} // Default height
+        src="/projectImages/ecommerceBoilerPlate/Eprouct.png" // Fixed the path here
+        alt="Web Screenshot"
+        width={1000} // Default width
+        height={400} // Default height
         priority
       />
       <Image
-        src="/projectImages/appMap.jpg" // Fixed the path here
-        alt="App Map Screenshot"
-        width={500} // Default width
-        height={300} // Default height
+        src="/projectImages/ecommerceBoilerPlate/Ereview.png" // Fixed the path here
+        alt="Web Screenshot"
+        width={1000} // Default width
+        height={400} // Default height
+        priority
+      />
+      <Image
+        src="/projectImages/ecommerceBoilerPlate/Eshoppingcart.png" // Fixed the path here
+        alt="Web Screenshot"
+        width={1000} // Default width
+        height={400} // Default height
+        priority
+      />
+      <Image
+        src="/projectImages/ecommerceBoilerPlate/Esideview.png" // Fixed the path here
+        alt="Web Screenshot"
+        width={1000} // Default width
+        height={400} // Default height
+        priority
+      />
+      <Image
+        src="/projectImages/ecommerceBoilerPlate/Etab.png" // Fixed the path here
+        alt="Web Screenshot"
+        width={1000} // Default width
+        height={400} // Default height
         priority
       />
     </div>
   </div>
 );
 
-// Client Note Section
-const ClientNote = () => (
-  <div className="client-note">
-    <p>
-      <strong>Note:</strong> This project was created for a client to help
-      manage their water delivery system more efficiently.
-    </p>
-  </div>
-);
 
 // Styled Wrapper Component with variables for shared styles
 const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #30c6fc;
+  background-color: #919191;
   padding: 2rem;
   gap: 1rem;
 
   /* Color Variables */
-  --primary-color: #306dfc;
+  --primary-color: #665858;
   --secondary-color: #05060f;
   --text-color: white;
   --border-radius: 1rem;
@@ -196,7 +228,7 @@ const StyledWrapper = styled.div`
   }
 
   .card {
-    width: 250px;
+    width: 30%;
     background: var(--primary-color);
     padding: 1rem;
     border-radius: var(--border-radius);
@@ -291,7 +323,7 @@ const StyledWrapper = styled.div`
     .repo-section,
     .client-note {
       width: 100%;
-      max-width: 350px;
+      max-width: 450px;
     }
   }
 `;
