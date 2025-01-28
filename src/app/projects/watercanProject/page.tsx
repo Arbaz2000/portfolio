@@ -147,7 +147,7 @@ const ImagesSection = () => (
       </div>
       <div className="image-wrapper moblie-hover">
         <Image
-          src="/projectImages/watercan/applogin.jpg" // Fixed the path here
+          src="/projectImages/watercan/waterCanLogin.jpg" // Fixed the path here
           alt="Web Screenshot"
           width={1000} // Default width
           height={300} // Default height
