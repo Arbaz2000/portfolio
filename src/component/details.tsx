@@ -135,7 +135,7 @@ const StyledWrapper = styled.div`
 
 const ModalWrapper = styled.div`
   position: fixed;
-  top: 5%;
+  top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.7);
@@ -149,6 +149,23 @@ const ModalWrapper = styled.div`
   .modal {
     font-size: 1.5rem;
   }
+
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    padding: 12px; /* Slightly smaller padding */
+    .modal {
+      font-size: 1.2rem; /* Slightly smaller text for tablets */
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 80%; /* Take up more space on smaller screens */
+    padding: 10px; /* Reduce padding on mobile */
+    .modal {
+      font-size: 1rem; /* Smaller font size for mobile */
+    }
+  }
 `;
+
 
 export default Card;

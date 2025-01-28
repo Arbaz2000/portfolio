@@ -1,8 +1,9 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-import Link from "next/link"; // Import Link from next/link
+import Link from "next/link";
 import ProjectCard from "@/component/projectCard";
+import { motion } from "framer-motion"; // Import motion for animation
 
 const Card = () => {
   return (
@@ -11,87 +12,246 @@ const Card = () => {
         <div className="head">What I did</div>
 
         <div className="content">
-          <Link href="/projects/watercanProject">
-            <ProjectCard
-              projectName="Watercan Project"
-              description={
-                <>
-                  <strong>Website, Android app & backend</strong>
-                  <br />
-                  Inventory management system for water delivery.
-                </>
-              }
-              techStack={[
-                "React",
-                "React Native",
-                "MongoDB",
-                "AWS",
-                "REST API",
-              ]}
-            />
-          </Link>
-          <Link href="/projects/getWeed">
-            <ProjectCard
-              projectName="Get Weed app"
-              description={
-                <>
-                  <strong>Three mobile Apps</strong>
-                  <br />
-                  Delivery, Shop Owner & Customer App
-                </>
-              }
-              techStack={["React Native", "REST API", "Google Map API"]}
-            />
-          </Link>
-          <Link href="/projects/hirangana">
-            <ProjectCard
-              projectName="Hirangana.in"
-              description={
-                <>
-                  <strong>Admin panel & E-Commerce site</strong>
-                  <br />
-                  Inventory management system
-                </>
-              }
-              techStack={["React", "AWS S3", "MySQL"]}
-            />
-          </Link>
-          <Link href="/projects/krikalEdu">
-            <ProjectCard
-              projectName="Krikal Education"
-              description="Admission Portal for coaching institution with mock AI interviewer"
-              techStack={["React", "Express.js", "Gemini API"]}
-            />
-          </Link>
+          {/* Drag effect with bounce */}
+          <motion.div
+            whileHover={{
+              scale: 1.05,
+              opacity: 0.9,
+              y: -10, // Slight upward movement when hovering
+              transition: { type: "spring", stiffness: 200, damping: 20 }, // Bounce effect
+            }}
+            whileTap={{
+              scale: 0.95,
+              transition: { type: "spring", stiffness: 400, damping: 10 }, // Bounce effect on click
+            }}
+            drag // Allow dragging
+            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }} // Keep it within the constraints
+            transition={{
+              duration: 0.3,
+              ease: "easeOut",
+            }}
+          >
+            <Link href="/projects/watercanProject">
+              <ProjectCard
+                projectName="Watercan Project"
+                description={
+                  <>
+                    <strong>Website, Android app & backend</strong>
+                    <br />
+                    Inventory management system for water delivery.
+                  </>
+                }
+                techStack={[
+                  "React",
+                  "React Native",
+                  "MongoDB",
+                  "AWS",
+                  "REST API",
+                ]}
+              />
+            </Link>
+          </motion.div>
 
-          <Link href="/projects/tagGame">
-            <ProjectCard
-              projectName="Tag Game"
-              description="Game of Tag made in Unity"
-              techStack={["Unity", "C#"]}
-            />
-          </Link>
-          <Link href="/projects/toursAndTravel">
-            <ProjectCard
-              projectName="Tours & Travel"
-              description="Travel agency Promotion page"
-              techStack={["Next.js", "React", "SEO"]}
-            />
-          </Link>
-          <Link href="/projects/qup">
-            <ProjectCard
-              projectName="Qup"
-              description="Social media"
-              techStack={["Expo", "React-Native", "Axios"]}
-            />
-          </Link>
-          <Link href="/projects/ecommerceBoilerPlate">
-            <ProjectCard
-              projectName="E-commerce"
-              description="E-commerce Boiler Plate code"
-              techStack={["Next.js", "React", "SEO"]}
-            />
-          </Link>
+          <motion.div
+            whileHover={{
+              scale: 1.05,
+              opacity: 0.9,
+              y: -10,
+              transition: { type: "spring", stiffness: 200, damping: 20 },
+            }}
+            whileTap={{
+              scale: 0.95,
+              transition: { type: "spring", stiffness: 400, damping: 10 },
+            }}
+            drag
+            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
+            transition={{
+              duration: 0.3,
+              ease: "easeOut",
+            }}
+          >
+            <Link href="/projects/getWeed">
+              <ProjectCard
+                projectName="Get Weed app"
+                description={
+                  <>
+                    <strong>Three mobile Apps</strong>
+                    <br />
+                    Delivery, Shop Owner & Customer App
+                  </>
+                }
+                techStack={["React Native", "REST API", "Google Map API"]}
+              />
+            </Link>
+          </motion.div>
+
+          <motion.div
+            whileHover={{
+              scale: 1.05,
+              opacity: 0.9,
+              y: -10,
+              transition: { type: "spring", stiffness: 200, damping: 20 },
+            }}
+            whileTap={{
+              scale: 0.95,
+              transition: { type: "spring", stiffness: 400, damping: 10 },
+            }}
+            drag
+            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
+            transition={{
+              duration: 0.3,
+              ease: "easeOut",
+            }}
+          >
+            <Link href="/projects/hirangana">
+              <ProjectCard
+                projectName="Hirangana.in"
+                description={
+                  <>
+                    <strong>Admin panel & E-Commerce site</strong>
+                    <br />
+                    Inventory management system
+                  </>
+                }
+                techStack={["React", "AWS S3", "MySQL"]}
+              />
+            </Link>
+          </motion.div>
+
+          <motion.div
+            whileHover={{
+              scale: 1.05,
+              opacity: 0.9,
+              y: -10,
+              transition: { type: "spring", stiffness: 200, damping: 20 },
+            }}
+            whileTap={{
+              scale: 0.95,
+              transition: { type: "spring", stiffness: 400, damping: 10 },
+            }}
+            drag
+            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
+            transition={{
+              duration: 0.3,
+              ease: "easeOut",
+            }}
+          >
+            <Link href="/projects/krikalEdu">
+              <ProjectCard
+                projectName="Krikal Education"
+                description="Admission Portal for coaching institution with mock AI interviewer"
+                techStack={["React", "Express.js", "Gemini API"]}
+              />
+            </Link>
+          </motion.div>
+
+          <motion.div
+            whileHover={{
+              scale: 1.05,
+              opacity: 0.9,
+              y: -10,
+              transition: { type: "spring", stiffness: 200, damping: 20 },
+            }}
+            whileTap={{
+              scale: 0.95,
+              transition: { type: "spring", stiffness: 400, damping: 10 },
+            }}
+            drag
+            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
+            transition={{
+              duration: 0.3,
+              ease: "easeOut",
+            }}
+          >
+            <Link href="/projects/tagGame">
+              <ProjectCard
+                projectName="Tag Game"
+                description="Game of Tag made in Unity"
+                techStack={["Unity", "C#"]}
+              />
+            </Link>
+          </motion.div>
+
+          <motion.div
+            whileHover={{
+              scale: 1.05,
+              opacity: 0.9,
+              y: -10,
+              transition: { type: "spring", stiffness: 200, damping: 20 },
+            }}
+            whileTap={{
+              scale: 0.95,
+              transition: { type: "spring", stiffness: 400, damping: 10 },
+            }}
+            drag
+            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
+            transition={{
+              duration: 0.3,
+              ease: "easeOut",
+            }}
+          >
+            <Link href="/projects/toursAndTravel">
+              <ProjectCard
+                projectName="Tours & Travel"
+                description="Travel agency Promotion page"
+                techStack={["Next.js", "React", "SEO"]}
+              />
+            </Link>
+          </motion.div>
+
+          <motion.div
+            whileHover={{
+              scale: 1.05,
+              opacity: 0.9,
+              y: -10,
+              transition: { type: "spring", stiffness: 200, damping: 20 },
+            }}
+            whileTap={{
+              scale: 0.95,
+              transition: { type: "spring", stiffness: 400, damping: 10 },
+            }}
+            drag
+            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
+            transition={{
+              duration: 0.3,
+              ease: "easeOut",
+            }}
+          >
+            <Link href="/projects/qup">
+              <ProjectCard
+                projectName="Qup"
+                description="Social media"
+                techStack={["Expo", "React-Native", "Axios"]}
+              />
+            </Link>
+          </motion.div>
+
+          <motion.div
+            whileHover={{
+              scale: 1.05,
+              opacity: 0.9,
+              y: -10,
+              transition: { type: "spring", stiffness: 200, damping: 20 },
+            }}
+            whileTap={{
+              scale: 0.95,
+              transition: { type: "spring", stiffness: 400, damping: 10 },
+            }}
+            drag
+            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
+            transition={{
+              duration: 0.3,
+              ease: "easeOut",
+            }}
+          >
+            <Link href="/projects/ecommerceBoilerPlate">
+              <ProjectCard
+                projectName="E-commerce"
+                description="E-commerce Boiler Plate code"
+                techStack={["Next.js", "React", "SEO"]}
+              />
+            </Link>
+          </motion.div>
 
           <div className="bottom-right">
             I have extensive experience providing freelance services,
@@ -150,23 +310,22 @@ const StyledWrapper = styled.div`
     background: #ef4444;
     overflow-y: auto;
     padding: 30px;
-    gap: 30px; /* Space between project cards */
+    gap: 30px;
   }
 
   .content::-webkit-scrollbar {
-    display: none; /* Hide scrollbar */
+    display: none;
   }
 
   .card:hover {
-    transform: translateY(-6px); /* Smooth hover effect */
+    transform: translateY(-6px);
   }
 
   .content > .project-card {
-    flex: 1 1 48%; /* By default, each project takes up 48% of width */
+    flex: 1 1 48%;
   }
 
   .bottom-right {
-
     bottom: 20px;
     font-size: 20px;
     font-weight: 700;
@@ -175,38 +334,37 @@ const StyledWrapper = styled.div`
     margin-top: 10%;
   }
 
-  /* Media queries for responsiveness */
   @media (max-width: 1024px) {
     .content > .project-card {
-      flex: 1 1 48%; /* Make project cards stack on smaller screens */
+      flex: 1 1 48%;
     }
   }
 
   @media (max-width: 768px) {
     .content > .project-card {
-      flex: 1 1 100%; /* Stack cards on smaller screens */
+      flex: 1 1 100%;
     }
 
     .head {
-      font-size: 30px; /* Smaller font size for mobile screens */
+      font-size: 30px;
       padding: 10px;
     }
 
     .content {
       padding: 20px;
-      gap: 20px; /* Smaller gap on mobile */
+      gap: 20px;
     }
 
     .bottom-right {
       font-size: 16px;
-      bottom: 15px; /* Adjust the position of bottom text */
+      bottom: 15px;
       right: 10px;
     }
   }
 
   @media (max-width: 480px) {
     .head {
-      font-size: 24px; /* Even smaller font size for very small screens */
+      font-size: 24px;
     }
 
     .content {
