@@ -27,15 +27,18 @@ export default function Home() {
 
   return (
     <>
-      <HomeSection />
-
+      <div className="mb-20">
+        <HomeSection />
+      </div>
       <div className="mb-20">
         <AboutSection />
       </div>
-
-      <SkillsSection />
-
-      <ProjectsSection />
+      <div className="mb-20 pt-10">
+        <SkillsSection />
+      </div>
+      <div >
+        <ProjectsSection />
+      </div>
 
       <div className="flex justify-center items-center w-full mt-5 flex-col md:flex-row">
         <div className="flex-grow basis-full md:basis-1/3 md:ml-24">
