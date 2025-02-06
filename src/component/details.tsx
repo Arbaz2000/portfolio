@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import styled from "styled-components";
-import SplitText from "../component/splitText";
 
 const Card = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -31,18 +30,7 @@ const Card = () => {
     <StyledWrapper>
       <div className="card">
         <div className="content">
-          <div className="head">
-            <SplitText
-              text="Hi I am Arbaz Khan"
-              className="text-7xl font-semibold text-center"
-              delay={150}
-              animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
-              animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
-              easing="easeOutCubic"
-              threshold={0.2}
-              rootMargin="-50px"
-            />
-          </div>
+          <div className="head">Hi I am Arbaz Khan</div>
           I'm a Full-Stack Developer with expertise in DevOps. Let's bring your
           ideas to life with scalable and efficient solutions!
           <br />
@@ -178,6 +166,5 @@ const ModalWrapper = styled.div`
     }
   }
 `;
-
 
 export default Card;
