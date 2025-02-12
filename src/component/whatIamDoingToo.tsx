@@ -5,19 +5,15 @@ const Card = () => {
   return (
     <StyledWrapper>
       <div className="card">
-        <div className="head">What I'm working on</div>
+        <div className="head">What I'm also working on</div>
         <div className="content">
           <h1>
-            <strong>Grocery Delivery App</strong>
+            <strong>Courier Service App</strong>
           </h1>
-          I'm building a grocery delivery app for semi-rural and semi-urban
-          areas, inspired by Blinkit and Zomato. It will have three components:
-          <ul>
-            <li>Customer App</li>
-            <li>Shop Owner App</li>
-            <li>Driver App</li>
-          </ul>
-          Feel free to reach out if you'd like to connect or collaborate!
+          I'm currently working on a courier service app for a client. While the
+          backend is not yet developed, I'm building three mobile apps: for
+          customers, delivery boys, and users. I'm also overseeing the
+          deployment of the web app backend and mobile app.
         </div>
       </div>
     </StyledWrapper>
@@ -25,8 +21,6 @@ const Card = () => {
 };
 
 const StyledWrapper = styled.div`
-
-  
   padding: 2rem;
   gap: 1rem;
   .card {
@@ -34,7 +28,7 @@ const StyledWrapper = styled.div`
     width: auto;
     // height:auto;
     translate: -6px -6px;
-    background: #ff66a3;
+    background: #efd334;
     border: 3px solid #000000;
     box-shadow: 12px 12px 0 #000000;
     overflow: hidden;

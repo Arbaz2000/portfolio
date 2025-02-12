@@ -6,6 +6,7 @@ import SkillsSection from "@/section/skillsSection";
 import ProjectsSection from "@/section/projectsSection";
 import Loader from "@/component/loader";
 import WhatIamon from "@/component/whatIamon";
+import WhatIamDoingToo from "@/component//whatIamDoingToo";
 import ShareYourReview from "@/component/shareYourReview";
 
 export default function Home() {
@@ -36,13 +37,16 @@ export default function Home() {
       <div className="mb-20 pt-10">
         <SkillsSection />
       </div>
-      <div >
+      <div>
         <ProjectsSection />
       </div>
 
       <div className="flex justify-center items-center w-full mt-5 flex-col md:flex-row">
         <div className="flex-grow basis-full md:basis-1/3 md:ml-24">
           <WhatIamon />
+        </div>
+        <div className="flex-grow basis-full md:basis-1/3">
+          <WhatIamDoingToo />
         </div>
         <div className="flex-grow basis-full md:basis-2/3">
           <ShareYourReview />
