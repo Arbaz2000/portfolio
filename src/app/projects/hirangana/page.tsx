@@ -2,7 +2,8 @@
 import React from "react";
 import styled from "styled-components";
 import { FaShoppingCart, FaWater } from "react-icons/fa"; // Water icon
-import Flipcard from "@/component/filpcard";
+const Flipcard = dynamic(() => import("@/component/filpcard"), { ssr: false });
+import dynamic from "next/dynamic";
 import Image from "next/image";
 
 const links = [
