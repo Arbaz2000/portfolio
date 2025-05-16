@@ -253,11 +253,116 @@ const Card = () => {
             </Link>
           </motion.div>
 
-          <div className="bottom-right">
-            I have extensive experience providing freelance services,
+          <motion.div
+            whileHover={{
+              scale: 1.05,
+              opacity: 0.9,
+              y: -10,
+              transition: { type: "spring", stiffness: 200, damping: 20 },
+            }}
+            whileTap={{
+              scale: 0.95,
+              transition: { type: "spring", stiffness: 400, damping: 10 },
+            }}
+            drag
+            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
+            transition={{
+              duration: 0.3,
+              ease: "easeOut",
+            }}
+          >
+            <Link href="/projects/beautyGenie">
+              <ProjectCard
+                projectName="Beauty Genie"
+                description="Beauty and wellness service management platform"
+                techStack={["React Native", "Node.js", "Express.js"]}
+              />
+            </Link>
+          </motion.div>
+
+          <motion.div
+            whileHover={{
+              scale: 1.05,
+              opacity: 0.9,
+              y: -10,
+              transition: { type: "spring", stiffness: 200, damping: 20 },
+            }}
+            whileTap={{
+              scale: 0.95,
+              transition: { type: "spring", stiffness: 400, damping: 10 },
+            }}
+            drag
+            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
+            transition={{
+              duration: 0.3,
+              ease: "easeOut",
+            }}
+          >
+            <Link href="/projects/pikkro">
+              <ProjectCard
+                projectName="Pikkro"
+                description="Content creation and delivery platform"
+                techStack={["React Native", "Node.js", "Express.js", "AWS"]}
+              />
+            </Link>
+          </motion.div>
+
+          <motion.div
+            whileHover={{
+              scale: 1.05,
+              opacity: 0.9,
+              y: -10,
+              transition: { type: "spring", stiffness: 200, damping: 20 },
+            }}
+            whileTap={{
+              scale: 0.95,
+              transition: { type: "spring", stiffness: 400, damping: 10 },
+            }}
+            drag
+            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
+            transition={{
+              duration: 0.3,
+              ease: "easeOut",
+            }}
+          >
+            <Link href="/projects/gettasker">
+              <ProjectCard
+                projectName="GetTasker"
+                description="Task management platform"
+                techStack={["React Native", "Node.js", "Express.js", "MongoDB"]}
+              />
+            </Link>
+          </motion.div>
+          <motion.div
+            whileHover={{
+              scale: 1.05,
+              opacity: 0.9,
+              y: -10,
+              transition: { type: "spring", stiffness: 200, damping: 20 },
+            }}
+            whileTap={{
+              scale: 0.95,
+              transition: { type: "spring", stiffness: 400, damping: 10 },
+            }}
+            drag
+            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
+            transition={{
+              duration: 0.3,
+              ease: "easeOut",
+            }}
+          >
+            <Link href="/projects/apnaDiscount">
+              <ProjectCard
+                projectName="ApnaDiscount"
+                description="Discount and membership management platform"
+                techStack={["React Native", "Firebase", "Redux"]}
+              />
+            </Link>
+          </motion.div>
+          <div className="bottom-left">
+            Freelance services, bug fixes, full-stack development.
             <br />
-            including bug fixes, as well as frontend and backend development
-            solutions.😎👍
+            More projects on GitHub! 😎
           </div>
         </div>
       </div>
@@ -304,13 +409,13 @@ const StyledWrapper = styled.div`
     align-items: flex-start;
     width: 100%;
     height: auto;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 600;
     color: #000000;
     background: #ef4444;
     overflow-y: auto;
-    padding: 30px;
-    gap: 30px;
+    padding: 20px;
+    gap: 20px;
   }
 
   .content::-webkit-scrollbar {
@@ -351,8 +456,9 @@ const StyledWrapper = styled.div`
     }
 
     .content {
-      padding: 20px;
-      gap: 20px;
+      padding: 15px;
+      gap: 15px;
+      font-size: 20px;
     }
 
     .bottom-right {

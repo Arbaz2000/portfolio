@@ -8,11 +8,11 @@ const Card = () => {
         <div className="head">What I'm working on</div>
         <div className="content">
           <h1>
-            <strong>Hotel & Lead Management Dashboard</strong>
+            <strong>2D Metaverse Office Platform</strong>
           </h1>
-          I'm building a comprehensive dashboard in TSX, handling API
-          integration, UI design, and functionality for hotel and lead
-          management.
+          Building a virtual office space using MERN stack where users can interact through avatars, 
+          chat, video calls, and customize their environment. Features include real-time movement, 
+          messaging, and a drag-and-drop map builder.
         </div>
       </div>
     </StyledWrapper>
