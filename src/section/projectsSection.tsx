@@ -12,20 +12,20 @@ const Card = () => {
         <div className="head">What I did</div>
 
         <div className="content">
-          {/* Drag effect with bounce */}
+          {/* Full Stack Enterprise Applications */}
           <motion.div
             whileHover={{
               scale: 1.05,
               opacity: 0.9,
-              y: -10, // Slight upward movement when hovering
-              transition: { type: "spring", stiffness: 200, damping: 20 }, // Bounce effect
+              y: -10,
+              transition: { type: "spring", stiffness: 200, damping: 20 },
             }}
             whileTap={{
               scale: 0.95,
-              transition: { type: "spring", stiffness: 400, damping: 10 }, // Bounce effect on click
+              transition: { type: "spring", stiffness: 400, damping: 10 },
             }}
-            drag // Allow dragging
-            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }} // Keep it within the constraints
+            drag
+            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
             transition={{
               duration: 0.3,
               ease: "easeOut",
@@ -103,6 +103,61 @@ const Card = () => {
               ease: "easeOut",
             }}
           >
+            <Link href="/projects/pikkro">
+              <ProjectCard
+                projectName="Pikkro"
+                description="Content creation and delivery platform"
+                techStack={["React Native", "Node.js", "Express.js", "AWS"]}
+              />
+            </Link>
+          </motion.div>
+
+          <motion.div
+            whileHover={{
+              scale: 1.05,
+              opacity: 0.9,
+              y: -10,
+              transition: { type: "spring", stiffness: 200, damping: 20 },
+            }}
+            whileTap={{
+              scale: 0.95,
+              transition: { type: "spring", stiffness: 400, damping: 10 },
+            }}
+            drag
+            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
+            transition={{
+              duration: 0.3,
+              ease: "easeOut",
+            }}
+          >
+            <Link href="/projects/gettasker">
+              <ProjectCard
+                projectName="GetTasker"
+                description="Task management platform"
+                techStack={["React Native", "Node.js", "Express.js", "MongoDB"]}
+              />
+            </Link>
+          </motion.div>
+
+          {/* E-commerce and Business Applications */}
+          <motion.div
+            whileHover={{
+              scale: 1.05,
+              opacity: 0.9,
+              y: -10,
+              transition: { type: "spring", stiffness: 200, damping: 20 },
+            }}
+            whileTap={{
+              scale: 0.95,
+              transition: { type: "spring", stiffness: 400, damping: 10 },
+            }}
+            drag
+            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
+            transition={{
+              duration: 0.3,
+              ease: "easeOut",
+            }}
+          >
             <Link href="/projects/hirangana">
               <ProjectCard
                 projectName="Hirangana.in"
@@ -114,114 +169,6 @@ const Card = () => {
                   </>
                 }
                 techStack={["React", "AWS S3", "MySQL"]}
-              />
-            </Link>
-          </motion.div>
-
-          <motion.div
-            whileHover={{
-              scale: 1.05,
-              opacity: 0.9,
-              y: -10,
-              transition: { type: "spring", stiffness: 200, damping: 20 },
-            }}
-            whileTap={{
-              scale: 0.95,
-              transition: { type: "spring", stiffness: 400, damping: 10 },
-            }}
-            drag
-            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
-            transition={{
-              duration: 0.3,
-              ease: "easeOut",
-            }}
-          >
-            <Link href="/projects/krikalEdu">
-              <ProjectCard
-                projectName="Krikal Education"
-                description="Admission Portal for coaching institution with mock AI interviewer"
-                techStack={["React", "Express.js", "Gemini API"]}
-              />
-            </Link>
-          </motion.div>
-
-          <motion.div
-            whileHover={{
-              scale: 1.05,
-              opacity: 0.9,
-              y: -10,
-              transition: { type: "spring", stiffness: 200, damping: 20 },
-            }}
-            whileTap={{
-              scale: 0.95,
-              transition: { type: "spring", stiffness: 400, damping: 10 },
-            }}
-            drag
-            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
-            transition={{
-              duration: 0.3,
-              ease: "easeOut",
-            }}
-          >
-            <Link href="/projects/tagGame">
-              <ProjectCard
-                projectName="Tag Game"
-                description="Game of Tag made in Unity"
-                techStack={["Unity", "C#"]}
-              />
-            </Link>
-          </motion.div>
-
-          <motion.div
-            whileHover={{
-              scale: 1.05,
-              opacity: 0.9,
-              y: -10,
-              transition: { type: "spring", stiffness: 200, damping: 20 },
-            }}
-            whileTap={{
-              scale: 0.95,
-              transition: { type: "spring", stiffness: 400, damping: 10 },
-            }}
-            drag
-            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
-            transition={{
-              duration: 0.3,
-              ease: "easeOut",
-            }}
-          >
-            <Link href="/projects/toursAndTravel">
-              <ProjectCard
-                projectName="Tours & Travel"
-                description="Travel agency Promotion page"
-                techStack={["Next.js", "React", "SEO"]}
-              />
-            </Link>
-          </motion.div>
-
-          <motion.div
-            whileHover={{
-              scale: 1.05,
-              opacity: 0.9,
-              y: -10,
-              transition: { type: "spring", stiffness: 200, damping: 20 },
-            }}
-            whileTap={{
-              scale: 0.95,
-              transition: { type: "spring", stiffness: 400, damping: 10 },
-            }}
-            drag
-            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
-            transition={{
-              duration: 0.3,
-              ease: "easeOut",
-            }}
-          >
-            <Link href="/projects/qup">
-              <ProjectCard
-                projectName="Qup"
-                description="Social media"
-                techStack={["Expo", "React-Native", "Axios"]}
               />
             </Link>
           </motion.div>
@@ -271,6 +218,34 @@ const Card = () => {
               ease: "easeOut",
             }}
           >
+            <Link href="/projects/apnaDiscount">
+              <ProjectCard
+                projectName="ApnaDiscount"
+                description="Discount and membership management platform"
+                techStack={["React Native", "Firebase", "Redux"]}
+              />
+            </Link>
+          </motion.div>
+
+          {/* Service and Education Platforms */}
+          <motion.div
+            whileHover={{
+              scale: 1.05,
+              opacity: 0.9,
+              y: -10,
+              transition: { type: "spring", stiffness: 200, damping: 20 },
+            }}
+            whileTap={{
+              scale: 0.95,
+              transition: { type: "spring", stiffness: 400, damping: 10 },
+            }}
+            drag
+            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
+            transition={{
+              duration: 0.3,
+              ease: "easeOut",
+            }}
+          >
             <Link href="/projects/beautyGenie">
               <ProjectCard
                 projectName="Beauty Genie"
@@ -298,11 +273,39 @@ const Card = () => {
               ease: "easeOut",
             }}
           >
-            <Link href="/projects/pikkro">
+            <Link href="/projects/krikalEdu">
               <ProjectCard
-                projectName="Pikkro"
-                description="Content creation and delivery platform"
-                techStack={["React Native", "Node.js", "Express.js", "AWS"]}
+                projectName="Krikal Education"
+                description="Admission Portal for coaching institution with mock AI interviewer"
+                techStack={["React", "Express.js", "Gemini API"]}
+              />
+            </Link>
+          </motion.div>
+
+          {/* Social and Travel Platforms */}
+          <motion.div
+            whileHover={{
+              scale: 1.05,
+              opacity: 0.9,
+              y: -10,
+              transition: { type: "spring", stiffness: 200, damping: 20 },
+            }}
+            whileTap={{
+              scale: 0.95,
+              transition: { type: "spring", stiffness: 400, damping: 10 },
+            }}
+            drag
+            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
+            transition={{
+              duration: 0.3,
+              ease: "easeOut",
+            }}
+          >
+            <Link href="/projects/qup">
+              <ProjectCard
+                projectName="Qup"
+                description="Social media"
+                techStack={["Expo", "React-Native", "Axios"]}
               />
             </Link>
           </motion.div>
@@ -325,14 +328,16 @@ const Card = () => {
               ease: "easeOut",
             }}
           >
-            <Link href="/projects/gettasker">
+            <Link href="/projects/toursAndTravel">
               <ProjectCard
-                projectName="GetTasker"
-                description="Task management platform"
-                techStack={["React Native", "Node.js", "Express.js", "MongoDB"]}
+                projectName="Tours & Travel"
+                description="Travel agency Promotion page"
+                techStack={["Next.js", "React", "SEO"]}
               />
             </Link>
           </motion.div>
+
+          {/* Game Development */}
           <motion.div
             whileHover={{
               scale: 1.05,
@@ -351,14 +356,15 @@ const Card = () => {
               ease: "easeOut",
             }}
           >
-            <Link href="/projects/apnaDiscount">
+            <Link href="/projects/tagGame">
               <ProjectCard
-                projectName="ApnaDiscount"
-                description="Discount and membership management platform"
-                techStack={["React Native", "Firebase", "Redux"]}
+                projectName="Tag Game"
+                description="Game of Tag made in Unity"
+                techStack={["Unity", "C#"]}
               />
             </Link>
           </motion.div>
+
           <div className="bottom-left">
             Freelance services, bug fixes, full-stack development.
             <br />
