@@ -8,6 +8,7 @@ import Loader from "@/component/loader";
 import WhatIamon from "@/component/whatIamon";
 import WhatIamDoingToo from "@/component//whatIamDoingToo";
 import ShareYourReview from "@/component/shareYourReview";
+import ResourcesButton from "@/component/resourcesButton";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -37,8 +38,11 @@ export default function Home() {
       <div className="mb-20 pt-10">
         <SkillsSection />
       </div>
-      <div>
+      <div className="mb-20">
         <ProjectsSection />
+      </div>
+      <div className="mb-20">
+        <ResourcesButton />
       </div>
 
       <div className="flex justify-center items-center w-full mt-5 flex-col md:flex-row">
