@@ -1,0 +1,653 @@
+0 verbose cli /Users/pckmac3/.nvm/versions/node/v24.12.0/bin/node /Users/pckmac3/.nvm/versions/node/v24.12.0/bin/npm
+1 info using npm@11.6.2
+2 info using node@v24.12.0
+3 silly config load:file:/Users/pckmac3/.nvm/versions/node/v24.12.0/lib/node_modules/npm/npmrc
+4 warn Unknown env config "devdir". This will stop working in the next major version of npm.
+5 silly config load:file:/Users/pckmac3/Desktop/portfolio/.npmrc
+6 silly config load:file:/Users/pckmac3/.npmrc
+7 silly config load:file:/Users/pckmac3/.nvm/versions/node/v24.12.0/etc/npmrc
+8 verbose title npm install three @react-three/fiber @react-three/drei
+9 verbose argv "install" "--cache" ".npm-cache" "--no-audit" "--no-fund" "three" "@react-three/fiber" "@react-three/drei"
+10 verbose logfile logs-max:10 dir:/Users/pckmac3/Desktop/portfolio/.npm-cache/_logs/2026-02-02T10_55_50_071Z-
+11 verbose logfile /Users/pckmac3/Desktop/portfolio/.npm-cache/_logs/2026-02-02T10_55_50_071Z-debug-0.log
+12 silly logfile done cleaning log files
+13 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+14 silly idealTree buildDeps
+15 silly fetch manifest three@*
+16 silly packumentCache full:https://registry.npmjs.org/three cache-miss
+17 http fetch GET 200 https://registry.npmjs.org/three 148ms (cache miss)
+18 silly packumentCache full:https://registry.npmjs.org/three set size:undefined disposed:false
+19 silly fetch manifest @react-three/fiber@*
+20 silly packumentCache full:https://registry.npmjs.org/@react-three%2ffiber cache-miss
+21 http fetch GET 200 https://registry.npmjs.org/@react-three%2ffiber 139ms (cache miss)
+22 silly packumentCache full:https://registry.npmjs.org/@react-three%2ffiber set size:undefined disposed:false
+23 silly fetch manifest expo@>=43.0
+24 silly packumentCache full:https://registry.npmjs.org/expo cache-miss
+25 http fetch GET 200 https://registry.npmjs.org/expo 110ms (cache miss)
+26 silly packumentCache full:https://registry.npmjs.org/expo set size:undefined disposed:false
+27 silly fetch manifest @expo/dom-webview@*
+28 silly packumentCache full:https://registry.npmjs.org/@expo%2fdom-webview cache-miss
+29 http fetch GET 200 https://registry.npmjs.org/@expo%2fdom-webview 70ms (cache miss)
+30 silly packumentCache full:https://registry.npmjs.org/@expo%2fdom-webview set size:undefined disposed:false
+31 silly fetch manifest react@^19.0.0
+32 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+33 http fetch GET 200 https://registry.npmjs.org/react 117ms (cache miss)
+34 silly packumentCache full:https://registry.npmjs.org/react set size:undefined disposed:false
+35 silly fetch manifest react-native@*
+36 silly packumentCache full:https://registry.npmjs.org/react-native cache-miss
+37 http fetch GET 200 https://registry.npmjs.org/react-native 208ms (cache miss)
+38 silly packumentCache full:https://registry.npmjs.org/react-native set size:undefined disposed:false
+39 silly fetch manifest @types/react@^19
+40 silly packumentCache full:https://registry.npmjs.org/@types%2freact cache-miss
+41 http fetch GET 200 https://registry.npmjs.org/@types%2freact 68ms (cache miss)
+42 silly packumentCache full:https://registry.npmjs.org/@types%2freact set size:undefined disposed:false
+43 silly fetch manifest @expo/metro-runtime@*
+44 silly packumentCache full:https://registry.npmjs.org/@expo%2fmetro-runtime cache-miss
+45 http fetch GET 200 https://registry.npmjs.org/@expo%2fmetro-runtime 59ms (cache miss)
+46 silly packumentCache full:https://registry.npmjs.org/@expo%2fmetro-runtime set size:undefined disposed:false
+47 silly fetch manifest react-dom@^19.0.0
+48 silly packumentCache full:https://registry.npmjs.org/react-dom cache-miss
+49 http fetch GET 200 https://registry.npmjs.org/react-dom 183ms (cache miss)
+50 silly packumentCache full:https://registry.npmjs.org/react-dom set size:undefined disposed:false
+51 silly fetch manifest react-native-webview@*
+52 silly packumentCache full:https://registry.npmjs.org/react-native-webview cache-miss
+53 http fetch GET 200 https://registry.npmjs.org/react-native-webview 128ms (cache miss)
+54 silly packumentCache full:https://registry.npmjs.org/react-native-webview set size:undefined disposed:false
+55 silly fetch manifest expo-asset@>=8.4
+56 silly packumentCache full:https://registry.npmjs.org/expo-asset cache-miss
+57 http fetch GET 200 https://registry.npmjs.org/expo-asset 47ms (cache miss)
+58 silly packumentCache full:https://registry.npmjs.org/expo-asset set size:undefined disposed:false
+59 silly fetch manifest expo-file-system@>=11.0
+60 silly packumentCache full:https://registry.npmjs.org/expo-file-system cache-miss
+61 http fetch GET 200 https://registry.npmjs.org/expo-file-system 47ms (cache miss)
+62 silly packumentCache full:https://registry.npmjs.org/expo-file-system set size:undefined disposed:false
+63 silly fetch manifest expo-gl@>=11.0
+64 silly packumentCache full:https://registry.npmjs.org/expo-gl cache-miss
+65 http fetch GET 200 https://registry.npmjs.org/expo-gl 419ms (cache miss)
+66 silly packumentCache full:https://registry.npmjs.org/expo-gl set size:undefined disposed:false
+67 silly fetch manifest react-native-reanimated@*
+68 silly packumentCache full:https://registry.npmjs.org/react-native-reanimated cache-miss
+69 http fetch GET 200 https://registry.npmjs.org/react-native-reanimated 103ms (cache miss)
+70 silly packumentCache full:https://registry.npmjs.org/react-native-reanimated set size:undefined disposed:false
+71 silly fetch manifest react-native-worklets@>=0.7.0
+72 silly packumentCache full:https://registry.npmjs.org/react-native-worklets cache-miss
+73 http fetch GET 200 https://registry.npmjs.org/react-native-worklets 49ms (cache miss)
+74 silly packumentCache full:https://registry.npmjs.org/react-native-worklets set size:undefined disposed:false
+75 silly fetch manifest @babel/core@*
+76 silly packumentCache full:https://registry.npmjs.org/@babel%2fcore cache-miss
+77 http fetch GET 200 https://registry.npmjs.org/@babel%2fcore 52ms (cache miss)
+78 silly packumentCache full:https://registry.npmjs.org/@babel%2fcore set size:undefined disposed:false
+79 silly fetch manifest react-native-web@*
+80 silly packumentCache full:https://registry.npmjs.org/react-native-web cache-miss
+81 http fetch GET 200 https://registry.npmjs.org/react-native-web 49ms (cache miss)
+82 silly packumentCache full:https://registry.npmjs.org/react-native-web set size:undefined disposed:false
+83 silly fetch manifest @react-three/drei@*
+84 silly packumentCache full:https://registry.npmjs.org/@react-three%2fdrei cache-miss
+85 http fetch GET 200 https://registry.npmjs.org/@react-three%2fdrei 92ms (cache miss)
+86 silly packumentCache full:https://registry.npmjs.org/@react-three%2fdrei set size:undefined disposed:false
+87 silly placeDep ROOT @react-three/drei@10.7.7 OK for: portfolio-0.1@0.1.0 want: *
+88 silly placeDep ROOT three@0.182.0 OK for: @react-three/drei@10.7.7 want: >=0.159
+89 silly placeDep ROOT @react-three/fiber@9.5.0 OK for: @react-three/drei@10.7.7 want: ^9.0.0
+90 silly placeDep ROOT @react-three/fiber@9.5.0 REPLACE for: portfolio-0.1@0.1.0 want: *
+91 silly placeDep ROOT three@0.182.0 REPLACE for: portfolio-0.1@0.1.0 want: *
+92 silly fetch manifest maath@^0.10.8
+93 silly packumentCache full:https://registry.npmjs.org/maath cache-miss
+94 silly fetch manifest hls.js@^1.5.17
+95 silly packumentCache full:https://registry.npmjs.org/hls.js cache-miss
+96 silly fetch manifest zustand@^5.0.1
+97 silly packumentCache full:https://registry.npmjs.org/zustand cache-miss
+98 silly fetch manifest meshline@^3.3.1
+99 silly packumentCache full:https://registry.npmjs.org/meshline cache-miss
+100 silly fetch manifest stats-gl@^2.2.8
+101 silly packumentCache full:https://registry.npmjs.org/stats-gl cache-miss
+102 silly fetch manifest stats.js@^0.17.0
+103 silly packumentCache full:https://registry.npmjs.org/stats.js cache-miss
+104 silly fetch manifest cross-env@^7.0.3
+105 silly packumentCache full:https://registry.npmjs.org/cross-env cache-miss
+106 silly fetch manifest detect-gpu@^5.0.56
+107 silly packumentCache full:https://registry.npmjs.org/detect-gpu cache-miss
+108 silly fetch manifest glsl-noise@^0.0.0
+109 silly packumentCache full:https://registry.npmjs.org/glsl-noise cache-miss
+110 http fetch GET 200 https://registry.npmjs.org/detect-gpu 221ms (cache miss)
+111 silly packumentCache full:https://registry.npmjs.org/detect-gpu set size:undefined disposed:false
+112 silly fetch manifest tunnel-rat@^0.1.2
+113 silly packumentCache full:https://registry.npmjs.org/tunnel-rat cache-miss
+114 http fetch GET 200 https://registry.npmjs.org/zustand 252ms (cache miss)
+115 silly packumentCache full:https://registry.npmjs.org/zustand set size:undefined disposed:false
+116 silly fetch manifest three-stdlib@^2.35.6
+117 silly packumentCache full:https://registry.npmjs.org/three-stdlib cache-miss
+118 http fetch GET 200 https://registry.npmjs.org/maath 360ms (cache miss)
+119 silly packumentCache full:https://registry.npmjs.org/maath set size:undefined disposed:false
+120 silly fetch manifest suspend-react@^0.1.3
+121 silly packumentCache full:https://registry.npmjs.org/suspend-react cache-miss
+122 http fetch GET 200 https://registry.npmjs.org/cross-env 511ms (cache miss)
+123 silly packumentCache full:https://registry.npmjs.org/cross-env set size:undefined disposed:false
+124 silly fetch manifest utility-types@^3.11.0
+125 silly packumentCache full:https://registry.npmjs.org/utility-types cache-miss
+126 http fetch GET 200 https://registry.npmjs.org/meshline 514ms (cache miss)
+127 silly packumentCache full:https://registry.npmjs.org/meshline set size:undefined disposed:false
+128 silly fetch manifest @babel/runtime@^7.26.0
+129 silly packumentCache full:https://registry.npmjs.org/@babel%2fruntime cache-miss
+130 http fetch GET 200 https://registry.npmjs.org/stats-gl 517ms (cache miss)
+131 silly packumentCache full:https://registry.npmjs.org/stats-gl set size:undefined disposed:false
+132 silly fetch manifest three-mesh-bvh@^0.8.3
+133 silly packumentCache full:https://registry.npmjs.org/three-mesh-bvh cache-miss
+134 http fetch GET 200 https://registry.npmjs.org/glsl-noise 521ms (cache miss)
+135 silly packumentCache full:https://registry.npmjs.org/glsl-noise set size:undefined disposed:false
+136 silly fetch manifest camera-controls@^3.1.0
+137 silly packumentCache full:https://registry.npmjs.org/camera-controls cache-miss
+138 http fetch GET 200 https://registry.npmjs.org/stats.js 529ms (cache miss)
+139 silly packumentCache full:https://registry.npmjs.org/stats.js set size:undefined disposed:false
+140 silly fetch manifest troika-three-text@^0.52.4
+141 silly packumentCache full:https://registry.npmjs.org/troika-three-text cache-miss
+142 http fetch GET 200 https://registry.npmjs.org/three-stdlib 388ms (cache miss)
+143 silly packumentCache full:https://registry.npmjs.org/three-stdlib set size:undefined disposed:false
+144 silly fetch manifest @use-gesture/react@^10.3.1
+145 silly packumentCache full:https://registry.npmjs.org/@use-gesture%2freact cache-miss
+146 http fetch GET 200 https://registry.npmjs.org/@babel%2fruntime 152ms (cache miss)
+147 silly packumentCache full:https://registry.npmjs.org/@babel%2fruntime set size:undefined disposed:false
+148 silly fetch manifest @monogrid/gainmap-js@^3.0.6
+149 silly packumentCache full:https://registry.npmjs.org/@monogrid%2fgainmap-js cache-miss
+150 http fetch GET 200 https://registry.npmjs.org/suspend-react 423ms (cache miss)
+151 silly packumentCache full:https://registry.npmjs.org/suspend-react set size:undefined disposed:false
+152 silly fetch manifest @mediapipe/tasks-vision@0.10.17
+153 silly packumentCache full:https://registry.npmjs.org/@mediapipe%2ftasks-vision cache-miss
+154 http fetch GET 200 https://registry.npmjs.org/utility-types 415ms (cache miss)
+155 silly packumentCache full:https://registry.npmjs.org/utility-types set size:undefined disposed:false
+156 silly fetch manifest use-sync-external-store@^1.4.0
+157 silly packumentCache full:https://registry.npmjs.org/use-sync-external-store cache-miss
+158 http fetch GET 200 https://registry.npmjs.org/camera-controls 411ms (cache miss)
+159 silly packumentCache full:https://registry.npmjs.org/camera-controls set size:undefined disposed:false
+160 silly fetch manifest buffer@^6.0.3
+161 silly packumentCache full:https://registry.npmjs.org/buffer cache-miss
+162 http fetch GET 200 https://registry.npmjs.org/buffer 53ms (cache miss)
+163 silly packumentCache full:https://registry.npmjs.org/buffer set size:undefined disposed:false
+164 silly fetch manifest zustand@^5.0.3
+165 silly packumentCache full:https://registry.npmjs.org/zustand cache-miss
+166 http cache https://registry.npmjs.org/zustand 4ms (cache hit)
+167 silly packumentCache full:https://registry.npmjs.org/zustand set size:496701 disposed:false
+168 silly fetch manifest its-fine@^2.0.0
+169 silly packumentCache full:https://registry.npmjs.org/its-fine cache-miss
+170 http fetch GET 200 https://registry.npmjs.org/hls.js 1039ms (cache miss)
+171 silly packumentCache full:https://registry.npmjs.org/hls.js set size:undefined disposed:false
+172 silly fetch manifest base64-js@^1.5.1
+173 silly packumentCache full:https://registry.npmjs.org/base64-js cache-miss
+174 http fetch GET 200 https://registry.npmjs.org/use-sync-external-store 157ms (cache miss)
+175 silly packumentCache full:https://registry.npmjs.org/use-sync-external-store set size:undefined disposed:false
+176 silly fetch manifest scheduler@^0.27.0
+177 silly packumentCache full:https://registry.npmjs.org/scheduler cache-miss
+178 http fetch GET 200 https://registry.npmjs.org/base64-js 119ms (cache miss)
+179 silly packumentCache full:https://registry.npmjs.org/base64-js set size:undefined disposed:false
+180 silly fetch manifest @types/webxr@*
+181 silly packumentCache full:https://registry.npmjs.org/@types%2fwebxr cache-miss
+182 http fetch GET 200 https://registry.npmjs.org/tunnel-rat 1016ms (cache miss)
+183 silly packumentCache full:https://registry.npmjs.org/tunnel-rat set size:undefined disposed:false
+184 silly fetch manifest @babel/runtime@^7.17.8
+185 silly packumentCache full:https://registry.npmjs.org/@babel%2fruntime cache-miss
+186 http cache https://registry.npmjs.org/@babel%2fruntime 4ms (cache hit)
+187 silly packumentCache full:https://registry.npmjs.org/@babel%2fruntime set size:3305729 disposed:false
+188 silly fetch manifest react-use-measure@^2.1.7
+189 silly packumentCache full:https://registry.npmjs.org/react-use-measure cache-miss
+190 http fetch GET 200 https://registry.npmjs.org/scheduler 172ms (cache miss)
+191 silly packumentCache full:https://registry.npmjs.org/scheduler set size:undefined disposed:false
+192 silly fetch manifest its-fine@^2.0.0
+193 silly packumentCache full:https://registry.npmjs.org/its-fine cache-miss
+194 http fetch GET 200 https://registry.npmjs.org/react-use-measure 39ms (cache miss)
+195 silly packumentCache full:https://registry.npmjs.org/react-use-measure set size:undefined disposed:false
+196 silly fetch manifest @types/webxr@*
+197 silly packumentCache full:https://registry.npmjs.org/@types%2fwebxr cache-miss
+198 http fetch GET 200 https://registry.npmjs.org/its-fine 368ms (cache miss)
+199 silly packumentCache full:https://registry.npmjs.org/its-fine set size:undefined disposed:false
+200 http fetch GET 200 https://registry.npmjs.org/its-fine 90ms (cache miss)
+201 silly packumentCache full:https://registry.npmjs.org/its-fine set size:undefined disposed:false
+202 http fetch GET 200 https://registry.npmjs.org/three-mesh-bvh 1006ms (cache miss)
+203 silly packumentCache full:https://registry.npmjs.org/three-mesh-bvh set size:undefined disposed:false
+204 http fetch GET 200 https://registry.npmjs.org/@types%2fwebxr 279ms (cache miss)
+205 silly packumentCache full:https://registry.npmjs.org/@types%2fwebxr set size:undefined disposed:false
+206 http fetch GET 200 https://registry.npmjs.org/@types%2fwebxr 380ms (cache miss)
+207 silly packumentCache full:https://registry.npmjs.org/@types%2fwebxr set size:undefined disposed:false
+208 http fetch GET 200 https://registry.npmjs.org/troika-three-text 1150ms (cache miss)
+209 silly packumentCache full:https://registry.npmjs.org/troika-three-text set size:undefined disposed:false
+210 http fetch GET 200 https://registry.npmjs.org/@monogrid%2fgainmap-js 1025ms (cache miss)
+211 silly packumentCache full:https://registry.npmjs.org/@monogrid%2fgainmap-js set size:undefined disposed:false
+212 http fetch GET 200 https://registry.npmjs.org/@use-gesture%2freact 1715ms (cache miss)
+213 silly packumentCache full:https://registry.npmjs.org/@use-gesture%2freact set size:undefined disposed:false
+214 http fetch GET 200 https://registry.npmjs.org/@mediapipe%2ftasks-vision 1580ms (cache miss)
+215 silly packumentCache full:https://registry.npmjs.org/@mediapipe%2ftasks-vision set size:undefined disposed:false
+216 silly fetch manifest @types/three@>=0.134.0
+217 silly packumentCache full:https://registry.npmjs.org/@types%2fthree cache-miss
+218 http fetch GET 200 https://registry.npmjs.org/@types%2fthree 714ms (cache miss)
+219 silly packumentCache full:https://registry.npmjs.org/@types%2fthree set size:undefined disposed:false
+220 silly fetch manifest three@>=0.159
+221 silly packumentCache full:https://registry.npmjs.org/three cache-miss
+222 http cache https://registry.npmjs.org/three 2ms (cache hit)
+223 silly packumentCache full:https://registry.npmjs.org/three set size:910018 disposed:false
+224 silly fetch manifest @types/react@>=18.0.0
+225 silly packumentCache full:https://registry.npmjs.org/@types%2freact cache-miss
+226 http cache https://registry.npmjs.org/@types%2freact 5ms (cache hit)
+227 silly packumentCache full:https://registry.npmjs.org/@types%2freact set size:2555610 disposed:false
+228 silly fetch manifest immer@>=9.0.6
+229 silly packumentCache full:https://registry.npmjs.org/immer cache-miss
+230 http fetch GET 200 https://registry.npmjs.org/immer 47ms (cache miss)
+231 silly packumentCache full:https://registry.npmjs.org/immer set size:undefined disposed:false
+232 silly fetch manifest react@^19
+233 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+234 http cache https://registry.npmjs.org/react 7ms (cache hit)
+235 silly packumentCache full:https://registry.npmjs.org/react set size:6438906 disposed:false
+236 silly placeDep ROOT @babel/runtime@7.28.6 OK for: @react-three/drei@10.7.7 want: ^7.26.0
+237 silly placeDep ROOT @mediapipe/tasks-vision@0.10.17 OK for: @react-three/drei@10.7.7 want: 0.10.17
+238 silly placeDep ROOT @monogrid/gainmap-js@3.4.0 OK for: @react-three/drei@10.7.7 want: ^3.0.6
+239 silly placeDep ROOT @use-gesture/react@10.3.1 OK for: @react-three/drei@10.7.7 want: ^10.3.1
+240 silly placeDep ROOT camera-controls@3.1.2 OK for: @react-three/drei@10.7.7 want: ^3.1.0
+241 silly placeDep ROOT cross-env@7.0.3 OK for: @react-three/drei@10.7.7 want: ^7.0.3
+242 silly placeDep ROOT detect-gpu@5.0.70 OK for: @react-three/drei@10.7.7 want: ^5.0.56
+243 silly placeDep ROOT glsl-noise@0.0.0 OK for: @react-three/drei@10.7.7 want: ^0.0.0
+244 silly placeDep ROOT hls.js@1.6.15 OK for: @react-three/drei@10.7.7 want: ^1.5.17
+245 silly placeDep ROOT maath@0.10.8 OK for: @react-three/drei@10.7.7 want: ^0.10.8
+246 silly placeDep ROOT @types/three@0.182.0 OK for: maath@0.10.8 want: >=0.134.0
+247 silly placeDep ROOT meshline@3.3.1 OK for: @react-three/drei@10.7.7 want: ^3.3.1
+248 silly placeDep ROOT stats-gl@2.4.2 OK for: @react-three/drei@10.7.7 want: ^2.2.8
+249 silly placeDep ROOT stats.js@0.17.0 OK for: @react-three/drei@10.7.7 want: ^0.17.0
+250 silly placeDep ROOT suspend-react@0.1.3 OK for: @react-three/drei@10.7.7 want: ^0.1.3
+251 silly placeDep ROOT three-mesh-bvh@0.8.3 OK for: @react-three/drei@10.7.7 want: ^0.8.3
+252 silly placeDep ROOT three-stdlib@2.36.1 OK for: @react-three/drei@10.7.7 want: ^2.35.6
+253 silly placeDep ROOT troika-three-text@0.52.4 OK for: @react-three/drei@10.7.7 want: ^0.52.4
+254 silly placeDep ROOT tunnel-rat@0.1.2 OK for: @react-three/drei@10.7.7 want: ^0.1.2
+255 silly placeDep ROOT use-sync-external-store@1.6.0 OK for: @react-three/drei@10.7.7 want: ^1.4.0
+256 silly placeDep ROOT utility-types@3.11.0 OK for: @react-three/drei@10.7.7 want: ^3.11.0
+257 silly placeDep ROOT zustand@5.0.11 OK for: @react-three/drei@10.7.7 want: ^5.0.1
+258 silly fetch manifest promise-worker-transferable@^1.0.4
+259 silly packumentCache full:https://registry.npmjs.org/promise-worker-transferable cache-miss
+260 silly fetch manifest @use-gesture/core@10.3.1
+261 silly packumentCache full:https://registry.npmjs.org/@use-gesture%2fcore cache-miss
+262 silly fetch manifest webgl-constants@^1.1.1
+263 silly packumentCache full:https://registry.npmjs.org/webgl-constants cache-miss
+264 silly fetch manifest fflate@~0.8.2
+265 silly packumentCache full:https://registry.npmjs.org/fflate cache-miss
+266 silly fetch manifest @types/webxr@>=0.5.17
+267 silly packumentCache full:https://registry.npmjs.org/@types%2fwebxr cache-miss
+268 silly fetch manifest @webgpu/types@*
+269 silly packumentCache full:https://registry.npmjs.org/@webgpu%2ftypes cache-miss
+270 silly fetch manifest meshoptimizer@~0.22.0
+271 silly packumentCache full:https://registry.npmjs.org/meshoptimizer cache-miss
+272 silly fetch manifest @types/stats.js@*
+273 silly packumentCache full:https://registry.npmjs.org/@types%2fstats.js cache-miss
+274 silly fetch manifest @tweenjs/tween.js@~23.1.3
+275 silly packumentCache full:https://registry.npmjs.org/@tweenjs%2ftween.js cache-miss
+276 http cache https://registry.npmjs.org/@types%2fwebxr 6ms (cache hit)
+277 silly packumentCache full:https://registry.npmjs.org/@types%2fwebxr set size:64472 disposed:false
+278 silly fetch manifest @dimforge/rapier3d-compat@~0.12.0
+279 silly packumentCache full:https://registry.npmjs.org/@dimforge%2frapier3d-compat cache-miss
+280 http fetch GET 200 https://registry.npmjs.org/meshoptimizer 106ms (cache miss)
+281 silly packumentCache full:https://registry.npmjs.org/meshoptimizer set size:undefined disposed:false
+282 silly fetch manifest three@^0.170.0
+283 silly packumentCache full:https://registry.npmjs.org/three cache-hit
+284 silly fetch manifest @types/draco3d@^1.4.0
+285 silly packumentCache full:https://registry.npmjs.org/@types%2fdraco3d cache-miss
+286 http fetch GET 200 https://registry.npmjs.org/fflate 107ms (cache miss)
+287 silly packumentCache full:https://registry.npmjs.org/fflate set size:undefined disposed:false
+288 silly fetch manifest @types/offscreencanvas@^2019.6.4
+289 silly packumentCache full:https://registry.npmjs.org/@types%2foffscreencanvas cache-miss
+290 http fetch GET 200 https://registry.npmjs.org/@types%2fstats.js 780ms (cache miss)
+291 silly packumentCache full:https://registry.npmjs.org/@types%2fstats.js set size:undefined disposed:false
+292 silly fetch manifest @types/webxr@^0.5.2
+293 silly packumentCache full:https://registry.npmjs.org/@types%2fwebxr cache-hit
+294 silly fetch manifest draco3d@^1.4.1
+295 silly packumentCache full:https://registry.npmjs.org/draco3d cache-miss
+296 http fetch GET 200 https://registry.npmjs.org/@types%2fdraco3d 705ms (cache miss)
+297 silly packumentCache full:https://registry.npmjs.org/@types%2fdraco3d set size:undefined disposed:false
+298 silly fetch manifest fflate@^0.6.9
+299 silly packumentCache full:https://registry.npmjs.org/fflate cache-miss
+300 http cache https://registry.npmjs.org/fflate 2ms (cache hit)
+301 silly packumentCache full:https://registry.npmjs.org/fflate set size:230492 disposed:false
+302 silly fetch manifest potpack@^1.0.1
+303 silly packumentCache full:https://registry.npmjs.org/potpack cache-miss
+304 http fetch GET 200 https://registry.npmjs.org/promise-worker-transferable 1117ms (cache miss)
+305 silly packumentCache full:https://registry.npmjs.org/promise-worker-transferable set size:undefined disposed:false
+306 silly fetch manifest bidi-js@^1.0.2
+307 silly packumentCache full:https://registry.npmjs.org/bidi-js cache-miss
+308 http fetch GET 200 https://registry.npmjs.org/webgl-constants 1118ms (cache miss)
+309 silly packumentCache full:https://registry.npmjs.org/webgl-constants set size:undefined disposed:false
+310 silly fetch manifest troika-three-utils@^0.52.4
+311 silly packumentCache full:https://registry.npmjs.org/troika-three-utils cache-miss
+312 http fetch GET 200 https://registry.npmjs.org/@tweenjs%2ftween.js 1118ms (cache miss)
+313 silly packumentCache full:https://registry.npmjs.org/@tweenjs%2ftween.js set size:undefined disposed:false
+314 silly fetch manifest troika-worker-utils@^0.52.0
+315 silly packumentCache full:https://registry.npmjs.org/troika-worker-utils cache-miss
+316 http fetch GET 200 https://registry.npmjs.org/draco3d 354ms (cache miss)
+317 silly packumentCache full:https://registry.npmjs.org/draco3d set size:undefined disposed:false
+318 silly fetch manifest webgl-sdf-generator@1.1.1
+319 silly packumentCache full:https://registry.npmjs.org/webgl-sdf-generator cache-miss
+320 http fetch GET 200 https://registry.npmjs.org/bidi-js 45ms (cache miss)
+321 silly packumentCache full:https://registry.npmjs.org/bidi-js set size:undefined disposed:false
+322 silly fetch manifest zustand@^4.3.2
+323 silly packumentCache full:https://registry.npmjs.org/zustand cache-hit
+324 http fetch GET 200 https://registry.npmjs.org/potpack 358ms (cache miss)
+325 silly packumentCache full:https://registry.npmjs.org/potpack set size:undefined disposed:false
+326 http fetch GET 200 https://registry.npmjs.org/@webgpu%2ftypes 1366ms (cache miss)
+327 silly packumentCache full:https://registry.npmjs.org/@webgpu%2ftypes set size:undefined disposed:false
+328 http fetch GET 200 https://registry.npmjs.org/troika-three-utils 360ms (cache miss)
+329 silly packumentCache full:https://registry.npmjs.org/troika-three-utils set size:undefined disposed:false
+330 http fetch GET 200 https://registry.npmjs.org/webgl-sdf-generator 351ms (cache miss)
+331 silly packumentCache full:https://registry.npmjs.org/webgl-sdf-generator set size:undefined disposed:false
+332 http fetch GET 200 https://registry.npmjs.org/@use-gesture%2fcore 1673ms (cache miss)
+333 silly packumentCache full:https://registry.npmjs.org/@use-gesture%2fcore set size:undefined disposed:false
+334 http fetch GET 200 https://registry.npmjs.org/@dimforge%2frapier3d-compat 1788ms (cache miss)
+335 silly packumentCache full:https://registry.npmjs.org/@dimforge%2frapier3d-compat set size:undefined disposed:false
+336 http fetch GET 200 https://registry.npmjs.org/@types%2foffscreencanvas 2056ms (cache miss)
+337 silly packumentCache full:https://registry.npmjs.org/@types%2foffscreencanvas set size:undefined disposed:false
+338 http fetch GET 200 https://registry.npmjs.org/troika-worker-utils 1047ms (cache miss)
+339 silly packumentCache full:https://registry.npmjs.org/troika-worker-utils set size:undefined disposed:false
+340 silly placeDep ROOT promise-worker-transferable@1.0.4 OK for: @monogrid/gainmap-js@3.4.0 want: ^1.0.4
+341 silly fetch manifest is-promise@^2.1.0
+342 silly packumentCache full:https://registry.npmjs.org/is-promise cache-miss
+343 silly fetch manifest lie@^3.0.2
+344 silly packumentCache full:https://registry.npmjs.org/lie cache-miss
+345 http fetch GET 200 https://registry.npmjs.org/is-promise 46ms (cache miss)
+346 silly packumentCache full:https://registry.npmjs.org/is-promise set size:undefined disposed:false
+347 http fetch GET 200 https://registry.npmjs.org/lie 49ms (cache miss)
+348 silly packumentCache full:https://registry.npmjs.org/lie set size:undefined disposed:false
+349 silly fetch manifest react@>=19 <19.3
+350 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+351 http cache https://registry.npmjs.org/react 7ms (cache hit)
+352 silly packumentCache full:https://registry.npmjs.org/react set size:6438906 disposed:false
+353 silly fetch manifest react-dom@>=19 <19.3
+354 silly packumentCache full:https://registry.npmjs.org/react-dom cache-miss
+355 http cache https://registry.npmjs.org/react-dom 8ms (cache hit)
+356 silly packumentCache full:https://registry.npmjs.org/react-dom set size:8506047 disposed:false
+357 silly placeDep ROOT @types/webxr@0.5.24 OK for: @react-three/fiber@9.5.0 want: *
+358 silly placeDep ROOT base64-js@1.5.1 OK for: @react-three/fiber@9.5.0 want: ^1.5.1
+359 silly placeDep ROOT buffer@6.0.3 OK for: @react-three/fiber@9.5.0 want: ^6.0.3
+360 silly placeDep ROOT its-fine@2.0.0 OK for: @react-three/fiber@9.5.0 want: ^2.0.0
+361 silly placeDep ROOT react-use-measure@2.1.7 OK for: @react-three/fiber@9.5.0 want: ^2.1.7
+362 silly placeDep node_modules/@react-three/fiber scheduler@0.27.0 OK for: @react-three/fiber@9.5.0 want: ^0.27.0
+363 silly fetch manifest ieee754@^1.2.1
+364 silly packumentCache full:https://registry.npmjs.org/ieee754 cache-miss
+365 silly fetch manifest @types/react-reconciler@^0.28.9
+366 silly packumentCache full:https://registry.npmjs.org/@types%2freact-reconciler cache-miss
+367 http fetch GET 200 https://registry.npmjs.org/ieee754 44ms (cache miss)
+368 silly packumentCache full:https://registry.npmjs.org/ieee754 set size:undefined disposed:false
+369 http fetch GET 200 https://registry.npmjs.org/@types%2freact-reconciler 2014ms (cache miss)
+370 silly packumentCache full:https://registry.npmjs.org/@types%2freact-reconciler set size:undefined disposed:false
+371 silly placeDep ROOT @dimforge/rapier3d-compat@0.12.0 OK for: @types/three@0.182.0 want: ~0.12.0
+372 silly placeDep ROOT @tweenjs/tween.js@23.1.3 OK for: @types/three@0.182.0 want: ~23.1.3
+373 silly placeDep ROOT @types/stats.js@0.17.4 OK for: @types/three@0.182.0 want: *
+374 silly placeDep ROOT @webgpu/types@0.1.69 OK for: @types/three@0.182.0 want: *
+375 silly placeDep ROOT fflate@0.8.2 OK for: @types/three@0.182.0 want: ~0.8.2
+376 silly placeDep ROOT meshoptimizer@0.22.0 OK for: @types/three@0.182.0 want: ~0.22.0
+377 silly placeDep ROOT @use-gesture/core@10.3.1 OK for: @use-gesture/react@10.3.1 want: 10.3.1
+378 silly placeDep ROOT ieee754@1.2.1 OK for: buffer@6.0.3 want: ^1.2.1
+379 silly placeDep ROOT webgl-constants@1.1.1 OK for: detect-gpu@5.0.70 want: ^1.1.1
+380 silly fetch manifest @types/react@*
+381 silly packumentCache full:https://registry.npmjs.org/@types%2freact cache-miss
+382 http cache https://registry.npmjs.org/@types%2freact 13ms (cache hit)
+383 silly packumentCache full:https://registry.npmjs.org/@types%2freact set size:2555610 disposed:false
+384 silly placeDep ROOT @types/react-reconciler@0.28.9 OK for: its-fine@2.0.0 want: ^0.28.9
+385 silly placeDep ROOT is-promise@2.2.2 OK for: promise-worker-transferable@1.0.4 want: ^2.1.0
+386 silly placeDep ROOT lie@3.3.0 OK for: promise-worker-transferable@1.0.4 want: ^3.0.2
+387 silly fetch manifest immediate@~3.0.5
+388 silly packumentCache full:https://registry.npmjs.org/immediate cache-miss
+389 http fetch GET 200 https://registry.npmjs.org/immediate 383ms (cache miss)
+390 silly packumentCache full:https://registry.npmjs.org/immediate set size:undefined disposed:false
+391 silly placeDep ROOT immediate@3.0.6 OK for: lie@3.3.0 want: ~3.0.5
+392 silly placeDep node_modules/stats-gl three@0.170.0 OK for: stats-gl@2.4.2 want: ^0.170.0
+393 silly placeDep ROOT @types/draco3d@1.4.10 OK for: three-stdlib@2.36.1 want: ^1.4.0
+394 silly placeDep ROOT @types/offscreencanvas@2019.7.3 OK for: three-stdlib@2.36.1 want: ^2019.6.4
+395 silly placeDep ROOT draco3d@1.5.7 OK for: three-stdlib@2.36.1 want: ^1.4.1
+396 silly placeDep node_modules/three-stdlib fflate@0.6.10 OK for: three-stdlib@2.36.1 want: ^0.6.9
+397 silly placeDep ROOT potpack@1.0.2 OK for: three-stdlib@2.36.1 want: ^1.0.1
+398 silly fetch manifest three@>=0.125.0
+399 silly packumentCache full:https://registry.npmjs.org/three cache-hit
+400 silly placeDep ROOT bidi-js@1.0.3 OK for: troika-three-text@0.52.4 want: ^1.0.2
+401 silly placeDep ROOT troika-three-utils@0.52.4 OK for: troika-three-text@0.52.4 want: ^0.52.4
+402 silly placeDep ROOT troika-worker-utils@0.52.0 OK for: troika-three-text@0.52.4 want: ^0.52.0
+403 silly placeDep ROOT webgl-sdf-generator@1.1.1 OK for: troika-three-text@0.52.4 want: 1.1.1
+404 silly fetch manifest require-from-string@^2.0.2
+405 silly packumentCache full:https://registry.npmjs.org/require-from-string cache-miss
+406 http fetch GET 200 https://registry.npmjs.org/require-from-string 45ms (cache miss)
+407 silly packumentCache full:https://registry.npmjs.org/require-from-string set size:undefined disposed:false
+408 silly placeDep ROOT require-from-string@2.0.2 OK for: bidi-js@1.0.3 want: ^2.0.2
+409 silly fetch manifest @types/react@>=16.8
+410 silly packumentCache full:https://registry.npmjs.org/@types%2freact cache-miss
+411 http cache https://registry.npmjs.org/@types%2freact 8ms (cache hit)
+412 silly packumentCache full:https://registry.npmjs.org/@types%2freact set size:2555610 disposed:false
+413 silly fetch manifest react@>=16.8
+414 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+415 http cache https://registry.npmjs.org/react 180ms (cache hit)
+416 silly packumentCache full:https://registry.npmjs.org/react set size:6438906 disposed:false
+417 silly placeDep node_modules/tunnel-rat zustand@4.5.7 OK for: tunnel-rat@0.1.2 want: ^4.3.2
+418 silly reify moves {}
+419 http cache troika-three-utils@https://registry.npmjs.org/troika-three-utils/-/troika-three-utils-0.52.4.tgz 0ms (cache hit)
+420 http cache webgl-sdf-generator@https://registry.npmjs.org/webgl-sdf-generator/-/webgl-sdf-generator-1.1.1.tgz 0ms (cache hit)
+421 http cache potpack@https://registry.npmjs.org/potpack/-/potpack-1.0.2.tgz 0ms (cache hit)
+422 http cache troika-worker-utils@https://registry.npmjs.org/troika-worker-utils/-/troika-worker-utils-0.52.0.tgz 0ms (cache hit)
+423 http cache @types/draco3d@https://registry.npmjs.org/@types/draco3d/-/draco3d-1.4.10.tgz 0ms (cache hit)
+424 http cache @types/offscreencanvas@https://registry.npmjs.org/@types/offscreencanvas/-/offscreencanvas-2019.7.3.tgz 0ms (cache hit)
+425 http cache is-promise@https://registry.npmjs.org/is-promise/-/is-promise-2.2.2.tgz 0ms (cache hit)
+426 http cache lie@https://registry.npmjs.org/lie/-/lie-3.3.0.tgz 0ms (cache hit)
+427 http cache immediate@https://registry.npmjs.org/immediate/-/immediate-3.0.6.tgz 0ms (cache hit)
+428 http cache draco3d@https://registry.npmjs.org/draco3d/-/draco3d-1.5.7.tgz 0ms (cache hit)
+429 http cache ieee754@https://registry.npmjs.org/ieee754/-/ieee754-1.2.1.tgz 0ms (cache hit)
+430 http cache @types/react-reconciler@https://registry.npmjs.org/@types/react-reconciler/-/react-reconciler-0.28.9.tgz 0ms (cache hit)
+431 http cache fflate@https://registry.npmjs.org/fflate/-/fflate-0.8.2.tgz 0ms (cache hit)
+432 http cache @use-gesture/core@https://registry.npmjs.org/@use-gesture/core/-/core-10.3.1.tgz 0ms (cache hit)
+433 http cache webgl-constants@https://registry.npmjs.org/webgl-constants/-/webgl-constants-1.1.1.tgz 0ms (cache hit)
+434 http cache @webgpu/types@https://registry.npmjs.org/@webgpu/types/-/types-0.1.69.tgz 0ms (cache hit)
+435 http cache @types/stats.js@https://registry.npmjs.org/@types/stats.js/-/stats.js-0.17.4.tgz 0ms (cache hit)
+436 http cache @tweenjs/tween.js@https://registry.npmjs.org/@tweenjs/tween.js/-/tween.js-23.1.3.tgz 0ms (cache hit)
+437 http cache meshoptimizer@https://registry.npmjs.org/meshoptimizer/-/meshoptimizer-0.22.0.tgz 0ms (cache hit)
+438 http cache react-use-measure@https://registry.npmjs.org/react-use-measure/-/react-use-measure-2.1.7.tgz 0ms (cache hit)
+439 http cache @dimforge/rapier3d-compat@https://registry.npmjs.org/@dimforge/rapier3d-compat/-/rapier3d-compat-0.12.0.tgz 0ms (cache hit)
+440 http cache base64-js@https://registry.npmjs.org/base64-js/-/base64-js-1.5.1.tgz 0ms (cache hit)
+441 http cache bidi-js@https://registry.npmjs.org/bidi-js/-/bidi-js-1.0.3.tgz 0ms (cache hit)
+442 http cache buffer@https://registry.npmjs.org/buffer/-/buffer-6.0.3.tgz 0ms (cache hit)
+443 http cache require-from-string@https://registry.npmjs.org/require-from-string/-/require-from-string-2.0.2.tgz 0ms (cache hit)
+444 http cache zustand@https://registry.npmjs.org/zustand/-/zustand-5.0.11.tgz 0ms (cache hit)
+445 http cache promise-worker-transferable@https://registry.npmjs.org/promise-worker-transferable/-/promise-worker-transferable-1.0.4.tgz 0ms (cache hit)
+446 http cache utility-types@https://registry.npmjs.org/utility-types/-/utility-types-3.11.0.tgz 0ms (cache hit)
+447 http cache tunnel-rat@https://registry.npmjs.org/tunnel-rat/-/tunnel-rat-0.1.2.tgz 0ms (cache hit)
+448 http cache three-mesh-bvh@https://registry.npmjs.org/three-mesh-bvh/-/three-mesh-bvh-0.8.3.tgz 0ms (cache hit)
+449 http cache suspend-react@https://registry.npmjs.org/suspend-react/-/suspend-react-0.1.3.tgz 0ms (cache hit)
+450 http cache three-stdlib@https://registry.npmjs.org/three-stdlib/-/three-stdlib-2.36.1.tgz 0ms (cache hit)
+451 http cache troika-three-text@https://registry.npmjs.org/troika-three-text/-/troika-three-text-0.52.4.tgz 0ms (cache hit)
+452 http cache stats.js@https://registry.npmjs.org/stats.js/-/stats.js-0.17.0.tgz 0ms (cache hit)
+453 http cache stats-gl@https://registry.npmjs.org/stats-gl/-/stats-gl-2.4.2.tgz 0ms (cache hit)
+454 http cache meshline@https://registry.npmjs.org/meshline/-/meshline-3.3.1.tgz 0ms (cache hit)
+455 http cache maath@https://registry.npmjs.org/maath/-/maath-0.10.8.tgz 0ms (cache hit)
+456 http cache @types/three@https://registry.npmjs.org/@types/three/-/three-0.182.0.tgz 0ms (cache hit)
+457 http cache hls.js@https://registry.npmjs.org/hls.js/-/hls.js-1.6.15.tgz 0ms (cache hit)
+458 http cache glsl-noise@https://registry.npmjs.org/glsl-noise/-/glsl-noise-0.0.0.tgz 0ms (cache hit)
+459 http cache cross-env@https://registry.npmjs.org/cross-env/-/cross-env-7.0.3.tgz 0ms (cache hit)
+460 http cache camera-controls@https://registry.npmjs.org/camera-controls/-/camera-controls-3.1.2.tgz 0ms (cache hit)
+461 http cache @use-gesture/react@https://registry.npmjs.org/@use-gesture/react/-/react-10.3.1.tgz 0ms (cache hit)
+462 http cache @babel/runtime@https://registry.npmjs.org/@babel/runtime/-/runtime-7.28.6.tgz 0ms (cache hit)
+463 http cache @monogrid/gainmap-js@https://registry.npmjs.org/@monogrid/gainmap-js/-/gainmap-js-3.4.0.tgz 0ms (cache hit)
+464 http cache three@https://registry.npmjs.org/three/-/three-0.182.0.tgz 0ms (cache hit)
+465 http cache @react-three/fiber@https://registry.npmjs.org/@react-three/fiber/-/fiber-9.5.0.tgz 0ms (cache hit)
+466 http cache @react-three/drei@https://registry.npmjs.org/@react-three/drei/-/drei-10.7.7.tgz 0ms (cache hit)
+467 http cache fflate@https://registry.npmjs.org/fflate/-/fflate-0.6.10.tgz 0ms (cache hit)
+468 http cache zustand@https://registry.npmjs.org/zustand/-/zustand-4.5.7.tgz 0ms (cache hit)
+469 http cache three@https://registry.npmjs.org/three/-/three-0.170.0.tgz 0ms (cache hit)
+470 http cache scheduler@https://registry.npmjs.org/scheduler/-/scheduler-0.27.0.tgz 0ms (cache hit)
+471 http cache its-fine@https://registry.npmjs.org/its-fine/-/its-fine-2.0.0.tgz 0ms (cache hit)
+472 silly tarball no local data for troika-three-utils@https://registry.npmjs.org/troika-three-utils/-/troika-three-utils-0.52.4.tgz. Extracting by manifest.
+473 silly tarball no local data for webgl-sdf-generator@https://registry.npmjs.org/webgl-sdf-generator/-/webgl-sdf-generator-1.1.1.tgz. Extracting by manifest.
+474 silly tarball no local data for potpack@https://registry.npmjs.org/potpack/-/potpack-1.0.2.tgz. Extracting by manifest.
+475 silly tarball no local data for troika-worker-utils@https://registry.npmjs.org/troika-worker-utils/-/troika-worker-utils-0.52.0.tgz. Extracting by manifest.
+476 silly tarball no local data for @types/draco3d@https://registry.npmjs.org/@types/draco3d/-/draco3d-1.4.10.tgz. Extracting by manifest.
+477 http cache use-sync-external-store@https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.6.0.tgz 0ms (cache hit)
+478 silly tarball no local data for @types/offscreencanvas@https://registry.npmjs.org/@types/offscreencanvas/-/offscreencanvas-2019.7.3.tgz. Extracting by manifest.
+479 silly tarball no local data for is-promise@https://registry.npmjs.org/is-promise/-/is-promise-2.2.2.tgz. Extracting by manifest.
+480 silly tarball no local data for lie@https://registry.npmjs.org/lie/-/lie-3.3.0.tgz. Extracting by manifest.
+481 silly tarball no local data for immediate@https://registry.npmjs.org/immediate/-/immediate-3.0.6.tgz. Extracting by manifest.
+482 silly tarball no local data for draco3d@https://registry.npmjs.org/draco3d/-/draco3d-1.5.7.tgz. Extracting by manifest.
+483 silly tarball no local data for ieee754@https://registry.npmjs.org/ieee754/-/ieee754-1.2.1.tgz. Extracting by manifest.
+484 silly tarball no local data for @types/react-reconciler@https://registry.npmjs.org/@types/react-reconciler/-/react-reconciler-0.28.9.tgz. Extracting by manifest.
+485 silly tarball no local data for fflate@https://registry.npmjs.org/fflate/-/fflate-0.8.2.tgz. Extracting by manifest.
+486 silly tarball no local data for @use-gesture/core@https://registry.npmjs.org/@use-gesture/core/-/core-10.3.1.tgz. Extracting by manifest.
+487 silly tarball no local data for webgl-constants@https://registry.npmjs.org/webgl-constants/-/webgl-constants-1.1.1.tgz. Extracting by manifest.
+488 silly tarball no local data for @webgpu/types@https://registry.npmjs.org/@webgpu/types/-/types-0.1.69.tgz. Extracting by manifest.
+489 silly tarball no local data for @types/stats.js@https://registry.npmjs.org/@types/stats.js/-/stats.js-0.17.4.tgz. Extracting by manifest.
+490 silly tarball no local data for @tweenjs/tween.js@https://registry.npmjs.org/@tweenjs/tween.js/-/tween.js-23.1.3.tgz. Extracting by manifest.
+491 silly tarball no local data for meshoptimizer@https://registry.npmjs.org/meshoptimizer/-/meshoptimizer-0.22.0.tgz. Extracting by manifest.
+492 silly tarball no local data for react-use-measure@https://registry.npmjs.org/react-use-measure/-/react-use-measure-2.1.7.tgz. Extracting by manifest.
+493 silly tarball no local data for @dimforge/rapier3d-compat@https://registry.npmjs.org/@dimforge/rapier3d-compat/-/rapier3d-compat-0.12.0.tgz. Extracting by manifest.
+494 http cache detect-gpu@https://registry.npmjs.org/detect-gpu/-/detect-gpu-5.0.70.tgz 0ms (cache hit)
+495 http cache @mediapipe/tasks-vision@https://registry.npmjs.org/@mediapipe/tasks-vision/-/tasks-vision-0.10.17.tgz 0ms (cache hit)
+496 silly tarball no local data for base64-js@https://registry.npmjs.org/base64-js/-/base64-js-1.5.1.tgz. Extracting by manifest.
+497 silly tarball no local data for bidi-js@https://registry.npmjs.org/bidi-js/-/bidi-js-1.0.3.tgz. Extracting by manifest.
+498 silly tarball no local data for buffer@https://registry.npmjs.org/buffer/-/buffer-6.0.3.tgz. Extracting by manifest.
+499 silly tarball no local data for require-from-string@https://registry.npmjs.org/require-from-string/-/require-from-string-2.0.2.tgz. Extracting by manifest.
+500 http cache @types/webxr@https://registry.npmjs.org/@types/webxr/-/webxr-0.5.24.tgz 0ms (cache hit)
+501 silly tarball no local data for zustand@https://registry.npmjs.org/zustand/-/zustand-5.0.11.tgz. Extracting by manifest.
+502 silly tarball no local data for promise-worker-transferable@https://registry.npmjs.org/promise-worker-transferable/-/promise-worker-transferable-1.0.4.tgz. Extracting by manifest.
+503 silly tarball no local data for utility-types@https://registry.npmjs.org/utility-types/-/utility-types-3.11.0.tgz. Extracting by manifest.
+504 silly tarball no local data for tunnel-rat@https://registry.npmjs.org/tunnel-rat/-/tunnel-rat-0.1.2.tgz. Extracting by manifest.
+505 silly tarball no local data for three-mesh-bvh@https://registry.npmjs.org/three-mesh-bvh/-/three-mesh-bvh-0.8.3.tgz. Extracting by manifest.
+506 silly tarball no local data for suspend-react@https://registry.npmjs.org/suspend-react/-/suspend-react-0.1.3.tgz. Extracting by manifest.
+507 silly tarball no local data for three-stdlib@https://registry.npmjs.org/three-stdlib/-/three-stdlib-2.36.1.tgz. Extracting by manifest.
+508 silly tarball no local data for troika-three-text@https://registry.npmjs.org/troika-three-text/-/troika-three-text-0.52.4.tgz. Extracting by manifest.
+509 silly tarball no local data for stats.js@https://registry.npmjs.org/stats.js/-/stats.js-0.17.0.tgz. Extracting by manifest.
+510 silly tarball no local data for meshline@https://registry.npmjs.org/meshline/-/meshline-3.3.1.tgz. Extracting by manifest.
+511 silly tarball no local data for maath@https://registry.npmjs.org/maath/-/maath-0.10.8.tgz. Extracting by manifest.
+512 silly tarball no local data for @types/three@https://registry.npmjs.org/@types/three/-/three-0.182.0.tgz. Extracting by manifest.
+513 silly tarball no local data for hls.js@https://registry.npmjs.org/hls.js/-/hls.js-1.6.15.tgz. Extracting by manifest.
+514 silly tarball no local data for glsl-noise@https://registry.npmjs.org/glsl-noise/-/glsl-noise-0.0.0.tgz. Extracting by manifest.
+515 silly tarball no local data for cross-env@https://registry.npmjs.org/cross-env/-/cross-env-7.0.3.tgz. Extracting by manifest.
+516 silly tarball no local data for camera-controls@https://registry.npmjs.org/camera-controls/-/camera-controls-3.1.2.tgz. Extracting by manifest.
+517 silly tarball no local data for @use-gesture/react@https://registry.npmjs.org/@use-gesture/react/-/react-10.3.1.tgz. Extracting by manifest.
+518 silly tarball no local data for stats-gl@https://registry.npmjs.org/stats-gl/-/stats-gl-2.4.2.tgz. Extracting by manifest.
+519 silly tarball no local data for @babel/runtime@https://registry.npmjs.org/@babel/runtime/-/runtime-7.28.6.tgz. Extracting by manifest.
+520 silly tarball no local data for @monogrid/gainmap-js@https://registry.npmjs.org/@monogrid/gainmap-js/-/gainmap-js-3.4.0.tgz. Extracting by manifest.
+521 silly tarball no local data for three@https://registry.npmjs.org/three/-/three-0.182.0.tgz. Extracting by manifest.
+522 silly tarball no local data for @react-three/fiber@https://registry.npmjs.org/@react-three/fiber/-/fiber-9.5.0.tgz. Extracting by manifest.
+523 silly tarball no local data for @react-three/drei@https://registry.npmjs.org/@react-three/drei/-/drei-10.7.7.tgz. Extracting by manifest.
+524 silly tarball no local data for fflate@https://registry.npmjs.org/fflate/-/fflate-0.6.10.tgz. Extracting by manifest.
+525 silly tarball no local data for zustand@https://registry.npmjs.org/zustand/-/zustand-4.5.7.tgz. Extracting by manifest.
+526 silly tarball no local data for three@https://registry.npmjs.org/three/-/three-0.170.0.tgz. Extracting by manifest.
+527 silly tarball no local data for scheduler@https://registry.npmjs.org/scheduler/-/scheduler-0.27.0.tgz. Extracting by manifest.
+528 silly tarball no local data for its-fine@https://registry.npmjs.org/its-fine/-/its-fine-2.0.0.tgz. Extracting by manifest.
+529 silly tarball no local data for use-sync-external-store@https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.6.0.tgz. Extracting by manifest.
+530 silly tarball no local data for detect-gpu@https://registry.npmjs.org/detect-gpu/-/detect-gpu-5.0.70.tgz. Extracting by manifest.
+531 silly tarball no local data for @mediapipe/tasks-vision@https://registry.npmjs.org/@mediapipe/tasks-vision/-/tasks-vision-0.10.17.tgz. Extracting by manifest.
+532 silly tarball no local data for @types/webxr@https://registry.npmjs.org/@types/webxr/-/webxr-0.5.24.tgz. Extracting by manifest.
+533 http fetch GET 200 https://registry.npmjs.org/immediate/-/immediate-3.0.6.tgz 101ms (cache miss)
+534 http fetch GET 200 https://registry.npmjs.org/lie/-/lie-3.3.0.tgz 101ms (cache miss)
+535 http fetch GET 200 https://registry.npmjs.org/potpack/-/potpack-1.0.2.tgz 105ms (cache miss)
+536 http fetch GET 200 https://registry.npmjs.org/is-promise/-/is-promise-2.2.2.tgz 110ms (cache miss)
+537 http fetch GET 200 https://registry.npmjs.org/@webgpu/types/-/types-0.1.69.tgz 182ms (cache miss)
+538 http fetch GET 200 https://registry.npmjs.org/webgl-sdf-generator/-/webgl-sdf-generator-1.1.1.tgz 198ms (cache miss)
+539 http fetch GET 200 https://registry.npmjs.org/@types/stats.js/-/stats.js-0.17.4.tgz 209ms (cache miss)
+540 http fetch GET 200 https://registry.npmjs.org/react-use-measure/-/react-use-measure-2.1.7.tgz 402ms (cache miss)
+541 http fetch GET 200 https://registry.npmjs.org/require-from-string/-/require-from-string-2.0.2.tgz 402ms (cache miss)
+542 http fetch GET 200 https://registry.npmjs.org/troika-worker-utils/-/troika-worker-utils-0.52.0.tgz 426ms (cache miss)
+543 http fetch GET 200 https://registry.npmjs.org/base64-js/-/base64-js-1.5.1.tgz 421ms (cache miss)
+544 http fetch GET 200 https://registry.npmjs.org/troika-three-utils/-/troika-three-utils-0.52.4.tgz 428ms (cache miss)
+545 http fetch GET 200 https://registry.npmjs.org/ieee754/-/ieee754-1.2.1.tgz 432ms (cache miss)
+546 http fetch GET 200 https://registry.npmjs.org/buffer/-/buffer-6.0.3.tgz 428ms (cache miss)
+547 http fetch GET 200 https://registry.npmjs.org/promise-worker-transferable/-/promise-worker-transferable-1.0.4.tgz 427ms (cache miss)
+548 http fetch GET 200 https://registry.npmjs.org/utility-types/-/utility-types-3.11.0.tgz 437ms (cache miss)
+549 http fetch GET 200 https://registry.npmjs.org/stats.js/-/stats.js-0.17.0.tgz 452ms (cache miss)
+550 http fetch GET 200 https://registry.npmjs.org/@tweenjs/tween.js/-/tween.js-23.1.3.tgz 528ms (cache miss)
+551 http fetch GET 200 https://registry.npmjs.org/meshline/-/meshline-3.3.1.tgz 527ms (cache miss)
+552 http fetch GET 200 https://registry.npmjs.org/suspend-react/-/suspend-react-0.1.3.tgz 540ms (cache miss)
+553 http fetch GET 200 https://registry.npmjs.org/meshoptimizer/-/meshoptimizer-0.22.0.tgz 547ms (cache miss)
+554 http fetch GET 200 https://registry.npmjs.org/@types/draco3d/-/draco3d-1.4.10.tgz 917ms (cache miss)
+555 http fetch GET 200 https://registry.npmjs.org/glsl-noise/-/glsl-noise-0.0.0.tgz 911ms (cache miss)
+556 http fetch GET 200 https://registry.npmjs.org/@types/offscreencanvas/-/offscreencanvas-2019.7.3.tgz 930ms (cache miss)
+557 http fetch GET 200 https://registry.npmjs.org/stats-gl/-/stats-gl-2.4.2.tgz 929ms (cache miss)
+558 http fetch GET 200 https://registry.npmjs.org/tunnel-rat/-/tunnel-rat-0.1.2.tgz 958ms (cache miss)
+559 http fetch GET 200 https://registry.npmjs.org/cross-env/-/cross-env-7.0.3.tgz 961ms (cache miss)
+560 http fetch GET 200 https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.6.0.tgz 955ms (cache miss)
+561 http fetch GET 200 https://registry.npmjs.org/scheduler/-/scheduler-0.27.0.tgz 956ms (cache miss)
+562 http fetch GET 200 https://registry.npmjs.org/its-fine/-/its-fine-2.0.0.tgz 967ms (cache miss)
+563 http fetch GET 200 https://registry.npmjs.org/bidi-js/-/bidi-js-1.0.3.tgz 980ms (cache miss)
+564 http fetch GET 200 https://registry.npmjs.org/@types/react-reconciler/-/react-reconciler-0.28.9.tgz 985ms (cache miss)
+565 http fetch GET 200 https://registry.npmjs.org/camera-controls/-/camera-controls-3.1.2.tgz 1099ms (cache miss)
+566 http fetch GET 200 https://registry.npmjs.org/@use-gesture/react/-/react-10.3.1.tgz 1379ms (cache miss)
+567 http fetch GET 200 https://registry.npmjs.org/fflate/-/fflate-0.6.10.tgz 1413ms (cache miss)
+568 http fetch GET 200 https://registry.npmjs.org/@types/webxr/-/webxr-0.5.24.tgz 1394ms (cache miss)
+569 http fetch GET 200 https://registry.npmjs.org/webgl-constants/-/webgl-constants-1.1.1.tgz 1428ms (cache miss)
+570 http fetch GET 200 https://registry.npmjs.org/draco3d/-/draco3d-1.5.7.tgz 1467ms (cache miss)
+571 http fetch GET 200 https://registry.npmjs.org/fflate/-/fflate-0.8.2.tgz 1495ms (cache miss)
+572 http fetch GET 200 https://registry.npmjs.org/zustand/-/zustand-5.0.11.tgz 1491ms (cache miss)
+573 http fetch GET 200 https://registry.npmjs.org/troika-three-text/-/troika-three-text-0.52.4.tgz 1492ms (cache miss)
+574 http fetch GET 200 https://registry.npmjs.org/detect-gpu/-/detect-gpu-5.0.70.tgz 1652ms (cache miss)
+575 http fetch GET 200 https://registry.npmjs.org/@react-three/fiber/-/fiber-9.5.0.tgz 1703ms (cache miss)
+576 http fetch GET 200 https://registry.npmjs.org/maath/-/maath-0.10.8.tgz 1742ms (cache miss)
+577 http fetch GET 200 https://registry.npmjs.org/@use-gesture/core/-/core-10.3.1.tgz 1749ms (cache miss)
+578 http fetch GET 200 https://registry.npmjs.org/@monogrid/gainmap-js/-/gainmap-js-3.4.0.tgz 1750ms (cache miss)
+579 http fetch GET 200 https://registry.npmjs.org/zustand/-/zustand-4.5.7.tgz 1753ms (cache miss)
+580 http fetch GET 200 https://registry.npmjs.org/three-mesh-bvh/-/three-mesh-bvh-0.8.3.tgz 1789ms (cache miss)
+581 http fetch GET 200 https://registry.npmjs.org/@dimforge/rapier3d-compat/-/rapier3d-compat-0.12.0.tgz 1815ms (cache miss)
+582 http fetch GET 200 https://registry.npmjs.org/@babel/runtime/-/runtime-7.28.6.tgz 1856ms (cache miss)
+583 http fetch GET 200 https://registry.npmjs.org/@mediapipe/tasks-vision/-/tasks-vision-0.10.17.tgz 1918ms (cache miss)
+584 http fetch GET 200 https://registry.npmjs.org/@react-three/drei/-/drei-10.7.7.tgz 1980ms (cache miss)
+585 http fetch GET 200 https://registry.npmjs.org/hls.js/-/hls.js-1.6.15.tgz 2100ms (cache miss)
+586 http fetch GET 200 https://registry.npmjs.org/@types/three/-/three-0.182.0.tgz 5690ms (cache miss)
+587 http fetch GET 200 https://registry.npmjs.org/three-stdlib/-/three-stdlib-2.36.1.tgz 6689ms (cache miss)
+588 http fetch GET 200 https://registry.npmjs.org/three/-/three-0.170.0.tgz 7465ms (cache miss)
+589 http fetch GET 200 https://registry.npmjs.org/three/-/three-0.182.0.tgz 7546ms (cache miss)
+590 silly ADD node_modules/require-from-string
+591 silly ADD node_modules/webgl-sdf-generator
+592 silly ADD node_modules/troika-worker-utils
+593 silly ADD node_modules/troika-three-utils
+594 silly ADD node_modules/bidi-js
+595 silly ADD node_modules/potpack
+596 silly ADD node_modules/draco3d
+597 silly ADD node_modules/@types/offscreencanvas
+598 silly ADD node_modules/@types/draco3d
+599 silly ADD node_modules/immediate
+600 silly ADD node_modules/lie
+601 silly ADD node_modules/is-promise
+602 silly ADD node_modules/@types/react-reconciler
+603 silly ADD node_modules/webgl-constants
+604 silly ADD node_modules/ieee754
+605 silly ADD node_modules/@use-gesture/core
+606 silly ADD node_modules/meshoptimizer
+607 silly ADD node_modules/fflate
+608 silly ADD node_modules/@webgpu/types
+609 silly ADD node_modules/@types/stats.js
+610 silly ADD node_modules/@tweenjs/tween.js
+611 silly ADD node_modules/@dimforge/rapier3d-compat
+612 silly ADD node_modules/react-use-measure
+613 silly ADD node_modules/its-fine
+614 silly ADD node_modules/buffer
+615 silly ADD node_modules/base64-js
+616 silly ADD node_modules/@types/webxr
+617 silly ADD node_modules/promise-worker-transferable
+618 silly ADD node_modules/zustand
+619 silly ADD node_modules/utility-types
+620 silly ADD node_modules/use-sync-external-store
+621 silly ADD node_modules/tunnel-rat
+622 silly ADD node_modules/tunnel-rat/node_modules/zustand
+623 silly ADD node_modules/troika-three-text
+624 silly ADD node_modules/three-stdlib
+625 silly ADD node_modules/three-stdlib/node_modules/fflate
+626 silly ADD node_modules/three-mesh-bvh
+627 silly ADD node_modules/suspend-react
+628 silly ADD node_modules/stats.js
+629 silly ADD node_modules/stats-gl
+630 silly ADD node_modules/stats-gl/node_modules/three
+631 silly ADD node_modules/meshline
+632 silly ADD node_modules/@types/three
+633 silly ADD node_modules/maath
+634 silly ADD node_modules/hls.js
+635 silly ADD node_modules/glsl-noise
+636 silly ADD node_modules/detect-gpu
+637 silly ADD node_modules/cross-env
+638 silly ADD node_modules/camera-controls
+639 silly ADD node_modules/@use-gesture/react
+640 silly ADD node_modules/@monogrid/gainmap-js
+641 silly ADD node_modules/@mediapipe/tasks-vision
+642 silly ADD node_modules/@babel/runtime
+643 silly ADD node_modules/three
+644 silly ADD node_modules/@react-three/fiber
+645 silly ADD node_modules/@react-three/fiber/node_modules/scheduler
+646 silly ADD node_modules/@react-three/drei
+647 verbose cwd /Users/pckmac3/Desktop/portfolio
+648 verbose os Darwin 25.2.0
+649 verbose node v24.12.0
+650 verbose npm  v11.6.2
+651 verbose exit 0
+652 info ok
