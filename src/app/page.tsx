@@ -9,26 +9,19 @@ import WhatIamon from "@/component/whatIamon";
 import WhatIamDoingToo from "@/component//whatIamDoingToo";
 import ShareYourReview from "@/component/shareYourReview";
 import ResourcesButton from "@/component/resourcesButton";
+import ThemeToggleButton from "@/component/ThemeToggleButton";
+import { HomeThemeProvider, useHomeTheme } from "@/context/HomeThemeContext";
 
-export default function Home() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Set a timeout to hide the loader after 3 seconds
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 100);
-
-    // Cleanup the timeout on component unmount
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return <Loader />;
-  }
-
+function PageContent() {
+  const { theme } = useHomeTheme();
   return (
-    <>
+    <div
+      style={{
+        background: theme.colors.background,
+        minHeight: "100vh",
+        transition: "background 0.3s ease-in-out",
+      }}
+    >
       <div className="mb-20">
         <HomeSection />
       </div>
@@ -56,6 +49,31 @@ export default function Home() {
           <ShareYourReview />
         </div>
       </div>
-    </>
+    </div>
+  );
+}
+
+export default function Home() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Set a timeout to hide the loader after 3 seconds
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 100);
+
+    // Cleanup the timeout on component unmount
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
+
+  return (
+    <HomeThemeProvider>
+      <ThemeToggleButton />
+      <PageContent />
+    </HomeThemeProvider>
   );
 }

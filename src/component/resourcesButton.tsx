@@ -3,10 +3,13 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
+import { useHomeTheme } from "@/context/HomeThemeContext";
 
 const ResourcesButton = () => {
+  const { theme } = useHomeTheme();
+
   return (
-    <StyledWrapper>
+    <StyledWrapper $theme={theme}>
       <div className="card">
         <div className="head">Resources & Tools</div>
         <div className="content">
@@ -23,7 +26,7 @@ const ResourcesButton = () => {
   );
 };
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.div<{ $theme: any }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,16 +42,16 @@ const StyledWrapper = styled.div`
     font-family: Montserrat, sans-serif;
     width: 70%;
     height: auto;
-    background: #1ac2ff;
-    border: 3px solid #000000;
-    box-shadow: 12px 12px 0 #000000;
+    background: ${(props) => (props.$theme.name === 'neo-brutalism' ? '#1ac2ff' : '#ffffff')};
+    border: 3px solid ${(props) => props.$theme.colors.border};
+    box-shadow: 12px 12px 0 ${(props) => props.$theme.colors.shadow};
     overflow: hidden;
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
 
     @media (max-width: 768px) {
       width: 100%;
-      box-shadow: 6px 6px 0 #000000;
+      box-shadow: 6px 6px 0 ${(props) => props.$theme.colors.shadow};
     }
   }
 
@@ -58,10 +61,10 @@ const StyledWrapper = styled.div`
     font-weight: 900;
     width: 100%;
     height: 80px;
-    background: #ffffff;
+    background: ${(props) => props.$theme.colors.cardHeader};
     padding: 5px 12px;
-    color: #000000;
-    border-bottom: 3px solid #000000;
+    color: ${(props) => props.$theme.colors.text};
+    border-bottom: 3px solid ${(props) => props.$theme.colors.border};
     text-align: left;
 
     @media (max-width: 768px) {
@@ -75,7 +78,7 @@ const StyledWrapper = styled.div`
     padding: 30px 20px;
     font-size: 20px;
     font-weight: 600;
-    color: #000000;
+    color: ${(props) => props.$theme.colors.text};
     text-align: center;
 
     @media (max-width: 768px) {
@@ -92,14 +95,14 @@ const StyledWrapper = styled.div`
   .button {
     display: inline-block;
     padding: 15px 30px;
-    background: #4ade80;
-    color: #000000;
+    background: ${(props) => (props.$theme.name === 'neo-brutalism' ? '#4ade80' : '#cccccc')};
+    color: ${(props) => props.$theme.colors.text};
     text-decoration: none;
-    border: 3px solid #000000;
-    box-shadow: 6px 6px 0 #000000;
+    border: 3px solid ${(props) => props.$theme.colors.border};
+    box-shadow: 6px 6px 0 ${(props) => props.$theme.colors.shadow};
     font-weight: 700;
     font-size: 18px;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
     border-radius: 5px;
 
     @media (max-width: 768px) {
@@ -109,23 +112,23 @@ const StyledWrapper = styled.div`
 
     &:hover {
       translate: -3px -3px;
-      box-shadow: 9px 9px 0 #000000;
-      background: #22c55e;
+      box-shadow: 9px 9px 0 ${(props) => props.$theme.colors.shadow};
+      background: ${(props) => (props.$theme.name === 'neo-brutalism' ? '#22c55e' : '#999999')};
     }
 
     &:active {
       translate: 0 0;
-      box-shadow: 3px 3px 0 #000000;
+      box-shadow: 3px 3px 0 ${(props) => props.$theme.colors.shadow};
     }
   }
 
   .card:hover {
     translate: -6px -6px;
-    box-shadow: 18px 18px 0 #000000;
+    box-shadow: 18px 18px 0 ${(props) => props.$theme.colors.shadow};
 
     @media (max-width: 768px) {
       translate: -3px -3px;
-      box-shadow: 9px 9px 0 #000000;
+      box-shadow: 9px 9px 0 ${(props) => props.$theme.colors.shadow};
     }
   }
 `;

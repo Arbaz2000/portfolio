@@ -2,10 +2,13 @@
 
 import React from "react";
 import styled from "styled-components";
+import { useHomeTheme } from "@/context/HomeThemeContext";
 
 const Card = () => {
+  const { theme } = useHomeTheme();
+
   return (
-    <StyledWrapper>
+    <StyledWrapper $theme={theme}>
       <div className="card">
         <div className="head">About Me</div>
         <div className="content">
@@ -30,7 +33,7 @@ const Card = () => {
   );
 };
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.div<{ $theme: any }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,19 +47,18 @@ const StyledWrapper = styled.div`
 
   .card {
     font-family: Montserrat, sans-serif;
-    width: 70%; /* Original width for large screens */
+    width: 70%;
     height: auto;
-    background: #1ac2ff;
-    border: 3px solid #000000;
-    box-shadow: 12px 12px 0 #000000;
+    background: ${(props) => (props.$theme.name === 'neo-brutalism' ? '#1ac2ff' : '#ffffff')};
+    border: 3px solid ${(props) => props.$theme.colors.border};
+    box-shadow: 12px 12px 0 ${(props) => props.$theme.colors.shadow};
     overflow: hidden;
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
 
-    /* Responsive adjustments for smaller screens */
     @media (max-width: 768px) {
-      width: 100%; /* Full width on smaller screens */
-      box-shadow: 6px 6px 0 #000000; /* Lighter shadow on mobile */
+      width: 100%;
+      box-shadow: 6px 6px 0 ${(props) => props.$theme.colors.shadow};
     }
   }
 
@@ -66,10 +68,10 @@ const StyledWrapper = styled.div`
     font-weight: 900;
     width: 100%;
     height: 80px;
-    background: #ffffff;
+    background: ${(props) => props.$theme.colors.cardHeader};
     padding: 5px 12px;
-    color: #000000;
-    border-bottom: 3px solid #000000;
+    color: ${(props) => props.$theme.colors.text};
+    border-bottom: 3px solid ${(props) => props.$theme.colors.border};
     text-align: left; /* Ensure the heading is aligned left */
 
     /* Responsive font size */
@@ -84,7 +86,7 @@ const StyledWrapper = styled.div`
     padding: 20px 20px;
     font-size: 28px;
     font-weight: 600;
-    color: #000000;
+    color: ${(props) => props.$theme.colors.text};
     overflow-y: auto; /* Prevent content overflow */
 
     /* Adjust font size and padding for mobile screens */
@@ -97,11 +99,11 @@ const StyledWrapper = styled.div`
   .button {
     padding: 5px 10px;
     margin-top: 10px;
-    border: 3px solid #000000;
-    box-shadow: 3px 3px 0 #000000;
+    border: 3px solid ${(props) => props.$theme.colors.border};
+    box-shadow: 3px 3px 0 ${(props) => props.$theme.colors.shadow};
     font-weight: 750;
-    background: #4ade80;
-    transition: all 0.3s ease;
+    background: ${(props) => (props.$theme.name === 'neo-brutalism' ? '#4ade80' : '#cccccc')};
+    transition: all 0.3s ease-in-out;
     cursor: pointer;
 
     /* Adjust button padding for mobile screens */
@@ -112,13 +114,13 @@ const StyledWrapper = styled.div`
 
   .button:hover {
     translate: 1.5px 1.5px;
-    box-shadow: 1.5px 1.5px 0 #000000;
-    background: #1ac2ff;
+    box-shadow: 1.5px 1.5px 0 ${(props) => props.$theme.colors.shadow};
+    background: ${(props) => (props.$theme.name === 'neo-brutalism' ? '#1ac2ff' : '#999999')};
   }
 
   .button:active {
     translate: 3px 3px;
-    box-shadow: 0 0 0 #000000;
+    box-shadow: 0 0 0 ${(props) => props.$theme.colors.shadow};
   }
 
   .card:hover {
@@ -127,11 +129,11 @@ const StyledWrapper = styled.div`
 
   .bottom-right {
     padding: 1%;
-    bottom: 20px; /* Add some space to avoid overlap */
+    bottom: 20px;
     right: 10px;
     font-size: 20px;
     font-weight: 700;
-    color: black;
+    color: ${(props) => props.$theme.colors.text};
     text-align: right;
     width: 100%; /* Ensure it doesn't overlap or extend beyond the card's width */
 

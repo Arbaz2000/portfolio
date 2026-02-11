@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Link from "next/link";
 import ProjectCard from "@/component/projectCard";
 import { motion } from "framer-motion";
+import { useHomeTheme } from "@/context/HomeThemeContext";
 
 const Card = () => {
   const projects = [
@@ -81,8 +82,10 @@ const Card = () => {
     }
   ];
 
+  const { theme } = useHomeTheme();
+
   return (
-    <StyledWrapper>
+    <StyledWrapper $theme={theme}>
       <div className="main-card">
         <div className="head">What I did</div>
         
@@ -127,7 +130,7 @@ const Card = () => {
   );
 };
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.div<{ $theme: any }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -139,11 +142,11 @@ const StyledWrapper = styled.div`
     font-family: Montserrat, sans-serif;
     width: 95%;
     max-width: 1400px;
-    border: 3px solid #000000;
-    box-shadow: 12px 12px 0 #000000;
+    border: 3px solid ${(props) => props.$theme.colors.border};
+    box-shadow: 12px 12px 0 ${(props) => props.$theme.colors.shadow};
     overflow: hidden;
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
   }
 
   .head {
@@ -152,10 +155,10 @@ const StyledWrapper = styled.div`
     font-weight: 900;
     width: 100%;
     height: 80px;
-    background: #ffffff;
+    background: ${(props) => props.$theme.colors.cardHeader};
     padding: 5px 20px;
-    color: #000000;
-    border-bottom: 3px solid #000000;
+    color: ${(props) => props.$theme.colors.text};
+    border-bottom: 3px solid ${(props) => props.$theme.colors.border};
     text-align: left;
     display: flex;
     align-items: center;
@@ -165,9 +168,10 @@ const StyledWrapper = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    background: #ef4444;
+    background: ${(props) => (props.$theme.name === 'neo-brutalism' ? '#ef4444' : '#e5e5e5')};
     padding: 30px;
     gap: 30px;
+    transition: background 0.3s ease-in-out;
   }
 
   .projects-grid {
@@ -188,14 +192,13 @@ const StyledWrapper = styled.div`
     p {
       font-size: 18px;
       font-weight: 600;
-      color: #000000;
+      color: ${(props) => props.$theme.colors.text};
       margin: 8px 0;
-      
+      transition: color 0.3s ease-in-out;
       
       &:last-child {
         font-weight: 700;
         font-size: 20px;
-        color: #000000;
       }
     }
   }

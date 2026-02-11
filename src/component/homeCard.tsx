@@ -2,17 +2,26 @@
 import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
+import { useHomeTheme } from "@/context/HomeThemeContext";
 
 const Card = () => {
+  const { theme } = useHomeTheme();
+  const imageSrc = theme.name === 'monochrome' 
+    ? '/Gemini_Generated_Image_ipk4iaipk4iaipk4.png' 
+    : '/me.png';
+  
+  const isMonochromeImage = theme.name === 'monochrome';
+
   return (
-    <StyledWrapper>
+    <StyledWrapper $theme={theme} $smallerImage={isMonochromeImage}>
       <div className="card">
         <div className="head">This is ME!</div>
         <div className="content">
           <div className="image-container">
             <Image
-              src="/me.png"
-              alt="Next.js logo"
+              key={imageSrc}
+              src={imageSrc}
+              alt="Profile image"
               layout="fill"
               objectFit="cover"
               priority
@@ -24,16 +33,16 @@ const Card = () => {
   );
 };
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.div<{ $theme: any; $smallerImage?: boolean }>`
   .card {
     font-family: Montserrat, sans-serif;
     width: 70vh;
     height: 70vh;
-    background: #ff66a3;
-    border: 3px solid #000000;
-    box-shadow: 12px 12px 0 #000000;
+    background: ${(props) => props.$theme.colors.primary};
+    border: 3px solid ${(props) => props.$theme.colors.border};
+    box-shadow: 12px 12px 0 ${(props) => props.$theme.colors.shadow};
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
     position: relative;
   }
 
@@ -43,11 +52,12 @@ const StyledWrapper = styled.div`
     font-weight: 900;
     width: 100%;
     height: 10%;
-    background: #ffffff;
+    background: ${(props) => props.$theme.colors.cardHeader};
     padding: 2% 3%;
-    color: #000000;
-    border-bottom: 3px solid #000000;
+    color: ${(props) => props.$theme.colors.text};
+    border-bottom: 3px solid ${(props) => props.$theme.colors.border};
     position: relative;
+    transition: all 0.3s ease-in-out;
   }
 
   .content {
@@ -60,8 +70,18 @@ const StyledWrapper = styled.div`
   .image-container {
     position: relative;
     width: 100%;
-    height: 60vh;
+    height: ${(props) => (props.$smallerImage ? '65vh' : '65vh')};
     overflow: hidden;
+    ${(props) =>
+      props.$smallerImage &&
+      `
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      & img {
+        object-fit: contain !important;
+      }
+    `}
   }
 
   .card:hover {
