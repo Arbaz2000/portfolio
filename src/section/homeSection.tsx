@@ -1,14 +1,18 @@
+"use client";
 import React from "react";
 import Card from "@/component/homeCard";
 import CardDetails from "@/component/details";
 import Git from "@/component/socials/gitSection";
 import LinkedIn from "@/component/socials/linkedInSection";
 import Instagram from "@/component/socials/instagramSection";
+import { useHomeTheme } from "@/context/HomeThemeContext";
 import styled from "styled-components";
 
 export default function HomeSection() {
+  const { theme } = useHomeTheme();
+
   return (
-    <Container>
+    <Container $theme={theme}>
       <Socials>
         <Git />
         <LinkedIn />
@@ -24,7 +28,7 @@ export default function HomeSection() {
 }
 
 // Styled components for responsive layout
-const Container = styled.div`
+const Container = styled.div<{ $theme: any }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,6 +37,8 @@ const Container = styled.div`
   padding: 0 20px; // Horizontal padding
   flex-direction: row; // Default layout for larger screens
   gap: 10%;
+  background: ${(props) => props.$theme.colors.background};
+  transition: background 0.3s ease-in-out;
 
   @media (max-width: 768px) {
     flex-direction: column; // Stack content vertically on smaller screens (mobile)

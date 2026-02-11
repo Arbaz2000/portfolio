@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
+import { useHomeTheme } from "@/context/HomeThemeContext";
 
-// Define types for props
 interface CardProps {
   projectName: string;
   description: React.ReactNode;
@@ -10,8 +10,10 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ projectName, description, techStack }) => {
+  const { theme } = useHomeTheme();
+
   return (
-    <StyledWrapper>
+    <StyledWrapper $theme={theme}>
       <div className="card">
         <div className="project-block-content">
           <p className="project-name">{projectName}</p>
@@ -31,29 +33,28 @@ const Card: React.FC<CardProps> = ({ projectName, description, techStack }) => {
   );
 };
 
-const StyledWrapper = styled.div`
-  /*Neo Brutalism project card*/
+const StyledWrapper = styled.div<{ $theme: any }>`
   .card {
     width: auto;
-    background: #00ffa0;
+    background: ${(props) => (props.$theme.name === 'neo-brutalism' ? '#00ffa0' : '#ffffff')};
     padding: 1rem;
     border-radius: 1rem;
-    border: 0.5vmin solid #05060f;
-    box-shadow: 0.4rem 0.4rem #05060f;
+    border: 0.5vmin solid ${(props) => props.$theme.colors.border};
+    box-shadow: 0.4rem 0.4rem ${(props) => props.$theme.colors.shadow};
     overflow: hidden;
-    color: black;
+    color: ${(props) => props.$theme.colors.text};
+    transition: all 0.3s ease-in-out;
   }
 
-  /*Card content*/
   .project-block-content {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    background: #00ffa0;
+    background: transparent;
   }
 
   .project-name {
-    color: #05060f;
+    color: ${(props) => props.$theme.colors.text};
     font-size: 1.4rem;
     line-height: 1.3;
     font-weight: 700;
@@ -61,7 +62,7 @@ const StyledWrapper = styled.div`
   }
 
   .description {
-    color: #05060f;
+    color: ${(props) => props.$theme.colors.text};
     font-size: 1rem;
     line-height: 1.5;
     opacity: 0.9;
@@ -69,7 +70,7 @@ const StyledWrapper = styled.div`
 
   .tech-stack {
     font-size: 1rem;
-    color: #05060f;
+    color: ${(props) => props.$theme.colors.text};
     font-weight: 700;
 
     p {
@@ -87,7 +88,7 @@ const StyledWrapper = styled.div`
     }
 
     li {
-      background-color: #05060f;
+      background-color: ${(props) => props.$theme.colors.border};
       color: #fff;
       padding: 0.25rem 0.5rem;
       border-radius: 1rem;

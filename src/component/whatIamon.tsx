@@ -1,9 +1,13 @@
+"use client";
 import React from "react";
 import styled from "styled-components";
+import { useHomeTheme } from "@/context/HomeThemeContext";
 
 const Card = () => {
+  const { theme } = useHomeTheme();
+
   return (
-    <StyledWrapper>
+    <StyledWrapper $theme={theme}>
       <div className="card">
         <div className="head">What I'm working on</div>
         <div className="content">
@@ -19,18 +23,18 @@ const Card = () => {
   );
 };
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.div<{ $theme: any }>`
   padding: 2rem;
   gap: 1rem;
   .card {
     font-family: Montserrat, sans-serif;
     width: auto;
     translate: -6px -6px;
-    background: #ff66a3;
-    border: 3px solid #000000;
-    box-shadow: 12px 12px 0 #000000;
+    background: ${(props) => (props.$theme.name === 'neo-brutalism' ? '#ff66a3' : '#ffffff')};
+    border: 3px solid ${(props) => props.$theme.colors.border};
+    box-shadow: 12px 12px 0 ${(props) => props.$theme.colors.shadow};
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
   }
 
   .head {
@@ -38,17 +42,17 @@ const StyledWrapper = styled.div`
     font-size: 25px;
     font-weight: 900;
     width: 100%;
-    background: #ffffff;
+    background: ${(props) => props.$theme.colors.cardHeader};
     padding: 5px 12px;
-    color: #000000;
-    border-bottom: 3px solid #000000;
+    color: ${(props) => props.$theme.colors.text};
+    border-bottom: 3px solid ${(props) => props.$theme.colors.border};
   }
 
   .content {
     padding: 12px 15px;
     font-size: 20px;
     font-weight: 600;
-    color: #000000;
+    color: ${(props) => props.$theme.colors.text};
   }
 
   ul {

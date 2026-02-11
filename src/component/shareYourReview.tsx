@@ -1,8 +1,11 @@
+"use client";
 import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import { useHomeTheme } from "@/context/HomeThemeContext";
 
 const Card = () => {
+  const { theme } = useHomeTheme();
   const [email, setEmail] = useState<string>("");
   const [feedback, setFeedback] = useState<string>("");
   const [error, setError] = useState<string>("");
@@ -41,7 +44,7 @@ const Card = () => {
   };
 
   return (
-    <StyledWrapper>
+    <StyledWrapper $theme={theme}>
       <div className="card">
         <span className="card__title">Want to connect?</span>
         <p className="card__content">
@@ -74,28 +77,28 @@ const Card = () => {
   );
 };
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.div<{ $theme: any }>`
   padding: 2rem;
   gap: 1rem;
   .card {
     width: 90%;
     height: auto;
     padding: 20px;
-    background: #fff;
-    border: 6px solid #000;
-    box-shadow: 12px 12px 0 #000;
-    transition: transform 0.3s, box-shadow 0.3s;
+    background: #ffffff;
+    border: 6px solid ${(props) => props.$theme.colors.border};
+    box-shadow: 12px 12px 0 ${(props) => props.$theme.colors.shadow};
+    transition: all 0.3s ease-in-out;
   }
 
   .card:hover {
     transform: translate(-5px, -5px);
-    box-shadow: 17px 17px 0 #000;
+    box-shadow: 17px 17px 0 ${(props) => props.$theme.colors.shadow};
   }
 
   .card__title {
     font-size: 32px;
     font-weight: 900;
-    color: #000;
+    color: ${(props) => props.$theme.colors.text};
     text-transform: uppercase;
     margin-bottom: 15px;
     display: block;
@@ -110,7 +113,7 @@ const StyledWrapper = styled.div`
     left: 0;
     width: 90%;
     height: 3px;
-    background-color: #000;
+    background-color: ${(props) => props.$theme.colors.border};
     transform: translateX(-100%);
     transition: transform 0.3s;
   }
@@ -122,7 +125,7 @@ const StyledWrapper = styled.div`
   .card__content {
     font-size: 16px;
     line-height: 1.4;
-    color: #000;
+    color: ${(props) => props.$theme.colors.text};
     margin-bottom: 20px;
   }
 
@@ -134,24 +137,24 @@ const StyledWrapper = styled.div`
 
   .card__form input {
     padding: 10px;
-    border: 3px solid #000;
+    border: 3px solid ${(props) => props.$theme.colors.border};
     font-size: 16px;
     font-family: inherit;
     transition: transform 0.3s;
     width: calc(100% - 26px);
-    color: #000; /* Set input text color to black */
+    color: ${(props) => props.$theme.colors.text};
   }
 
   .card__form input:focus {
     outline: none;
     transform: scale(1.05);
-    background-color: #000;
+    background-color: ${(props) => props.$theme.colors.border};
     color: #ffffff;
   }
 
   .card__button {
-    border: 3px solid #000;
-    background: #000;
+    border: 3px solid ${(props) => props.$theme.colors.border};
+    background: ${(props) => props.$theme.colors.border};
     color: #fff;
     padding: 10px;
     font-size: 18px;
@@ -173,8 +176,8 @@ const StyledWrapper = styled.div`
     left: 0;
     width: 100%;
     height: 105%;
-    background-color: #5ad641;
-    color: #000;
+    background-color: ${(props) => (props.$theme.name === 'neo-brutalism' ? '#5ad641' : '#666666')};
+    color: ${(props) => props.$theme.colors.text};
     display: flex;
     align-items: center;
     justify-content: center;

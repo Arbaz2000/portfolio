@@ -1,8 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useHomeTheme } from "@/context/HomeThemeContext";
 
 const Card = () => {
+  const { theme } = useHomeTheme();
   const [modalVisible, setModalVisible] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
 
@@ -27,7 +29,7 @@ const Card = () => {
   };
 
   return (
-    <StyledWrapper>
+    <StyledWrapper $theme={theme}>
       <div className="card">
         <div className="content">
           <div className="head">Hi I am Arbaz Khan</div>
@@ -63,13 +65,13 @@ const Card = () => {
   );
 };
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.div<{ $theme: any }>`
   .card {
     font-family: Montserrat, sans-serif;
     width: 70vh;
     height: 70vh;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
     position: relative;
   }
 
@@ -78,36 +80,39 @@ const StyledWrapper = styled.div`
     font-size: 3vw;
     font-weight: 900;
     width: auto;
-    color: #000000;
+    color: ${(props) => props.$theme.colors.text};
+    transition: color 0.3s ease-in-out;
   }
 
   .content {
     padding: 3% 4%;
     font-size: 2vw;
     font-weight: 600;
-    color: #000000;
+    color: ${(props) => props.$theme.colors.text};
     margin-top: 15%;
+    transition: color 0.3s ease-in-out;
   }
 
   .button {
     padding: 5px 10px;
-    border: 3px solid #000000;
-    box-shadow: 3px 3px 0 #000000;
+    border: 3px solid ${(props) => props.$theme.colors.border};
+    box-shadow: 3px 3px 0 ${(props) => props.$theme.colors.shadow};
     font-weight: 750;
-    background: #4ade80;
-    transition: all 0.3s ease;
+    background: ${(props) => props.$theme.name === 'neo-brutalism' ? '#4ade80' : '#cccccc'};
+    color: ${(props) => props.$theme.colors.text};
+    transition: all 0.3s ease-in-out;
     cursor: pointer;
   }
 
   .button:hover {
     translate: 1.5px 1.5px;
-    box-shadow: 1.5px 1.5px 0 #000000;
-    background: #1ac2ff;
+    box-shadow: 1.5px 1.5px 0 ${(props) => props.$theme.colors.shadow};
+    background: ${(props) => props.$theme.name === 'neo-brutalism' ? '#1ac2ff' : '#999999'};
   }
 
   .button:active {
     translate: 2% 2%;
-    box-shadow: 0 0 0 #000000;
+    box-shadow: 0 0 0 ${(props) => props.$theme.colors.shadow};
   }
 
   // Mobile responsiveness

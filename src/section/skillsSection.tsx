@@ -2,11 +2,14 @@
 
 import React from "react";
 import styled from "styled-components";
-import Iconrack from "@/component/appIcons"; // Ensure correct import path for Iconrack
+import Iconrack from "@/component/appIcons";
+import { useHomeTheme } from "@/context/HomeThemeContext";
 
 const Card = () => {
+  const { theme } = useHomeTheme();
+
   return (
-    <StyledWrapper>
+    <StyledWrapper $theme={theme}>
       <div className="card">
         <div className="head">What I know</div>
         <div className="content">
@@ -17,35 +20,33 @@ const Card = () => {
   );
 };
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.div<{ $theme: any }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   margin: 0;
   transition: all 0.3s ease;
 
-  /* Responsiveness for the card wrapper */
   @media (max-width: 768px) {
-    height: auto; /* Let the height adjust automatically for smaller screens */
-    padding: 20px; /* Add padding to prevent content from touching edges */
+    height: auto;
+    padding: 20px;
   }
 
   .card {
     font-family: Montserrat, sans-serif;
-    width:90%; /* Original width for large screens */
+    width: 90%;
     height: auto;
-    background: #eb7711;
-    border: 3px solid #000000;
-    box-shadow: 12px 12px 0 #000000;
+    background: ${(props) => (props.$theme.name === 'neo-brutalism' ? '#eb7711' : '#ffffff')};
+    border: 3px solid ${(props) => props.$theme.colors.border};
+    box-shadow: 12px 12px 0 ${(props) => props.$theme.colors.shadow};
     overflow: hidden;
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
 
-    /* Responsive adjustments for smaller screens */
     @media (max-width: 768px) {
-      width: 100%; /* Full width on smaller screens */
-      box-shadow: 6px 6px 0 #000000; /* Lighter shadow on mobile */
+      width: 100%;
+      box-shadow: 6px 6px 0 ${(props) => props.$theme.colors.shadow};
     }
   }
 
@@ -55,10 +56,10 @@ const StyledWrapper = styled.div`
     font-weight: 900;
     width: 100%;
     height: 80px;
-    background: #ffffff;
+    background: ${(props) => props.$theme.colors.cardHeader};
     padding: 5px 12px;
-    color: #000000;
-    border-bottom: 3px solid #000000;
+    color: ${(props) => props.$theme.colors.text};
+    border-bottom: 3px solid ${(props) => props.$theme.colors.border};
     text-align: left; /* Ensure the heading is aligned left */
 
     /* Responsive font size */
@@ -69,14 +70,14 @@ const StyledWrapper = styled.div`
   }
 
   .content {
-    display: flex; /* Use flexbox for center alignment */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: calc(100% - 80px); /* Adjust for the header height */
+    height: calc(100% - 80px);
     font-size: 28px;
     font-weight: 600;
-    color: #000000;
+    color: ${(props) => props.$theme.colors.text};
 
     /* Responsive font size */
     @media (max-width: 768px) {
