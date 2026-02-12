@@ -33,6 +33,7 @@ const StyledWrapper = styled.div`
     border-radius: 10px;
     width: 100%;
     height: 100%;
+    min-height: 250px;
     background-color: whitesmoke;
     -webkit-box-shadow: 1px 1px 12px #000;
     box-shadow: 1px 1px 12px #000;
@@ -48,6 +49,18 @@ const StyledWrapper = styled.div`
     color: #000;
     padding: 1rem;
     gap: 1rem;
+
+    @media (max-width: 768px) {
+      min-height: 200px;
+      padding: 0.875rem;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 480px) {
+      min-height: 180px;
+      padding: 0.75rem;
+      gap: 0.5rem;
+    }
   }
 
   .cover {
@@ -68,15 +81,40 @@ const StyledWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 1rem;
+
+    @media (max-width: 768px) {
+      padding: 0.75rem;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0.5rem;
+    }
   }
 
   .book:hover .cover {
     transform: rotateY(-80deg);
   }
 
+  /* Add touch support for mobile */
+  @media (hover: none) and (pointer: coarse) {
+    .book:active .cover {
+      transform: rotateY(-80deg);
+    }
+  }
+
   p {
     font-size: 20px;
     font-weight: bolder;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 16px;
+    }
   }
 
   a {
@@ -84,10 +122,25 @@ const StyledWrapper = styled.div`
     text-decoration: none;
     color: #000;
     font-size: 16px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 13px;
+      margin: 3px 0;
+      padding: 6px 10px;
+    }
   }
 
   a:hover {
     color: #0077cc;
+    background-color: rgba(0, 119, 204, 0.1);
   }
 `;
 

@@ -80,6 +80,15 @@ const Card = () => {
 const StyledWrapper = styled.div<{ $theme: any }>`
   padding: 2rem;
   gap: 1rem;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.5rem;
+  }
+
   .card {
     width: 90%;
     height: auto;
@@ -88,11 +97,34 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     border: 6px solid ${(props) => props.$theme.colors.border};
     box-shadow: 12px 12px 0 ${(props) => props.$theme.colors.shadow};
     transition: all 0.3s ease-in-out;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      padding: 15px;
+      border: 4px solid ${(props) => props.$theme.colors.border};
+      box-shadow: 6px 6px 0 ${(props) => props.$theme.colors.shadow};
+    }
+
+    @media (max-width: 480px) {
+      padding: 12px;
+      border: 3px solid ${(props) => props.$theme.colors.border};
+      box-shadow: 4px 4px 0 ${(props) => props.$theme.colors.shadow};
+    }
   }
 
   .card:hover {
     transform: translate(-5px, -5px);
     box-shadow: 17px 17px 0 ${(props) => props.$theme.colors.shadow};
+
+    @media (max-width: 768px) {
+      transform: translate(-3px, -3px);
+      box-shadow: 9px 9px 0 ${(props) => props.$theme.colors.shadow};
+    }
+
+    @media (max-width: 480px) {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 ${(props) => props.$theme.colors.shadow};
+    }
   }
 
   .card__title {
@@ -104,6 +136,16 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     display: block;
     position: relative;
     overflow: hidden;
+
+    @media (max-width: 768px) {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
   }
 
   .card__title::after {
@@ -116,6 +158,10 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     background-color: ${(props) => props.$theme.colors.border};
     transform: translateX(-100%);
     transition: transform 0.3s;
+
+    @media (max-width: 480px) {
+      height: 2px;
+    }
   }
 
   .card:hover .card__title::after {
@@ -127,12 +173,30 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     line-height: 1.4;
     color: ${(props) => props.$theme.colors.text};
     margin-bottom: 20px;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
   }
 
   .card__form {
     display: flex;
     flex-direction: column;
     gap: 15px;
+
+    @media (max-width: 768px) {
+      gap: 12px;
+    }
+
+    @media (max-width: 480px) {
+      gap: 10px;
+    }
   }
 
   .card__form input {
@@ -143,6 +207,19 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     transition: transform 0.3s;
     width: calc(100% - 26px);
     color: ${(props) => props.$theme.colors.text};
+
+    @media (max-width: 768px) {
+      padding: 8px;
+      font-size: 14px;
+      width: calc(100% - 22px);
+      border: 2px solid ${(props) => props.$theme.colors.border};
+    }
+
+    @media (max-width: 480px) {
+      padding: 7px;
+      font-size: 13px;
+      width: calc(100% - 20px);
+    }
   }
 
   .card__form input:focus {
@@ -150,6 +227,10 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     transform: scale(1.05);
     background-color: ${(props) => props.$theme.colors.border};
     color: #ffffff;
+
+    @media (max-width: 768px) {
+      transform: scale(1.02);
+    }
   }
 
   .card__button {
@@ -167,6 +248,21 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     transition: transform 0.3s;
     width: 50%;
     height: 100%;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+      padding: 9px;
+      width: 60%;
+      left: 10%;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 14px;
+      padding: 8px;
+      width: 80%;
+      left: 0;
+      margin: 0 auto;
+    }
   }
 
   .card__button::before {
@@ -213,6 +309,12 @@ const StyledWrapper = styled.div<{ $theme: any }>`
 
   .glitch {
     animation: glitch 0.3s infinite;
+  }
+
+  .error {
+    @media (max-width: 480px) {
+      font-size: 12px;
+    }
   }
 `;
 

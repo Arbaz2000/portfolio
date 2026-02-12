@@ -64,10 +64,24 @@ const StyledWrapper = styled.div`
     );
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
     overflow: hidden;
+
+    @media (max-width: 768px) {
+      width: 40px;
+      height: 40px;
+    }
+
+    @media (max-width: 480px) {
+      width: 36px;
+      height: 36px;
+    }
   }
 
   .svgIcon {
     transition-duration: 0.3s;
+
+    @media (max-width: 480px) {
+      height: 1.3em;
+    }
   }
 
   .svgIcon path {
@@ -81,12 +95,29 @@ const StyledWrapper = styled.div`
     font-weight: 600;
     opacity: 0;
     transition-duration: 0.4s;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 12px;
+      width: 100px;
+    }
   }
 
   .Btn:hover {
     width: 110px;
     transition-duration: 0.4s;
     border-radius: 30px;
+
+    @media (max-width: 768px) {
+      width: 100px;
+    }
+
+    @media (max-width: 480px) {
+      width: 90px;
+    }
   }
 
   .Btn:hover .text {

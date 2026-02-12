@@ -33,9 +33,17 @@ const StyledWrapper = styled.div<{ $theme: any }>`
   margin: 0;
   transition: all 0.3s ease;
 
+  @media (max-width: 1024px) {
+    padding: 15px;
+  }
+
   @media (max-width: 768px) {
     height: auto;
     padding: 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 15px;
   }
 
   .card {
@@ -49,9 +57,18 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     position: relative;
     transition: all 0.3s ease-in-out;
 
+    @media (max-width: 1024px) {
+      width: 85%;
+      box-shadow: 9px 9px 0 ${(props) => props.$theme.colors.shadow};
+    }
+
     @media (max-width: 768px) {
       width: 100%;
       box-shadow: 6px 6px 0 ${(props) => props.$theme.colors.shadow};
+    }
+
+    @media (max-width: 480px) {
+      box-shadow: 4px 4px 0 ${(props) => props.$theme.colors.shadow};
     }
   }
 
@@ -67,9 +84,18 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     border-bottom: 3px solid ${(props) => props.$theme.colors.border};
     text-align: left;
 
+    @media (max-width: 1024px) {
+      font-size: 42px;
+    }
+
     @media (max-width: 768px) {
       font-size: 36px;
       padding: 5px 10px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 28px;
+      height: 65px;
     }
   }
 
@@ -81,9 +107,19 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     color: ${(props) => props.$theme.colors.text};
     text-align: center;
 
+    @media (max-width: 1024px) {
+      font-size: 18px;
+      padding: 25px 18px;
+    }
+
     @media (max-width: 768px) {
       font-size: 16px;
       padding: 20px 15px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 14px;
+      padding: 15px 12px;
     }
   }
 

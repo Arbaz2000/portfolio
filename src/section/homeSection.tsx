@@ -34,15 +34,26 @@ const Container = styled.div<{ $theme: any }>`
   align-items: center;
   min-height: 100vh;
   position: relative;
-  padding: 0 20px; // Horizontal padding
-  flex-direction: row; // Default layout for larger screens
+  padding: 80px 20px 20px; // Top padding to account for socials
+  flex-direction: row;
   gap: 10%;
   background: ${(props) => props.$theme.colors.background};
   transition: background 0.3s ease-in-out;
 
+  @media (max-width: 1024px) {
+    gap: 5%;
+    padding: 70px 15px 15px;
+  }
+
   @media (max-width: 768px) {
-    flex-direction: column; // Stack content vertically on smaller screens (mobile)
-    padding: 0 10px; // Reduce horizontal padding for mobile
+    flex-direction: column;
+    padding: 60px 10px 20px;
+    gap: 30px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 50px 8px 15px;
+    gap: 20px;
   }
 `;
 
@@ -51,10 +62,21 @@ const Socials = styled.div`
   top: 20px;
   right: 20px;
   display: flex;
-  flex-direction: row; // Always keep social icons in a row
+  flex-direction: row;
   gap: 10px;
+  z-index: 10;
 
-  // No changes needed for mobile here, as we want to keep it in a row
+  @media (max-width: 768px) {
+    top: 15px;
+    right: 15px;
+    gap: 8px;
+  }
+
+  @media (max-width: 480px) {
+    top: 10px;
+    right: 10px;
+    gap: 6px;
+  }
 `;
 
 const Content = styled.div`

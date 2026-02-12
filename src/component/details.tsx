@@ -115,6 +115,28 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     box-shadow: 0 0 0 ${(props) => props.$theme.colors.shadow};
   }
 
+  // Tablet responsiveness
+  @media (max-width: 1024px) {
+    .card {
+      width: 80vh;
+      height: auto;
+    }
+
+    .head {
+      font-size: 3.5vw;
+    }
+
+    .content {
+      font-size: 2.5vw;
+      margin-top: 12%;
+    }
+
+    .button {
+      font-size: 2vw;
+      padding: 8px 12px;
+    }
+  }
+
   // Mobile responsiveness
   @media (max-width: 768px) {
     .card {
@@ -134,6 +156,32 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     .button {
       font-size: 4vw;
       padding: 10px 15px;
+      margin-bottom: 8px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      width: 92vw;
+    }
+
+    .head {
+      font-size: 7vw;
+    }
+
+    .content {
+      font-size: 4.5vw;
+      margin-top: 8%;
+      padding: 4% 5%;
+    }
+
+    .button {
+      font-size: 3.5vw;
+      padding: 8px 12px;
+      margin-bottom: 6px;
+      display: block;
+      width: 100%;
+      max-width: 200px;
     }
   }
 `;

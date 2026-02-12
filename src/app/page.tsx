@@ -9,7 +9,6 @@ import WhatIamon from "@/component/whatIamon";
 import WhatIamDoingToo from "@/component//whatIamDoingToo";
 import ShareYourReview from "@/component/shareYourReview";
 import ResourcesButton from "@/component/resourcesButton";
-import ThemeToggleButton from "@/component/ThemeToggleButton";
 import { HomeThemeProvider, useHomeTheme } from "@/context/HomeThemeContext";
 
 function PageContent() {
@@ -22,30 +21,30 @@ function PageContent() {
         transition: "background 0.3s ease-in-out",
       }}
     >
-      <div className="mb-20">
+      <div className="mb-12 md:mb-20">
         <HomeSection />
       </div>
-      <div className="mb-20">
+      <div className="mb-12 md:mb-20">
         <AboutSection />
       </div>
-      <div className="mb-20 pt-10">
+      <div className="mb-12 md:mb-20 pt-6 md:pt-10">
         <SkillsSection />
       </div>
-      <div className="mb-20">
+      <div className="mb-12 md:mb-20">
         <ProjectsSection />
       </div>
-      <div className="mb-20">
+      <div className="mb-12 md:mb-20">
         <ResourcesButton />
       </div>
 
-      <div className="flex justify-center items-center w-full mt-5 flex-col md:flex-row">
-        <div className="flex-grow basis-full md:basis-1/3 md:ml-24">
+      <div className="flex justify-center items-stretch w-full mt-5 flex-col lg:flex-row gap-4 px-2 md:px-4 pb-8">
+        <div className="flex-grow w-full lg:w-1/3 lg:basis-1/3">
           <WhatIamon />
         </div>
-        <div className="flex-grow basis-full md:basis-1/3">
+        <div className="flex-grow w-full lg:w-1/3 lg:basis-1/3">
           <WhatIamDoingToo />
         </div>
-        <div className="flex-grow basis-full md:basis-2/3">
+        <div className="flex-grow w-full lg:w-1/3 lg:basis-1/3">
           <ShareYourReview />
         </div>
       </div>
@@ -72,7 +71,6 @@ export default function Home() {
 
   return (
     <HomeThemeProvider>
-      <ThemeToggleButton />
       <PageContent />
     </HomeThemeProvider>
   );

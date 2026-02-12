@@ -44,6 +44,18 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     overflow: hidden;
     color: ${(props) => props.$theme.colors.text};
     transition: all 0.3s ease-in-out;
+    height: 100%;
+
+    @media (max-width: 768px) {
+      padding: 0.875rem;
+      box-shadow: 0.3rem 0.3rem ${(props) => props.$theme.colors.shadow};
+      border: 3px solid ${(props) => props.$theme.colors.border};
+    }
+
+    @media (max-width: 480px) {
+      padding: 0.75rem;
+      box-shadow: 0.25rem 0.25rem ${(props) => props.$theme.colors.shadow};
+    }
   }
 
   .project-block-content {
@@ -51,6 +63,14 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     flex-direction: column;
     gap: 0.75rem;
     background: transparent;
+
+    @media (max-width: 768px) {
+      gap: 0.6rem;
+    }
+
+    @media (max-width: 480px) {
+      gap: 0.5rem;
+    }
   }
 
   .project-name {
@@ -59,6 +79,14 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     line-height: 1.3;
     font-weight: 700;
     margin: 0;
+
+    @media (max-width: 768px) {
+      font-size: 1.25rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.1rem;
+    }
   }
 
   .description {
@@ -66,12 +94,29 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     font-size: 1rem;
     line-height: 1.5;
     opacity: 0.9;
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.85rem;
+    }
   }
 
   .tech-stack {
     font-size: 1rem;
     color: ${(props) => props.$theme.colors.text};
     font-weight: 700;
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.85rem;
+    }
 
     p {
       margin: 0;
@@ -85,6 +130,14 @@ const StyledWrapper = styled.div<{ $theme: any }>`
       flex-wrap: wrap;
       gap: 0.5rem;
       width: auto;
+
+      @media (max-width: 768px) {
+        gap: 0.4rem;
+      }
+
+      @media (max-width: 480px) {
+        gap: 0.35rem;
+      }
     }
 
     li {
@@ -93,6 +146,16 @@ const StyledWrapper = styled.div<{ $theme: any }>`
       padding: 0.25rem 0.5rem;
       border-radius: 1rem;
       font-weight: 600;
+
+      @media (max-width: 768px) {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 480px) {
+        padding: 0.15rem 0.35rem;
+        font-size: 0.75rem;
+      }
     }
   }
 `;

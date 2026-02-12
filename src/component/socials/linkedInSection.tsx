@@ -42,10 +42,30 @@ const StyledWrapper = styled.div`
     cursor: pointer;
     position: relative;
     background: #0274b3;
+
+    @media (max-width: 768px) {
+      width: 40px;
+      height: 40px;
+    }
+
+    @media (max-width: 480px) {
+      width: 36px;
+      height: 36px;
+    }
   }
 
   .svgIcon {
     transition-duration: 0.3s;
+
+    @media (max-width: 768px) {
+      width: 14px;
+      height: 14px;
+    }
+
+    @media (max-width: 480px) {
+      width: 13px;
+      height: 13px;
+    }
   }
 
   .svgIcon path {
@@ -59,12 +79,29 @@ const StyledWrapper = styled.div`
     font-weight: 600;
     opacity: 0;
     transition-duration: 0.4s;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 12px;
+      width: 100px;
+    }
   }
 
   .Btn:hover {
     width: 110px;
     transition-duration: 0.4s;
     border-radius: 30px;
+
+    @media (max-width: 768px) {
+      width: 100px;
+    }
+
+    @media (max-width: 480px) {
+      width: 90px;
+    }
   }
 
   .Btn:hover .text {

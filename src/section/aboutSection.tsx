@@ -40,9 +40,17 @@ const StyledWrapper = styled.div<{ $theme: any }>`
   margin: 0;
   transition: all 0.3s ease;
 
+  @media (max-width: 1024px) {
+    padding: 15px;
+  }
+
   @media (max-width: 768px) {
-    height: auto; /* Let the height adjust automatically for smaller screens */
-    padding: 20px; /* Add padding to prevent content from touching edges */
+    height: auto;
+    padding: 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 15px;
   }
 
   .card {
@@ -56,9 +64,18 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     position: relative;
     transition: all 0.3s ease-in-out;
 
+    @media (max-width: 1024px) {
+      width: 85%;
+      box-shadow: 9px 9px 0 ${(props) => props.$theme.colors.shadow};
+    }
+
     @media (max-width: 768px) {
       width: 100%;
       box-shadow: 6px 6px 0 ${(props) => props.$theme.colors.shadow};
+    }
+
+    @media (max-width: 480px) {
+      box-shadow: 4px 4px 0 ${(props) => props.$theme.colors.shadow};
     }
   }
 

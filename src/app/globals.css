@@ -17,26 +17,106 @@
   }
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* Prevent font size adjustments on orientation changes on mobile devices */
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   overflow: auto; /* Enable scrolling but hide the scrollbar */
-   scrollbar-width: none;
-    -ms-overflow-style: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  /* Improve text rendering on mobile */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .body::-webkit-scrollbar {
-    display: none;
-  }
+  display: none;
+}
 
 body {
   -ms-overflow-style: none;  /* Internet Explorer and Edge */
   scrollbar-width: none;  /* Firefox */
 }
 
+body::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   height: 100%;
-   scrollbar-width: none;
-    -ms-overflow-style: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Responsive image defaults */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Prevent layout shift from images */
+img[width][height] {
+  height: auto;
+}
+
+/* Ensure touch targets are at least 44x44px on mobile */
+@media (max-width: 768px) {
+  button:not(.compact), a:not(.compact), input, select, textarea {
+    min-height: 44px;
+  }
+}
+
+/* Add safe area support for devices with notches */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
+}
+
+/* Utility classes for responsive spacing */
+@layer utilities {
+  .container-responsive {
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-responsive {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-responsive {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
 }

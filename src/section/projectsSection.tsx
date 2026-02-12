@@ -203,9 +203,25 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1200px) {
+    .main-card {
+      width: 98%;
+    }
+    
     .projects-grid {
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: 3% 3%;
+    
+    .main-card {
+      box-shadow: 9px 9px 0 ${(props) => props.$theme.colors.shadow};
+    }
+    
+    .projects-grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 15px;
       padding: 20px;
     }
@@ -214,9 +230,19 @@ const StyledWrapper = styled.div<{ $theme: any }>`
       padding: 20px;
       gap: 20px;
     }
+
+    .head {
+      font-size: 42px;
+    }
   }
 
   @media (max-width: 768px) {
+    padding: 2rem 1rem;
+    
+    .main-card {
+      box-shadow: 6px 6px 0 ${(props) => props.$theme.colors.shadow};
+    }
+    
     .head {
       font-size: 36px;
       padding: 10px 15px;
@@ -234,12 +260,18 @@ const StyledWrapper = styled.div<{ $theme: any }>`
       padding: 15px;
     }
 
-    .bottom-note .note-content p {
+    .bottom-note p {
       font-size: 16px;
     }
   }
 
   @media (max-width: 480px) {
+    padding: 1rem 0.5rem;
+    
+    .main-card {
+      box-shadow: 4px 4px 0 ${(props) => props.$theme.colors.shadow};
+    }
+    
     .head {
       font-size: 28px;
       padding: 8px 12px;
@@ -259,8 +291,12 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     .bottom-note {
       padding: 15px;
       
-      .note-content p {
+      p {
         font-size: 14px;
+        
+        &:last-child {
+          font-size: 16px;
+        }
       }
     }
   }
