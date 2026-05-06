@@ -38,11 +38,10 @@ import {
   SiAndroid,
   SiUnity,
   SiSwagger,
-  SiAmazons3,
-  SiAmazonec2,
-  SiGnometerminal,
   SiMongoose,
+  SiGnometerminal,
 } from "react-icons/si";
+import { SiAmazons3, SiAmazonec2 } from "react-icons/si";
 import styled from "styled-components";
 
 const StyledWrapper = styled.div`

@@ -1,86 +1,32 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import styled from "styled-components";
 import Link from "next/link";
+import { ResourcesData } from "@/types/resources";
 
 const ResourcesPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [resources, setResources] = useState<ResourcesData | null>(null);
+  const [loading, setLoading] = useState(true);
 
-  const resources = {
-    reactNative: {
-      title: "REACT NATIVE STARTER",
-      subtitle: "Minimal. Modern. Powerful.",
-      code: `git clone https://github.com/Arbaz2000/React_native_setup
-npm install && npm start
-npm run android # or npm run ios`,
-      description: "Navigation • Splash Screen • Placeholder Screens",
-      instruction: "Edit `App.tsx` to begin.",
-      links: [
-        { name: "Arbaz2000", url: "https://github.com/Arbaz2000" },
-        { name: "ArbazIdea2reality", url: "https://github.com/ArbazIdea2reality" }
-      ]
-    },
-    categories: [
-      {
-        title: "🧩 Front-End Development",
-        items: [
-          { name: "React Bits", url: "https://www.reactbits.dev/", description: "Tips and patterns for React developers." },
-          { name: "react-beautiful-dnd", url: "https://www.npmjs.com/package/react-beautiful-dnd", description: "Beautiful drag-and-drop for lists with React." }
-        ]
-      },
-      {
-        title: "🎨 UI/UX Design & Components",
-        items: [
-          { name: "Uiverse", url: "https://uiverse.io/elements", description: "Beautiful community-driven UI components." },
-          { name: "unDraw", url: "https://undraw.co/", description: "Open-source illustrations for any idea." },
-          { name: "PatternPad", url: "https://patternpad.com/", description: "Generate and customize seamless patterns." }
-        ]
-      },
-      {
-        title: "📊 Data Visualization",
-        items: [
-          { name: "Rosen Charts", url: "https://rosencharts.com/", description: "Simple and customizable charting library." },
-          { name: "Graphy", url: "https://graphy.app/", description: "Create visual charts and graphs easily." },
-          { name: "Pictographic", url: "https://www.pictographic.io/", description: "Infographic-style data presentation." }
-        ]
-      },
-      {
-        title: "✨ Animation & Interaction",
-        items: [
-          { name: "Anime.js", url: "https://animejs.com/", description: "A lightweight JavaScript animation library." }
-        ]
-      },
-      {
-        title: "🛠️ Productivity & Tools",
-        items: [
-          { name: "ILovePDF", url: "https://www.ilovepdf.com/", description: "Tools to work with PDF files." },
-          { name: "Tooooools", url: "https://www.tooooools.app/", description: "Curated collection of handy tools for creators and developers." }
-        ]
-      },
-      {
-        title: "🐙 GitHub Resources",
-        items: [
-          { name: "Awesome Lists", url: "https://github.com/sindresorhus/awesome", description: "😎 Awesome lists about all kinds of interesting topics - 379k+ stars!" },
-          { name: "Best Websites for Programmers", url: "https://github.com/sdmg15/Best-websites-a-programmer-should-visit", description: "Essential websites every programmer should know about." },
-          { name: "Awesome Open Source Alternatives", url: "https://github.com/diegoleme/awesome-open-source-alternatives", description: "Find open-source alternatives to popular software." },
-          { name: "Free Programming Books", url: "https://github.com/EbookFoundation/free-programming-books", description: "📚 Freely available programming books for developers." },
-          { name: "Build Your Own X", url: "https://github.com/codecrafters-io/build-your-own-x", description: "Master programming by recreating your favorite technologies from scratch." },
-          { name: "System Design Primer", url: "https://github.com/donnemartin/system-design-primer", description: "Learn how to design large-scale systems. Prep for the system design interview." },
-          { name: "ML From Scratch", url: "https://github.com/eriklindernoren/ML-From-Scratch", description: "Machine Learning From Scratch. Bare bones NumPy implementations of ML models and algorithms." },
-          { name: "Made With ML", url: "https://github.com/GokuMohandas/Made-With-ML", description: "Learn how to responsibly deliver value with ML." },
-          { name: "LLMs from Scratch", url: "https://github.com/rasbt/LLMs-from-scratch", description: "Implementing LLMs from scratch with PyTorch." },
-          { name: "The Algorithms", url: "https://github.com/thealgorithms", description: "Open Source resource for learning Data Structures & Algorithms in any Programming Language." },
-          { name: "Public APIs", url: "https://github.com/public-apis/public-apis", description: "A collective list of free APIs for use in software and web development." },
-          { name: "Free for Developers", url: "https://github.com/ripienaar/free-for-dev", description: "A list of SaaS, PaaS and IaaS offerings that have free tiers for devops and infradev." }
-        ]
-      }
-    ]
-  };
+  useEffect(() => {
+    fetch("/data/resources.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setResources(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Failed to load resources:", err);
+        setLoading(false);
+      });
+  }, []);
 
   // Filter categories based on search query and selected categories
   const filteredCategories = useMemo(() => {
+    if (!resources) return [];
     return resources.categories.filter(category => {
       // If no filters are applied, show all categories
       if (!searchQuery && selectedCategories.length === 0) {
@@ -96,8 +42,8 @@ npm run android # or npm run ios`,
       if (searchQuery) {
         const query = searchQuery.toLowerCase();
         const categoryMatches = category.title.toLowerCase().includes(query);
-        const itemsMatch = category.items.some(item => 
-          item.name.toLowerCase().includes(query) || 
+        const itemsMatch = category.items.some(item =>
+          item.name.toLowerCase().includes(query) ||
           item.description.toLowerCase().includes(query)
         );
         return categoryMatches || itemsMatch;
@@ -109,14 +55,14 @@ npm run android # or npm run ios`,
       items: category.items.filter(item => {
         if (!searchQuery) return true;
         const query = searchQuery.toLowerCase();
-        return item.name.toLowerCase().includes(query) || 
-               item.description.toLowerCase().includes(query);
+        return item.name.toLowerCase().includes(query) ||
+          item.description.toLowerCase().includes(query);
       })
     })).filter(category => category.items.length > 0);
-  }, [searchQuery, selectedCategories]);
+  }, [searchQuery, selectedCategories, resources]);
 
   const handleCategoryToggle = (categoryTitle: string) => {
-    setSelectedCategories(prev => 
+    setSelectedCategories(prev =>
       prev.includes(categoryTitle)
         ? prev.filter(cat => cat !== categoryTitle)
         : [...prev, categoryTitle]
@@ -129,6 +75,16 @@ npm run android # or npm run ios`,
   };
 
   const hasActiveFilters = searchQuery || selectedCategories.length > 0;
+
+  if (loading || !resources) {
+    return (
+      <PageWrapper>
+        <div className="container" style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "80vh" }}>
+          <h1 className="page-title" style={{ animation: "pulse 1.5s ease-in-out infinite" }}>⏳ Loading Resources...</h1>
+        </div>
+      </PageWrapper>
+    );
+  }
 
   return (
     <PageWrapper>
@@ -153,7 +109,7 @@ npm run android # or npm run ios`,
               />
               <span className="search-icon">🔍</span>
             </div>
-            
+
             {hasActiveFilters && (
               <button onClick={clearFilters} className="clear-filters-btn">
                 Clear Filters
@@ -184,7 +140,7 @@ npm run android # or npm run ios`,
             </div>
           )}
         </SearchFilterSection>
-        
+
         {/* React Native Starter Section - Hidden when searching or filtering */}
         {!hasActiveFilters && (
           <ReactNativeSection>
@@ -193,7 +149,7 @@ npm run android # or npm run ios`,
                 <h2>{resources.reactNative.title}</h2>
                 <p className="subtitle">{resources.reactNative.subtitle}</p>
               </div>
-              
+
               <div className="code-block">
                 <div className="code-header">
                   <span className="language">bash</span>
@@ -208,18 +164,18 @@ npm run android # or npm run ios`,
                 </div>
                 <pre className="code-content">{resources.reactNative.code}</pre>
               </div>
-              
+
               <div className="starter-info">
                 <p className="core-info">{resources.reactNative.description}</p>
                 <p className="instruction">{resources.reactNative.instruction}</p>
               </div>
-              
+
               <div className="starter-links">
                 {resources.reactNative.links.map((link, index) => (
-                  <a 
+                  <a
                     key={index}
-                    href={link.url} 
-                    target="_blank" 
+                    href={link.url}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="github-link"
                   >
@@ -235,17 +191,17 @@ npm run android # or npm run ios`,
         {filteredCategories.length > 0 ? (
           <BentoGrid>
             {filteredCategories.map((category, categoryIndex) => (
-              <BentoCard 
-                key={categoryIndex} 
+              <BentoCard
+                key={categoryIndex}
                 className={`bento-card ${categoryIndex === 5 ? 'large' : categoryIndex < 2 ? 'medium' : 'small'}`}
               >
                 <h3 className="category-title">{category.title}</h3>
                 <div className={`category-items ${categoryIndex === 5 ? 'github-grid' : ''}`}>
                   {category.items.map((item, itemIndex) => (
                     <ResourceItem key={itemIndex}>
-                      <a 
-                        href={item.url} 
-                        target="_blank" 
+                      <a
+                        href={item.url}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="resource-link"
                       >
