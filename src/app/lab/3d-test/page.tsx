@@ -7,6 +7,10 @@ import { ReactLenis, useLenis } from "lenis/react";
 import * as THREE from "three";
 import { SideText } from "./SideText";
 
+import dynamic from "next/dynamic";
+
+const Scene = dynamic(() => import("./Scene"), { ssr: false });
+
 function getShiftT(scrollPx: number) {
   const halfScreen = (typeof window !== "undefined" ? window.innerHeight : 0) * 0.5;
   return halfScreen > 0
@@ -35,47 +39,6 @@ function ScrollProgressBar() {
         style={{ transform: "scaleX(0)" }}
       />
     </div>
-  );
-}
-
-// ------------------------------------------------------------------
-// 1. The 3D Scene Component
-// ------------------------------------------------------------------
-type SceneProps = {
-  scrollRef: React.MutableRefObject<number>;
-  scrollPxRef: React.MutableRefObject<number>;
-};
-
-function AkiraScene({ scrollRef, scrollPxRef }: SceneProps) {
-  const { scene } = useGLTF("/akira_bike/scene.gltf");
-  const group = useRef<THREE.Group>(null);
-  const viewport = useThree((s) => s.viewport);
-
-  useFrame((_state, delta) => {
-    if (!group.current) return;
-
-    const p = scrollRef.current;
-    const scrollPx = scrollPxRef.current;
-
-    // Animation: Spin 360 degrees based on scroll
-    group.current.rotation.y = p * Math.PI * 2;
-
-    // After half a screen of scroll, move model left until ~50% is visible
-    // Transition happens over the next half screen for a smooth feel.
-    const t = getShiftT(scrollPx);
-
-    // Move the model's origin to the left edge of the view (roughly half clipped)
-    const targetX = (-viewport.width / 2) * t;
-    group.current.position.x = THREE.MathUtils.damp(group.current.position.x, targetX, 6, delta);
-  });
-
-  return (
-    <group ref={group} position={[0, 0, 0]}>
-      {/* <Center> automatically centers the model at 0,0,0 */}
-      <Center>
-        <Clone object={scene} scale={3} />
-      </Center>
-    </group>
   );
 }
 
@@ -115,44 +78,32 @@ export default function LenisSmoothScrollPage() {
         
         {/* STICKY 3D BACKGROUND */}
         <div className="sticky top-0 h-[100vh] w-full overflow-hidden bg-[#CADF9E]">
-          <div className="flex h-full w-full">
-            {/* LEFT: 3D (100% -> 50% after half screen) */}
+          
+          {/* ABSOLUTE 3D SCENE (Never resizes, prevents shift bug) */}
+          <div className="absolute inset-0 z-0">
+            <Scene scrollRef={scrollProgress} scrollPxRef={scrollPx} />
+          </div>
+
+          {/* OVERLAY UI */}
+          <div className="absolute top-0 left-0 z-10 p-8 pointer-events-none">
+            <h1 className="text-4xl font-black text-black">LENIS + R3F</h1>
+            <p className="text-black font-medium mt-2">
+              Scroll down. Notice the sync.
+            </p>
+          </div>
+
+          <div className="relative z-10 flex h-full w-full pointer-events-none">
+            {/* LEFT: Empty placeholder to push the right panel */}
             <div
               ref={leftPanelRef}
-              className="relative h-full shrink-0 overflow-hidden"
+              className="h-full shrink-0"
               style={{ width: "100%" }}
-            >
-              <Canvas
-                shadows
-                dpr={[1, 1.5]} // Cap DPR at 1.5 for performance
-                camera={{ position: [0, 0, 6], fov: 45 }}
-                gl={{ antialias: true }}
-              >
-                <Suspense fallback={null}>
-                  <Environment preset="city" />
-                  <ambientLight intensity={0.5} />
-                  <directionalLight
-                    position={[5, 10, 5]}
-                    intensity={2}
-                    castShadow
-                  />
-                  <AkiraScene scrollRef={scrollProgress} scrollPxRef={scrollPx} />
-                </Suspense>
-              </Canvas>
-
-              {/* OVERLAY UI */}
-              <div className="absolute top-0 left-0 p-8 pointer-events-none">
-                <h1 className="text-4xl font-black text-black">LENIS + R3F</h1>
-                <p className="text-black font-medium mt-2">
-                  Scroll down. Notice the sync.
-                </p>
-              </div>
-            </div>
+            />
 
             {/* RIGHT: Text (0% -> 50% after half screen) */}
             <div
               ref={rightPanelRef}
-              className="relative h-full shrink-0 overflow-hidden"
+              className="relative h-full shrink-0 overflow-hidden bg-[#CADF9E] pointer-events-auto border-l border-black/10"
               style={{ width: "0%" }}
             >
               <div
@@ -230,5 +181,4 @@ function SplitPanelsController({
 
   return null;
 }
-
-useGLTF.preload("/akira_bike/scene.gltf");
+
