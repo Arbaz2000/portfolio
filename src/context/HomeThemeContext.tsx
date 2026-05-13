@@ -7,6 +7,7 @@ export interface Theme {
     primary: string;
     background: string;
     cardHeader: string;
+    cardHeaderText: string;
     border: string;
     shadow: string;
     text: string;
@@ -20,6 +21,7 @@ const neoBrutalismTheme: Theme = {
     primary: "#ff66a3",
     background: "#CADF9E",
     cardHeader: "#ffffff",
+    cardHeaderText: "#000000",
     border: "#000000",
     shadow: "#000000",
     text: "#000000",
@@ -32,6 +34,7 @@ const monochromeTheme: Theme = {
     primary: "#ffffff",
     background: "#f5f5f5",
     cardHeader: "#000000",
+    cardHeaderText: "#ffffff",
     border: "#000000",
     shadow: "#333333",
     text: "#000000",

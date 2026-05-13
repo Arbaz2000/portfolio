@@ -24,7 +24,8 @@ const StyledWrapper = styled.div<{ $theme: any }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: auto;
+  padding: 4rem 0;
   margin: 0;
   transition: all 0.3s ease;
 
@@ -58,7 +59,7 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     height: 80px;
     background: ${(props) => props.$theme.colors.cardHeader};
     padding: 5px 12px;
-    color: ${(props) => props.$theme.colors.text};
+    color: ${(props) => props.$theme.colors.cardHeaderText};
     border-bottom: 3px solid ${(props) => props.$theme.colors.border};
     text-align: left; /* Ensure the heading is aligned left */
 
@@ -74,7 +75,7 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: calc(100% - 80px);
+    height: auto;
     font-size: 28px;
     font-weight: 600;
     color: ${(props) => props.$theme.colors.text};

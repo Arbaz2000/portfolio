@@ -8,14 +8,29 @@ import MinimalButton from "@/component/minimalButton";
 const ThemeToggleButton = () => {
   const { toggleTheme, isNeoBrutalism } = useHomeTheme();
   const [isVisible, setIsVisible] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 1500);
-    return () => clearTimeout(timer);
+
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
-    <StyledWrapper $isVisible={isVisible}>
+    <StyledWrapper $isVisible={isVisible && !isScrolled}>
       <MinimalButton
         text={isNeoBrutalism ? "Switch to Mono?" : "Back to Color?"}
         onClick={toggleTheme}
@@ -31,6 +46,9 @@ const StyledWrapper = styled.div<{ $isVisible: boolean }>`
   right: 20px;
   z-index: 1000;
   opacity: ${(props) => (props.$isVisible ? 1 : 0)};
+  transform: ${(props) => (props.$isVisible ? "translateX(0)" : "translateX(20px)")};
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  pointer-events: ${(props) => (props.$isVisible ? "auto" : "none")};
   animation: ${(props) =>
     props.$isVisible ? "bounceInRight 0.8s ease-out" : "none"};
 

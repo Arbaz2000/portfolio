@@ -2,8 +2,8 @@
 import React from "react";
 import styled from "styled-components";
 import { FaTasks } from "react-icons/fa";
-const Flipcard = dynamic(() => import("@/component/filpcard"), { ssr: false });
 import dynamic from "next/dynamic";
+const Flipcard = dynamic(() => import("@/component/filpcard"), { ssr: false });
 import Image from "next/image";
 
 const links = [

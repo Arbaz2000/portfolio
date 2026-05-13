@@ -80,7 +80,7 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     font-size: 3vw;
     font-weight: 900;
     width: auto;
-    color: ${(props) => props.$theme.colors.text};
+    color: ${(props) => props.$theme.colors.cardHeaderText};
     transition: color 0.3s ease-in-out;
   }
 

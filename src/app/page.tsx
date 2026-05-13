@@ -4,6 +4,8 @@ import HomeSection from "@/section/homeSection";
 import AboutSection from "@/section/aboutSection";
 import SkillsSection from "@/section/skillsSection";
 import ProjectsSection from "@/section/projectsSection";
+import SkillsHeatMap from "@/component/SkillsHeatMap";
+import GithubHeatMap from "@/component/GithubHeatMap";
 import Loader from "@/component/loader";
 import WhatIamon from "@/component/whatIamon";
 import WhatIamDoingToo from "@/component//whatIamDoingToo";
@@ -33,6 +35,10 @@ function PageContent() {
       </div>
       <div className="mb-20">
         <ProjectsSection />
+      </div>
+      <div className="mb-20 px-5 md:px-20 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <SkillsHeatMap />
+        <GithubHeatMap />
       </div>
       <div className="mb-20">
         <ResourcesButton />

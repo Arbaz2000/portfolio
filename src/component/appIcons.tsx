@@ -49,8 +49,8 @@ const StyledWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 3rem;
-  padding: 3rem;
+  gap: 1.5rem;
+  padding: 2rem;
 
   /* Make the icons wrap and scale down on small screens */
   @media (max-width: 768px) {
@@ -77,11 +77,11 @@ const IconWrapper = styled.div`
 
     /* Responsive icon size */
     @media (max-width: 768px) {
-      font-size: 60px; /* Smaller icons on tablets and small screens */
+      font-size: 40px; /* Smaller icons on tablets and small screens */
     }
 
     @media (max-width: 480px) {
-      font-size: 50px; /* Even smaller icons on mobile */
+      font-size: 35px; /* Even smaller icons on mobile */
     }
   }
 
@@ -164,7 +164,7 @@ const AppIcons: React.FC = () => {
     <StyledWrapper>
       {iconData.map(({ Component, key }) => (
         <IconWrapper key={key}>
-          <Component size={80} className="icon" aria-label={key} />
+          <Component size={50} className="icon" aria-label={key} />
           <div className="tooltip">{key}</div>
         </IconWrapper>
       ))}

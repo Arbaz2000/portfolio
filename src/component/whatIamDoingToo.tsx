@@ -46,7 +46,7 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     height: auto;
     background: ${(props) => props.$theme.colors.cardHeader};
     padding: 5px 12px;
-    color: ${(props) => props.$theme.colors.text};
+    color: ${(props) => props.$theme.colors.cardHeaderText};
     border-bottom: 3px solid ${(props) => props.$theme.colors.border};
   }
 
