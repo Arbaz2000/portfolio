@@ -3,84 +3,13 @@ import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import ProjectCard from "@/component/projectCard";
+import SkillsHeatMap from "@/component/SkillsHeatMap";
 import { motion } from "framer-motion";
 import { useHomeTheme } from "@/context/HomeThemeContext";
 
+import { projects } from "@/constants/projects";
+
 const Card = () => {
-  const projects = [
-    {
-      name: "Watercan Project",
-      description: "Website, Android app & backend - Inventory management system for water delivery.",
-      techStack: ["React", "React Native", "MongoDB", "AWS", "REST API"],
-      link: "/projects/watercanProject"
-    },
-    {
-      name: "Get Weed app",
-      description: "Three mobile Apps - Delivery, Shop Owner & Customer App",
-      techStack: ["React Native", "REST API", "Google Map API"],
-      link: "/projects/getWeed"
-    },
-    {
-      name: "Pikkro",
-      description: "Content creation and delivery platform",
-      techStack: ["React Native", "Node.js", "Express.js", "AWS"],
-      link: "/projects/pikkro"
-    },
-    {
-      name: "GetTasker",
-      description: "Task management platform",
-      techStack: ["React Native", "Node.js", "Express.js", "MongoDB"],
-      link: "/projects/gettasker"
-    },
-    {
-      name: "Hirangana.in",
-      description: "Admin panel & E-Commerce site - Inventory management system",
-      techStack: ["React", "AWS S3", "MySQL"],
-      link: "/projects/hirangana"
-    },
-    {
-      name: "E-commerce",
-      description: "E-commerce Boiler Plate code",
-      techStack: ["Next.js", "React", "SEO"],
-      link: "/projects/ecommerceBoilerPlate"
-    },
-    {
-      name: "ApnaDiscount",
-      description: "Discount and membership management platform",
-      techStack: ["React Native", "Firebase", "Redux"],
-      link: "/projects/apnaDiscount"
-    },
-    {
-      name: "Beauty Genie",
-      description: "Beauty and wellness service management platform",
-      techStack: ["React Native", "Node.js", "Express.js"],
-      link: "/projects/beautyGenie"
-    },
-    {
-      name: "Krikal Education",
-      description: "Admission Portal for coaching institution with mock AI interviewer",
-      techStack: ["React", "Express.js", "Gemini API"],
-      link: "/projects/krikalEdu"
-    },
-    {
-      name: "Qup",
-      description: "Social media platform",
-      techStack: ["Expo", "React-Native", "Axios"],
-      link: "/projects/qup"
-    },
-    {
-      name: "Tours & Travel",
-      description: "Travel agency Promotion page",
-      techStack: ["Next.js", "React", "SEO"],
-      link: "/projects/toursAndTravel"
-    },
-    {
-      name: "Tag Game",
-      description: "Game of Tag made in Unity",
-      techStack: ["Unity", "C#"],
-      link: "/projects/tagGame"
-    }
-  ];
 
   const { theme } = useHomeTheme();
 
@@ -88,8 +17,9 @@ const Card = () => {
     <StyledWrapper $theme={theme}>
       <div className="main-card">
         <div className="head">What I did</div>
-        
+
         <div className="content">
+          {/* <SkillsHeatMap /> */}
           <div className="projects-grid">
             {projects.map((project, index) => (
               <motion.div
@@ -118,12 +48,12 @@ const Card = () => {
               </motion.div>
             ))}
           </div>
-          
-            <div className="bottom-note">
-              <p>Freelance services, bug fixes, full-stack development.</p>
-              <p>More projects on GitHub! 😎</p>
-            </div>
-          
+
+          <div className="bottom-note">
+            <p>Freelance services, bug fixes, full-stack development.</p>
+            <p>More projects on GitHub! 😎</p>
+          </div>
+
         </div>
       </div>
     </StyledWrapper>
@@ -157,7 +87,7 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     height: 80px;
     background: ${(props) => props.$theme.colors.cardHeader};
     padding: 5px 20px;
-    color: ${(props) => props.$theme.colors.text};
+    color: ${(props) => props.$theme.colors.cardHeaderText};
     border-bottom: 3px solid ${(props) => props.$theme.colors.border};
     text-align: left;
     display: flex;
