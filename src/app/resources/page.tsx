@@ -27,7 +27,9 @@ npm run android # or npm run ios`,
         title: "🧩 Front-End Development",
         items: [
           { name: "React Bits", url: "https://www.reactbits.dev/", description: "Tips and patterns for React developers." },
-          { name: "react-beautiful-dnd", url: "https://www.npmjs.com/package/react-beautiful-dnd", description: "Beautiful drag-and-drop for lists with React." }
+          { name: "react-beautiful-dnd", url: "https://www.npmjs.com/package/react-beautiful-dnd", description: "Beautiful drag-and-drop for lists with React." },
+          { name: "termcn.dev", url: "https://www.termcn.dev/", description: "Terminal based components for React developers." },
+          { name: "gluestack.io", url: "https://gluestack.io/", description: "UI library for building performant and accessible web applications." }
         ]
       },
       {
@@ -96,8 +98,8 @@ npm run android # or npm run ios`,
       if (searchQuery) {
         const query = searchQuery.toLowerCase();
         const categoryMatches = category.title.toLowerCase().includes(query);
-        const itemsMatch = category.items.some(item => 
-          item.name.toLowerCase().includes(query) || 
+        const itemsMatch = category.items.some(item =>
+          item.name.toLowerCase().includes(query) ||
           item.description.toLowerCase().includes(query)
         );
         return categoryMatches || itemsMatch;
@@ -109,14 +111,14 @@ npm run android # or npm run ios`,
       items: category.items.filter(item => {
         if (!searchQuery) return true;
         const query = searchQuery.toLowerCase();
-        return item.name.toLowerCase().includes(query) || 
-               item.description.toLowerCase().includes(query);
+        return item.name.toLowerCase().includes(query) ||
+          item.description.toLowerCase().includes(query);
       })
     })).filter(category => category.items.length > 0);
   }, [searchQuery, selectedCategories]);
 
   const handleCategoryToggle = (categoryTitle: string) => {
-    setSelectedCategories(prev => 
+    setSelectedCategories(prev =>
       prev.includes(categoryTitle)
         ? prev.filter(cat => cat !== categoryTitle)
         : [...prev, categoryTitle]
@@ -153,7 +155,7 @@ npm run android # or npm run ios`,
               />
               <span className="search-icon">🔍</span>
             </div>
-            
+
             {hasActiveFilters && (
               <button onClick={clearFilters} className="clear-filters-btn">
                 Clear Filters
@@ -184,7 +186,7 @@ npm run android # or npm run ios`,
             </div>
           )}
         </SearchFilterSection>
-        
+
         {/* React Native Starter Section - Hidden when searching or filtering */}
         {!hasActiveFilters && (
           <ReactNativeSection>
@@ -193,7 +195,7 @@ npm run android # or npm run ios`,
                 <h2>{resources.reactNative.title}</h2>
                 <p className="subtitle">{resources.reactNative.subtitle}</p>
               </div>
-              
+
               <div className="code-block">
                 <div className="code-header">
                   <span className="language">bash</span>
@@ -208,18 +210,18 @@ npm run android # or npm run ios`,
                 </div>
                 <pre className="code-content">{resources.reactNative.code}</pre>
               </div>
-              
+
               <div className="starter-info">
                 <p className="core-info">{resources.reactNative.description}</p>
                 <p className="instruction">{resources.reactNative.instruction}</p>
               </div>
-              
+
               <div className="starter-links">
                 {resources.reactNative.links.map((link, index) => (
-                  <a 
+                  <a
                     key={index}
-                    href={link.url} 
-                    target="_blank" 
+                    href={link.url}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="github-link"
                   >
@@ -235,17 +237,17 @@ npm run android # or npm run ios`,
         {filteredCategories.length > 0 ? (
           <BentoGrid>
             {filteredCategories.map((category, categoryIndex) => (
-              <BentoCard 
-                key={categoryIndex} 
+              <BentoCard
+                key={categoryIndex}
                 className={`bento-card ${categoryIndex === 5 ? 'large' : categoryIndex < 2 ? 'medium' : 'small'}`}
               >
                 <h3 className="category-title">{category.title}</h3>
                 <div className={`category-items ${categoryIndex === 5 ? 'github-grid' : ''}`}>
                   {category.items.map((item, itemIndex) => (
                     <ResourceItem key={itemIndex}>
-                      <a 
-                        href={item.url} 
-                        target="_blank" 
+                      <a
+                        href={item.url}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="resource-link"
                       >
