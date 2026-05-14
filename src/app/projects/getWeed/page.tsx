@@ -53,13 +53,15 @@ const ProjectOverview = () => (
     <h3>Project Overview</h3>
     <p>
       <strong>Get Weed</strong> is a comprehensive inventory management system
-      designed for the cannabis industry. It includes three mobile apps: a Shop
-      Owner app, a Delivery app, and a Customer app. Shop owners can list
-      products, manage inventory, and provide product details. Delivery drivers
-      use the Delivery app to deliver products to customers at specific
-      locations. The system integrates Map APIs for delivery navigation and
-      includes charts for the dashboard. I was responsible for designing the UI
-      in Figma and integrating APIs into the apps.
+      designed for the cannabis industry, specifically developed for compliance
+      and operation within U.S. states where such activities are legal. It
+      includes three mobile apps: a Shop Owner app, a Delivery app, and a
+      Customer app. Shop owners can list products, manage inventory, and provide
+      product details. Delivery drivers use the Delivery app to deliver products
+      to customers at specific locations. The system integrates Map APIs for
+      delivery navigation and includes charts for the dashboard. I was
+      responsible for designing the UI in Figma and integrating APIs into the
+      apps.
     </p>
     <h4>Tech Stack</h4>
     <ul>
