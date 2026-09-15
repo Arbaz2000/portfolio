@@ -1,0 +1,69 @@
+name: Portfolio CI (Intermediate)
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  # Job 1: Run code quality checks
+  lint:
+    name: Code Quality (Lint)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm' # Built-in caching for npm dependencies
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Linter
+        run: npm run lint
+
+  # Job 2: Build validation (runs only if lint passes, and runs on a matrix of Node versions)
+  build:
+    name: Build (Node v${{ matrix.node-version }})
+    needs: lint # Dependency: Build won't run if Lint fails
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        # Test build compatibility on multiple Node.js versions
+        node-version: [18.x, 20.x, 22.x]
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      # Next.js recommends caching the .next/cache folder to speed up production builds
+      - name: Cache Next.js Build Output
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ github.workspace }}/.next/cache
+          # The key combines OS, Node version, lockfile hash, and source files hash
+          key: ${{ runner.os }}-nextjs-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          # Fallback keys to retrieve the closest cache matching the OS and Node version
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}-
+            ${{ runner.os }}-nextjs-${{ matrix.node-version }}-
+
+      - name: Build Project
+        run: npm run build

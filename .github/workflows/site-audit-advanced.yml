@@ -1,0 +1,50 @@
+name: Portfolio Site Audit (Advanced)
+
+# Run on a weekly schedule (Sunday at midnight UTC) or manually from the Actions tab
+on:
+  schedule:
+    - cron: '0 0 * * 0' # Weekly cron job
+  workflow_dispatch:
+    inputs:
+      site_url:
+        description: 'Portfolio URL to audit (AWS Amplify live URL)'
+        required: true
+        type: string
+        default: 'https://your-portfolio.amplifyapp.com'
+
+jobs:
+  # Job 1: Scan repository markdown files and codebase for broken links
+  link-checker:
+    name: Broken Link Checker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # lycheeverse/lychee-action is a powerful fast link checker
+      - name: Run Lychee Link Checker
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # Check all markdown files in the repo
+          args: --verbose --no-progress './**/*.md'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # Job 2: Audit live performance, accessibility, SEO, and best practices of the site
+  lighthouse-ci:
+    name: Lighthouse Performance Audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Run Lighthouse CI against the target site
+      - name: Run Lighthouse Audit
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            ${{ github.event.inputs.site_url || 'https://your-portfolio.amplifyapp.com' }}
+          # Uploads results to GitHub Action artifacts
+          uploadArtifacts: true
+          # Generates a temporary public link to view the visual HTML report
+          temporaryPublicStorage: true
