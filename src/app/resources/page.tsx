@@ -24,6 +24,19 @@ npm run android # or npm run ios`,
     },
     categories: [
       {
+        title: "🛠️ Interactive Tools",
+        items: [
+          { 
+            name: "HTML/CSS/JS Live Code Playground", 
+            url: "/resources/code-editor", 
+            description: "Interactive browser editor to learn & test simple HTML, CSS, and JS with instant live preview.",
+            isInternal: true
+          },
+          { name: "ILovePDF", url: "https://www.ilovepdf.com/", description: "Tools to work with PDF files." },
+          { name: "Tooooools", url: "https://www.tooooools.app/", description: "Curated collection of handy tools for creators and developers." }
+        ]
+      },
+      {
         title: "🧩 Front-End Development",
         items: [
           { name: "React Bits", url: "https://www.reactbits.dev/", description: "Tips and patterns for React developers." },
@@ -52,13 +65,6 @@ npm run android # or npm run ios`,
         title: "✨ Animation & Interaction",
         items: [
           { name: "Anime.js", url: "https://animejs.com/", description: "A lightweight JavaScript animation library." }
-        ]
-      },
-      {
-        title: "🛠️ Productivity & Tools",
-        items: [
-          { name: "ILovePDF", url: "https://www.ilovepdf.com/", description: "Tools to work with PDF files." },
-          { name: "Tooooools", url: "https://www.tooooools.app/", description: "Curated collection of handy tools for creators and developers." }
         ]
       },
       {
@@ -187,6 +193,38 @@ npm run android # or npm run ios`,
           )}
         </SearchFilterSection>
 
+        {/* Interactive Tools Section - Learn Simple CSS / JS / HTML */}
+        {!hasActiveFilters && (
+          <ToolsSection>
+            <div className="tools-card">
+              <div className="tools-badge">⚡ NEW INTERACTIVE TOOL</div>
+              <div className="tools-body">
+                <div className="tools-info">
+                  <h2 className="tools-title">🛠️ Learn HTML, CSS & JavaScript</h2>
+                  <p className="tools-desc">
+                    Need a quick way to test and learn simple web code? Push the button below to open the dedicated interactive live code playground. Write HTML structure, apply CSS styling, and run JavaScript functions with real-time live preview!
+                  </p>
+                  <div className="tools-tags">
+                    <span className="tag">💻 Live Preview</span>
+                    <span className="tag">🎨 4+ Starter Presets</span>
+                    <span className="tag">⚡ Real-time Execution</span>
+                    <span className="tag">💾 Code Export</span>
+                  </div>
+                </div>
+                <div className="tools-action">
+                  <Link 
+                    href="/resources/code-editor"
+                    className="launch-btn"
+                  >
+                    <span>🚀 Launch Code Editor</span>
+                    <small>Push button to open separate playground page</small>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </ToolsSection>
+        )}
+
         {/* React Native Starter Section - Hidden when searching or filtering */}
         {!hasActiveFilters && (
           <ReactNativeSection>
@@ -239,24 +277,37 @@ npm run android # or npm run ios`,
             {filteredCategories.map((category, categoryIndex) => (
               <BentoCard
                 key={categoryIndex}
-                className={`bento-card ${categoryIndex === 5 ? 'large' : categoryIndex < 2 ? 'medium' : 'small'}`}
+                className={`bento-card ${category.title.includes('GitHub') ? 'large' : categoryIndex < 2 ? 'medium' : 'small'}`}
               >
                 <h3 className="category-title">{category.title}</h3>
-                <div className={`category-items ${categoryIndex === 5 ? 'github-grid' : ''}`}>
+                <div className={`category-items ${category.title.includes('GitHub') ? 'github-grid' : ''}`}>
                   {category.items.map((item, itemIndex) => (
                     <ResourceItem key={itemIndex}>
-                      <a
-                        href={item.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="resource-link"
-                      >
-                        <div className="resource-content">
-                          <h4 className="resource-name">{item.name}</h4>
-                          <p className="resource-description">{item.description}</p>
-                        </div>
-                        <div className="resource-arrow">→</div>
-                      </a>
+                      {'isInternal' in item && item.isInternal ? (
+                        <Link
+                          href={item.url}
+                          className="resource-link"
+                        >
+                          <div className="resource-content">
+                            <h4 className="resource-name">⚡ {item.name}</h4>
+                            <p className="resource-description">{item.description}</p>
+                          </div>
+                          <div className="resource-arrow">🚀</div>
+                        </Link>
+                      ) : (
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="resource-link"
+                        >
+                          <div className="resource-content">
+                            <h4 className="resource-name">{item.name}</h4>
+                            <p className="resource-description">{item.description}</p>
+                          </div>
+                          <div className="resource-arrow">→</div>
+                        </a>
+                      )}
                     </ResourceItem>
                   ))}
                 </div>
@@ -361,6 +412,157 @@ const PageWrapper = styled.div`
 
     @media (max-width: 768px) {
       font-size: 16px;
+    }
+  }
+`;
+
+const ToolsSection = styled.div`
+  margin-bottom: 50px;
+
+  .tools-card {
+    background: linear-gradient(135deg, #ffd166 0%, #ffbe0b 100%);
+    border: 4px solid #ffffff;
+    box-shadow: 12px 12px 0 #000000;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &:hover {
+      translate: -4px -4px;
+      box-shadow: 16px 16px 0 #000000;
+    }
+
+    @media (max-width: 768px) {
+      box-shadow: 6px 6px 0 #000000;
+      
+      &:hover {
+        translate: -2px -2px;
+        box-shadow: 8px 8px 0 #000000;
+      }
+    }
+  }
+
+  .tools-badge {
+    background: #000000;
+    color: #ffd166;
+    padding: 8px 20px;
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    display: inline-block;
+    border-bottom: 3px solid #ffffff;
+    border-right: 3px solid #ffffff;
+  }
+
+  .tools-body {
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 20px;
+      gap: 20px;
+    }
+  }
+
+  .tools-info {
+    flex: 1;
+
+    .tools-title {
+      font-size: 32px;
+      font-weight: 900;
+      color: #000000;
+      margin: 0 0 12px 0;
+      letter-spacing: 1px;
+
+      @media (max-width: 768px) {
+        font-size: 24px;
+      }
+    }
+
+    .tools-desc {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #1a1a1a;
+      font-weight: 600;
+      margin: 0 0 20px 0;
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
+    }
+
+    .tools-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      .tag {
+        background: #000000;
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 5px 12px;
+        border: 2px solid #ffffff;
+        box-shadow: 2px 2px 0 #000000;
+      }
+    }
+  }
+
+  .tools-action {
+    display: flex;
+    justify-content: center;
+
+    .launch-btn {
+      background: #ff6b6b;
+      color: #ffffff;
+      border: 4px solid #000000;
+      box-shadow: 8px 8px 0 #000000;
+      padding: 18px 32px;
+      font-family: 'Courier New', monospace;
+      font-weight: 900;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+
+      span {
+        font-size: 20px;
+        letter-spacing: 1px;
+      }
+
+      small {
+        font-size: 12px;
+        font-weight: 600;
+        opacity: 0.9;
+      }
+
+      &:hover {
+        background: #ff5252;
+        translate: -3px -3px;
+        box-shadow: 11px 11px 0 #000000;
+      }
+
+      &:active {
+        translate: 0 0;
+        box-shadow: 4px 4px 0 #000000;
+      }
+
+      @media (max-width: 768px) {
+        width: 100%;
+        padding: 14px 20px;
+
+        span {
+          font-size: 17px;
+        }
+      }
     }
   }
 `;
@@ -918,6 +1120,14 @@ const ResourceItem = styled.div`
       justify-content: space-between;
       gap: 10px;
     }
+  }
+
+  .tool-button-link {
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
+    outline: none;
+    border: 2px solid #000000;
   }
 
   .resource-content {
