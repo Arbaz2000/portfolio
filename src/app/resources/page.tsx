@@ -32,6 +32,12 @@ npm run android # or npm run ios`,
             description: "Interactive browser editor to learn & test simple HTML, CSS, and JS with instant live preview.",
             isInternal: true
           },
+          { 
+            name: "Keybr Pro — Touch Typing & Speed Trainer", 
+            url: "/resources/keybr", 
+            description: "Smart touch typing practice with adaptive letter weighting, real-time WPM, accuracy matrix, and virtual keyboard visualizer.",
+            isInternal: true
+          },
           { name: "ILovePDF", url: "https://www.ilovepdf.com/", description: "Tools to work with PDF files." },
           { name: "Tooooools", url: "https://www.tooooools.app/", description: "Curated collection of handy tools for creators and developers." }
         ]
@@ -193,11 +199,12 @@ npm run android # or npm run ios`,
           )}
         </SearchFilterSection>
 
-        {/* Interactive Tools Section - Learn Simple CSS / JS / HTML */}
+        {/* Interactive Tools Section - Learn Simple CSS / JS / HTML & Keybr Touch Typing */}
         {!hasActiveFilters && (
           <ToolsSection>
-            <div className="tools-card">
-              <div className="tools-badge">⚡ NEW INTERACTIVE TOOL</div>
+            {/* Tool 1: Code Editor */}
+            <div className="tools-card editor-card">
+              <div className="tools-badge">⚡ LIVE PLAYGROUND</div>
               <div className="tools-body">
                 <div className="tools-info">
                   <h2 className="tools-title">🛠️ Learn HTML, CSS & JavaScript</h2>
@@ -218,6 +225,34 @@ npm run android # or npm run ios`,
                   >
                     <span>🚀 Launch Code Editor</span>
                     <small>Push button to open separate playground page</small>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Tool 2: Keybr Touch Typing */}
+            <div className="tools-card keybr-card">
+              <div className="tools-badge keybr-badge">⌨️ NEW INTERACTIVE TUTOR</div>
+              <div className="tools-body">
+                <div className="tools-info">
+                  <h2 className="tools-title">⌨️ Keybr Pro — Touch Typing & Speed Trainer</h2>
+                  <p className="tools-desc">
+                    Boost your typing speed and muscle memory with an adaptive Keybr algorithm. Features real-time WPM, accuracy analytics, developer code mode, mechanical switch sounds, and an interactive virtual keyboard visualizer!
+                  </p>
+                  <div className="tools-tags">
+                    <span className="tag">🧠 Adaptive Key Weighting</span>
+                    <span className="tag">📊 Live WPM & Sparklines</span>
+                    <span className="tag">💻 Dev Code Snippets</span>
+                    <span className="tag">🔊 Mechanical Sound FX</span>
+                  </div>
+                </div>
+                <div className="tools-action">
+                  <Link 
+                    href="/resources/keybr"
+                    className="launch-btn keybr-launch-btn"
+                  >
+                    <span>⚡ Launch Keybr Pro</span>
+                    <small>Practice touch typing in interactive tutor</small>
                   </Link>
                 </div>
               </div>
@@ -563,6 +598,25 @@ const ToolsSection = styled.div`
           font-size: 17px;
         }
       }
+    }
+
+    .keybr-launch-btn {
+      background: #06d6a0;
+      color: #000000;
+
+      &:hover {
+        background: #05b386;
+      }
+    }
+  }
+
+  .keybr-card {
+    background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 100%);
+    margin-top: 30px;
+
+    .keybr-badge {
+      background: #000000;
+      color: #38bdf8;
     }
   }
 `;
