@@ -38,6 +38,12 @@ npm run android # or npm run ios`,
             description: "Smart touch typing practice with adaptive letter weighting, real-time WPM, accuracy matrix, and virtual keyboard visualizer.",
             isInternal: true
           },
+          { 
+            name: "JS Runner — DSA Playground", 
+            url: "/resources/js-runner", 
+            description: "JavaScript sandbox for Data Structures & Algorithms practice with 10 built-in DSA templates, execution timer, and console output.",
+            isInternal: true
+          },
           { name: "ILovePDF", url: "https://www.ilovepdf.com/", description: "Tools to work with PDF files." },
           { name: "Tooooools", url: "https://www.tooooools.app/", description: "Curated collection of handy tools for creators and developers." }
         ]
@@ -253,6 +259,33 @@ npm run android # or npm run ios`,
                   >
                     <span>⚡ Launch Keybr Pro</span>
                     <small>Practice touch typing in interactive tutor</small>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            {/* Tool 3: JS Runner DSA Playground */}
+            <div className="tools-card jsrunner-card">
+              <div className="tools-badge jsrunner-badge">🧠 DSA SANDBOX</div>
+              <div className="tools-body">
+                <div className="tools-info">
+                  <h2 className="tools-title">⚡ JS Runner — DSA Playground</h2>
+                  <p className="tools-desc">
+                    Practice Data Structures & Algorithms in a pure JavaScript sandbox. Comes with 10 built-in DSA templates — sorting, search, trees, graphs, dynamic programming & more — with execution timing and full console output capture.
+                  </p>
+                  <div className="tools-tags">
+                    <span className="tag">🔢 10 DSA Templates</span>
+                    <span className="tag">⏱️ Execution Timer</span>
+                    <span className="tag">📟 Console Output</span>
+                    <span className="tag">💾 Download .js</span>
+                  </div>
+                </div>
+                <div className="tools-action">
+                  <Link 
+                    href="/resources/js-runner"
+                    className="launch-btn jsrunner-launch-btn"
+                  >
+                    <span>🧠 Launch JS Runner</span>
+                    <small>Open DSA playground in separate page</small>
                   </Link>
                 </div>
               </div>
@@ -617,6 +650,25 @@ const ToolsSection = styled.div`
     .keybr-badge {
       background: #000000;
       color: #38bdf8;
+    }
+  }
+
+  .jsrunner-card {
+    background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+    margin-top: 30px;
+
+    .jsrunner-badge {
+      background: #000000;
+      color: #a78bfa;
+    }
+  }
+
+  .jsrunner-launch-btn {
+    background: #ffd166 !important;
+    color: #000000 !important;
+
+    &:hover {
+      background: #ffbe0b !important;
     }
   }
 `;
