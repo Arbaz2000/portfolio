@@ -1,27 +1,33 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 
 const ResourcesPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [showEasterEggModal, setShowEasterEggModal] = useState(false);
+
+  // Easter egg: detect "aqsa khan" search
+  useEffect(() => {
+    if (searchQuery.trim().toLowerCase() === "aqsa khan") {
+      setShowEasterEggModal(true);
+    }
+  }, [searchQuery]);
+
+  const handleEasterEggClose = useCallback(() => {
+    setShowEasterEggModal(false);
+    setSearchQuery("");
+  }, []);
+
+  const handleEasterEggOpen = useCallback(() => {
+    window.open("https://github.com/Arbaz2000/obsidian-vault", "_blank");
+    setShowEasterEggModal(false);
+    setSearchQuery("");
+  }, []);
 
   const resources = {
-    reactNative: {
-      title: "REACT NATIVE STARTER",
-      subtitle: "Minimal. Modern. Powerful.",
-      code: `git clone https://github.com/Arbaz2000/React_native_setup
-npm install && npm start
-npm run android # or npm run ios`,
-      description: "Navigation • Splash Screen • Placeholder Screens",
-      instruction: "Edit `App.tsx` to begin.",
-      links: [
-        { name: "Arbaz2000", url: "https://github.com/Arbaz2000" },
-        { name: "ArbazIdea2reality", url: "https://github.com/ArbazIdea2reality" }
-      ]
-    },
     categories: [
       {
         title: "🛠️ Interactive Tools",
@@ -293,51 +299,6 @@ npm run android # or npm run ios`,
           </ToolsSection>
         )}
 
-        {/* React Native Starter Section - Hidden when searching or filtering */}
-        {!hasActiveFilters && (
-          <ReactNativeSection>
-            <div className="starter-card">
-              <div className="starter-header">
-                <h2>{resources.reactNative.title}</h2>
-                <p className="subtitle">{resources.reactNative.subtitle}</p>
-              </div>
-
-              <div className="code-block">
-                <div className="code-header">
-                  <span className="language">bash</span>
-                  <div className="copy-buttons">
-                    <button className="copy-btn clone-btn" onClick={() => navigator.clipboard.writeText("git clone https://github.com/Arbaz2000/React_native_setup")}>
-                      Copy Clone
-                    </button>
-                    <button className="copy-btn" onClick={() => navigator.clipboard.writeText(resources.reactNative.code)}>
-                      Copy All
-                    </button>
-                  </div>
-                </div>
-                <pre className="code-content">{resources.reactNative.code}</pre>
-              </div>
-
-              <div className="starter-info">
-                <p className="core-info">{resources.reactNative.description}</p>
-                <p className="instruction">{resources.reactNative.instruction}</p>
-              </div>
-
-              <div className="starter-links">
-                {resources.reactNative.links.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="github-link"
-                  >
-                    {link.name}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </ReactNativeSection>
-        )}
 
         {/* Resources Categories - Bento Box Layout */}
         {filteredCategories.length > 0 ? (
@@ -392,6 +353,29 @@ npm run android # or npm run ios`,
               </button>
             </div>
           </NoResultsSection>
+        )}
+
+        {/* Easter Egg Modal */}
+        {showEasterEggModal && (
+          <EasterEggOverlay onClick={handleEasterEggClose}>
+            <div className="modal" onClick={(e) => e.stopPropagation()}>
+              <div className="modal-badge">🔮 SECRET FOUND</div>
+              <div className="modal-body">
+                <h2 className="modal-title">✨ You found Aqsa Khan&apos;s Vault!</h2>
+                <p className="modal-desc">
+                  You&apos;ve unlocked a hidden portal to the Obsidian Knowledge Vault — a curated collection of notes, ideas, and resources.
+                </p>
+                <div className="modal-actions">
+                  <button className="modal-btn primary" onClick={handleEasterEggOpen}>
+                    🚀 Open Obsidian Vault
+                  </button>
+                  <button className="modal-btn secondary" onClick={handleEasterEggClose}>
+                    ✕ Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </EasterEggOverlay>
         )}
       </div>
     </PageWrapper>
@@ -673,207 +657,6 @@ const ToolsSection = styled.div`
   }
 `;
 
-const ReactNativeSection = styled.div`
-  margin-bottom: 50px;
-
-  .starter-card {
-    background: #ff6b6b;
-    border: 4px solid #ffffff;
-    box-shadow: 12px 12px 0 #000000;
-    border-radius: 0;
-    overflow: hidden;
-    transition: all 0.3s ease;
-
-    &:hover {
-      translate: -6px -6px;
-      box-shadow: 18px 18px 0 #000000;
-    }
-
-    @media (max-width: 768px) {
-      box-shadow: 6px 6px 0 #000000;
-      
-      &:hover {
-        translate: -3px -3px;
-        box-shadow: 9px 9px 0 #000000;
-      }
-    }
-  }
-
-  .starter-header {
-    background: #ffffff;
-    padding: 20px;
-    border-bottom: 4px solid #000000;
-
-    h2 {
-      font-family: 'Courier New', monospace;
-      font-size: 36px;
-      font-weight: 900;
-      color: #000000;
-      margin: 0 0 10px 0;
-      letter-spacing: 1px;
-
-      @media (max-width: 768px) {
-        font-size: 28px;
-      }
-    }
-
-    .subtitle {
-      font-size: 20px;
-      font-weight: 600;
-      color: #666666;
-      margin: 0;
-      font-style: italic;
-      font-family: 'Courier New', monospace;
-
-      @media (max-width: 768px) {
-        font-size: 16px;
-      }
-    }
-  }
-
-  .code-block {
-    background: #000000;
-    margin: 20px;
-    border-radius: 0;
-    overflow: hidden;
-    border: 3px solid #ffffff;
-
-    .code-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 15px;
-      background: #333333;
-      border-bottom: 2px solid #ffffff;
-
-      .language {
-        color: #ffffff;
-        font-weight: 600;
-        font-size: 14px;
-        font-family: 'Courier New', monospace;
-      }
-
-      .copy-buttons {
-        display: flex;
-        gap: 8px;
-      }
-
-      .copy-btn {
-        background: #4ecdc4;
-        color: #000000;
-        border: 2px solid #000000;
-        padding: 5px 12px;
-        border-radius: 0;
-        font-weight: 700;
-        font-size: 12px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-family: 'Courier New', monospace;
-
-        &:hover {
-          background: #45b7d1;
-          translate: -1px -1px;
-        }
-
-        &:active {
-          translate: 0 0;
-        }
-
-        &.clone-btn {
-          background: #ff6b6b;
-          
-          &:hover {
-            background: #ff5252;
-          }
-        }
-      }
-    }
-
-    .code-content {
-      padding: 20px;
-      color: #4ecdc4;
-      font-family: 'Courier New', monospace;
-      font-size: 16px;
-      line-height: 1.5;
-      margin: 0;
-      white-space: pre-wrap;
-
-      @media (max-width: 768px) {
-        font-size: 14px;
-        padding: 15px;
-      }
-    }
-  }
-
-  .starter-info {
-    padding: 20px;
-    text-align: center;
-
-    .core-info {
-      font-size: 24px;
-      font-weight: 700;
-      color: #ffffff;
-      margin: 0 0 15px 0;
-      font-family: 'Courier New', monospace;
-      text-shadow: 2px 2px 0 #000000;
-
-      @media (max-width: 768px) {
-        font-size: 20px;
-      }
-    }
-
-    .instruction {
-      font-size: 18px;
-      font-weight: 600;
-      color: #ffffff;
-      margin: 0;
-      font-family: 'Courier New', monospace;
-      text-shadow: 1px 1px 0 #000000;
-
-      @media (max-width: 768px) {
-        font-size: 16px;
-      }
-    }
-  }
-
-  .starter-links {
-    padding: 20px;
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    border-top: 3px solid #ffffff;
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .github-link {
-      padding: 10px 20px;
-      background: #ffffff;
-      color: #000000;
-      text-decoration: none;
-      border: 3px solid #000000;
-      box-shadow: 4px 4px 0 #000000;
-      font-weight: 700;
-      font-size: 16px;
-      transition: all 0.3s ease;
-      border-radius: 0;
-      font-family: 'Courier New', monospace;
-
-      &:hover {
-        translate: -2px -2px;
-        box-shadow: 6px 6px 0 #000000;
-        background: #f0f0f0;
-      }
-
-      &:active {
-        translate: 0 0;
-        box-shadow: 2px 2px 0 #000000;
-      }
-    }
-  }
-`;
 
 const SearchFilterSection = styled.div`
   margin-bottom: 50px;
@@ -1348,6 +1131,142 @@ const NoResultsSection = styled.div`
     @media (max-width: 768px) {
       padding: 12px 24px;
       font-size: 16px;
+    }
+  }
+`;
+
+const EasterEggOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.3s ease;
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .modal {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: 4px solid #ffffff;
+    box-shadow: 12px 12px 0 #000000;
+    max-width: 500px;
+    width: 90%;
+    overflow: hidden;
+    animation: slideUp 0.4s ease;
+  }
+
+  .modal-badge {
+    background: #000000;
+    color: #ffd166;
+    padding: 10px 24px;
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-family: 'Courier New', monospace;
+    border-bottom: 3px solid #ffffff;
+  }
+
+  .modal-body {
+    padding: 30px;
+
+    @media (max-width: 768px) {
+      padding: 20px;
+    }
+  }
+
+  .modal-title {
+    font-family: 'Courier New', monospace;
+    font-size: 28px;
+    font-weight: 900;
+    color: #ffffff;
+    margin: 0 0 16px 0;
+    text-shadow: 3px 3px 0 #000000;
+    letter-spacing: 1px;
+
+    @media (max-width: 768px) {
+      font-size: 22px;
+    }
+  }
+
+  .modal-desc {
+    font-family: 'Courier New', monospace;
+    font-size: 15px;
+    font-weight: 600;
+    color: #f0e6ff;
+    line-height: 1.6;
+    margin: 0 0 28px 0;
+
+    @media (max-width: 768px) {
+      font-size: 13px;
+    }
+  }
+
+  .modal-actions {
+    display: flex;
+    gap: 12px;
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+    }
+  }
+
+  .modal-btn {
+    flex: 1;
+    padding: 14px 24px;
+    font-family: 'Courier New', monospace;
+    font-weight: 900;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 3px solid #000000;
+    box-shadow: 5px 5px 0 #000000;
+
+    &:hover {
+      translate: -2px -2px;
+      box-shadow: 7px 7px 0 #000000;
+    }
+
+    &:active {
+      translate: 0 0;
+      box-shadow: 2px 2px 0 #000000;
+    }
+
+    &.primary {
+      background: #ffd166;
+      color: #000000;
+
+      &:hover {
+        background: #ffbe0b;
+      }
+    }
+
+    &.secondary {
+      background: transparent;
+      color: #ffffff;
+      border-color: #ffffff;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      padding: 12px 20px;
     }
   }
 `;
