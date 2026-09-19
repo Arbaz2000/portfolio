@@ -18,13 +18,13 @@ const Card = () => {
           solid experience in AWS to enhance my work. I am also actively
           exploring the dynamic fields of Unity, AI, and machine learning. I
           thrive on combining user-friendly designs with powerful backend
-          solutions, and I'm always on the lookout for new challenges and
+          solutions, and I&apos;m always on the lookout for new challenges and
           opportunities in the tech world—game development is definitely on my
           radar for the future!
         </div>
         <div className="flex mt-10">
           <p className="bottom-right">
-            I've worked on projects and I am
+            I&apos;ve worked on projects and I am
             <br /> skilled with new technologies. 😁✌️
           </p>
         </div>

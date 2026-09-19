@@ -144,7 +144,7 @@ export default function KeybrPage() {
   const [showKeyboard, setShowKeyboard] = useState(true);
 
   // Core typing state
-  const [targetText, setTargetText] = useState("");
+  const [targetText, setTargetText] = useState(() => generateLessonForMode());
   const [userInput, setUserInput] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [status, setStatus] = useState<"idle" | "typing" | "finished">("idle");
@@ -154,6 +154,9 @@ export default function KeybrPage() {
   const [charMatrix, setCharMatrix] = useState<Record<string, CharStats>>({});
   const [activeKeyPressed, setActiveKeyPressed] = useState<string | null>(null);
   const [wpmTrend, setWpmTrend] = useState<number[]>([]);
+
+  // Track previous mode/wordCount to reset only on actual changes, not on initial mount
+  const isMountedRef = useRef(false);
 
   // Typing container ref for scroll & focus
   const typingContainerRef = useRef<HTMLDivElement>(null);
@@ -184,10 +187,10 @@ export default function KeybrPage() {
       for (const char of lowerWord) {
         score += weights[char] || 1;
       }
-      return { word, score: score / word.length };
+      return { word, score };
     });
 
-    const totalScore = wordScores.reduce((sum, item) => sum + item.score, 0);
+    const totalScore = wordScores.reduce((sum, w) => sum + w.score, 0);
 
     const getRandomWord = () => {
       let rand = Math.random() * totalScore;
@@ -234,8 +237,12 @@ export default function KeybrPage() {
     setWpmTrend([]);
   }, [generateLessonForMode]);
 
-  // Initial load
+  // Reload when mode or count changes after mount
   useEffect(() => {
+    if (!isMountedRef.current) {
+      isMountedRef.current = true;
+      return;
+    }
     loadNewLesson();
   }, [practiceMode, wordCountOption]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -384,9 +391,10 @@ export default function KeybrPage() {
     const errors = totalTyped - correctHits;
     const accuracy = Math.round((correctHits / totalTyped) * 100);
 
+    const latestTimestamp = history[history.length - 1]?.time || startTime || 0;
     const timeSpan = (status === "finished" && endTime && startTime)
       ? (endTime - startTime)
-      : (Date.now() - (startTime || Date.now()));
+      : Math.max(0, latestTimestamp - (startTime || latestTimestamp));
 
     const minutes = Math.max(0.01, timeSpan / 60000);
     const durationSec = Math.round(timeSpan / 1000);

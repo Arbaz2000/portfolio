@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import { 
@@ -333,7 +333,7 @@ export default function CodeEditorPage() {
   const [selectedTemplate, setSelectedTemplate] = useState(TEMPLATES[0].id);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
-  const generateOutput = () => {
+  const generateOutput = useCallback(() => {
     return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -354,9 +354,9 @@ export default function CodeEditorPage() {
   <\/script>
 </body>
 </html>`;
-  };
+  }, [cssCode, htmlCode, jsCode]);
 
-  const [srcDoc, setSrcDoc] = useState(generateOutput());
+  const [srcDoc, setSrcDoc] = useState(generateOutput);
 
   useEffect(() => {
     if (!autoRun) return;
@@ -364,7 +364,7 @@ export default function CodeEditorPage() {
       setSrcDoc(generateOutput());
     }, 250);
     return () => clearTimeout(timer);
-  }, [htmlCode, cssCode, jsCode, autoRun]);
+  }, [autoRun, generateOutput]);
 
   const handleManualRun = () => {
     setSrcDoc(generateOutput());

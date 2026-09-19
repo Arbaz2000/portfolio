@@ -55,7 +55,7 @@ const ProjectOverview = () => (
       admin panel for centralized control and customization. The system enables users
       to create tasks, accept them, and track their progress either on-site or off-site.
       The backend is built with Swagger for API documentation and includes an admin
-      panel for customizing the mobile application's user interface and functionality.
+      panel for customizing the mobile application&apos;s user interface and functionality.
     </p>
     <h4>Tech Stack</h4>
     <ul>
@@ -108,7 +108,7 @@ const MoreDetails = () => (
       <h4 className="mt-4">More Details</h4>
       <p>
         The platform features a robust admin panel that allows for complete
-        customization of the mobile application's interface and functionality.
+        customization of the mobile application&apos;s interface and functionality.
         The backend is built with Swagger for comprehensive API documentation,
         making it easy for developers to understand and integrate with the system.
         The mobile application uses Zustand for efficient state management,
@@ -127,7 +127,7 @@ const MoreDetails = () => (
       </li>
       <li>
         <strong>Admin Control:</strong> Comprehensive admin panel for customizing
-        the mobile application's interface and functionality.
+        the mobile application&apos;s interface and functionality.
       </li>
       <li>
         <strong>API Documentation:</strong> Swagger integration for clear and

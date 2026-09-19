@@ -33,7 +33,7 @@ const Card = () => {
       <div className="card">
         <div className="content">
           <div className="head">Hi I am Arbaz Khan</div>
-          I'm a Full-Stack Developer with expertise in DevOps. Let's bring your
+          I&apos;m a Full-Stack Developer with expertise in DevOps. Let&apos;s bring your
           ideas to life with scalable and efficient solutions!
           <br />
           <br />

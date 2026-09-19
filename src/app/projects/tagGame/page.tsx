@@ -87,7 +87,7 @@ const MoreDetails = () => (
           <strong>AI Bot:</strong> Follows the player and tries to catch them. If the bot catches the player, they lose.
         </li>
         <li>
-          <strong>Obstacles:</strong> Various 3D obstacles, including movable ones, that block the bot's and player's movements.
+          <strong>Obstacles:</strong> Various 3D obstacles, including movable ones, that block the bot&apos;s and player&apos;s movements.
         </li>
       </ul>
     </div>

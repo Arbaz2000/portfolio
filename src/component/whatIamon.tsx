@@ -9,7 +9,7 @@ const Card = () => {
   return (
     <StyledWrapper $theme={theme}>
       <div className="card">
-        <div className="head">What I'm working on</div>
+        <div className="head">What I&apos;m working on</div>
         <div className="content">
           <h1>
             <strong>2D Metaverse Office Platform</strong>

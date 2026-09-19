@@ -51,7 +51,7 @@ const ProjectOverview = () => (
       <strong>Krikal Education</strong> is an interactive educational platform
       that helps users prepare for interviews by simulating real-world interview
       scenarios. It uses the Gemini API to conduct mock interviews and provides
-      users with feedback and a rating based on the AI's expertise. The website
+      users with feedback and a rating based on the AI&apos;s expertise. The website
       is built with Next.js and completely developed with TypeScript, ensuring
       great performance, type safety, and SEO friendliness. It is hosted on
       Amplify for efficient and reliable deployment.
@@ -117,7 +117,7 @@ const MoreDetails = () => (
     <ul>
       <li>
         <strong>Gemini AI Interviewer:</strong> Conducts mock interviews and
-        rates the user's performance.
+        rates the user&apos;s performance.
       </li>
       <li>
         <strong>TypeScript:</strong> The entire project is developed in

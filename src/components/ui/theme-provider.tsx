@@ -191,10 +191,12 @@ export const ThemeProvider = ({
   theme = defaultTheme,
 }: ThemeProviderProps) => {
   const [currentTheme, setCurrentTheme] = React.useState(theme);
+  const [prevTheme, setPrevTheme] = React.useState(theme);
 
-  React.useEffect(() => {
+  if (prevTheme !== theme) {
+    setPrevTheme(theme);
     setCurrentTheme(theme);
-  }, [theme]);
+  }
 
   const motionValue = React.useMemo(
     () => ({ reduced: reducedMotion ?? isReducedMotion() }),

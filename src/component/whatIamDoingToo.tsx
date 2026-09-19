@@ -9,14 +9,14 @@ const Card = () => {
   return (
     <StyledWrapper $theme={theme}>
       <div className="card">
-        <div className="head">What I'm also working on</div>
+        <div className="head">What I&apos;m also working on</div>
         <div className="content">
           <h1>
             <strong>Courier Service App</strong>
           </h1>
-          I'm currently working on a courier service app for a client. While the
-          backend is not yet developed, I'm building three mobile apps: for
-          customers, delivery boys, and users. I'm also overseeing the
+          I&apos;m currently working on a courier service app for a client. While the
+          backend is not yet developed, I&apos;m building three mobile apps: for
+          customers, delivery boys, and users. I&apos;m also overseeing the
           deployment of the web app backend and mobile app.
         </div>
       </div>

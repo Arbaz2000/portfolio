@@ -1,34 +1,11 @@
 "use client";
 
-import React, { useState, useMemo, useEffect, useCallback } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 
-const ResourcesPage = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [showEasterEggModal, setShowEasterEggModal] = useState(false);
-
-  // Easter egg: detect "aqsa khan" search
-  useEffect(() => {
-    if (searchQuery.trim().toLowerCase() === "aqsa khan") {
-      setShowEasterEggModal(true);
-    }
-  }, [searchQuery]);
-
-  const handleEasterEggClose = useCallback(() => {
-    setShowEasterEggModal(false);
-    setSearchQuery("");
-  }, []);
-
-  const handleEasterEggOpen = useCallback(() => {
-    window.open("https://github.com/Arbaz2000/obsidian-vault", "_blank");
-    setShowEasterEggModal(false);
-    setSearchQuery("");
-  }, []);
-
-  const resources = {
-    categories: [
+const resources = {
+  categories: [
       {
         title: "🛠️ Interactive Tools",
         items: [
@@ -104,6 +81,26 @@ const ResourcesPage = () => {
       }
     ]
   };
+
+const ResourcesPage = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [showEasterEggModal, setShowEasterEggModal] = useState(false);
+
+  // Easter egg: detect "aqsa khan" search
+  const isEasterEggTriggered = searchQuery.trim().toLowerCase() === "aqsa khan";
+  const showEasterEgg = showEasterEggModal || isEasterEggTriggered;
+
+  const handleEasterEggClose = useCallback(() => {
+    setShowEasterEggModal(false);
+    setSearchQuery("");
+  }, []);
+
+  const handleEasterEggOpen = useCallback(() => {
+    window.open("https://github.com/Arbaz2000/obsidian-vault", "_blank");
+    setShowEasterEggModal(false);
+    setSearchQuery("");
+  }, []);
 
   // Filter categories based on search query and selected categories
   const filteredCategories = useMemo(() => {
@@ -347,7 +344,7 @@ const ResourcesPage = () => {
           <NoResultsSection>
             <div className="no-results">
               <h2>🔍 No resources found</h2>
-              <p>Try adjusting your search terms or filters to find what you're looking for.</p>
+              <p>Try adjusting your search terms or filters to find what you&apos;re looking for.</p>
               <button onClick={clearFilters} className="reset-btn">
                 Reset Filters
               </button>
@@ -356,7 +353,7 @@ const ResourcesPage = () => {
         )}
 
         {/* Easter Egg Modal */}
-        {showEasterEggModal && (
+        {showEasterEgg && (
           <EasterEggOverlay onClick={handleEasterEggClose}>
             <div className="modal" onClick={(e) => e.stopPropagation()}>
               <div className="modal-badge">🔮 SECRET FOUND</div>
