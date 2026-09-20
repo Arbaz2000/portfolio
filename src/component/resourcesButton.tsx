@@ -17,9 +17,14 @@ const ResourcesButton = () => {
             Discover my curated collection of useful links for developers, designers, and creators. 
             These tools and libraries can improve your productivity, boost your UI/UX game, and simplify your workflow.
           </p>
-          <Link href="/resources" className="button">
-            View Resources →
-          </Link>
+          <div className="button-group">
+            <Link href="/resources" className="button">
+              View All Resources →
+            </Link>
+            <Link href="/resources/react-native-starter" className="button rn-button">
+              📱 React Native Starter →
+            </Link>
+          </div>
         </div>
       </div>
     </StyledWrapper>
@@ -128,6 +133,14 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     line-height: 1.6;
   }
 
+  .button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
   .button {
     display: inline-block;
     padding: 15px 30px;
@@ -142,8 +155,9 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     border-radius: 5px;
 
     @media (max-width: 768px) {
-      padding: 12px 24px;
-      font-size: 16px;
+      padding: 12px 20px;
+      font-size: 15px;
+      width: 100%;
     }
 
     &:hover {
@@ -155,6 +169,14 @@ const StyledWrapper = styled.div<{ $theme: any }>`
     &:active {
       translate: 0 0;
       box-shadow: 3px 3px 0 ${(props) => props.$theme.colors.shadow};
+    }
+  }
+
+  .rn-button {
+    background: ${(props) => (props.$theme.name === 'neo-brutalism' ? '#FFE600' : '#ffffff')};
+
+    &:hover {
+      background: ${(props) => (props.$theme.name === 'neo-brutalism' ? '#ffd000' : '#e5e5e5')};
     }
   }
 

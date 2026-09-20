@@ -27,6 +27,12 @@ const resources = {
             description: "JavaScript sandbox for Data Structures & Algorithms practice with 10 built-in DSA templates, execution timer, and console output.",
             isInternal: true
           },
+          { 
+            name: "React Native Quick Start & Boilerplate", 
+            url: "/resources/react-native-starter", 
+            description: "Production-ready bare React Native CLI starter with TypeScript, Zustand, RTK Query, and one-click copyable git commands.",
+            isInternal: true
+          },
           { name: "ILovePDF", url: "https://www.ilovepdf.com/", description: "Tools to work with PDF files." },
           { name: "Tooooools", url: "https://www.tooooools.app/", description: "Curated collection of handy tools for creators and developers." }
         ]
@@ -289,6 +295,34 @@ const ResourcesPage = () => {
                   >
                     <span>🧠 Launch JS Runner</span>
                     <small>Open DSA playground in separate page</small>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Tool 4: React Native Quick Start & Boilerplate */}
+            <div className="tools-card rn-card">
+              <div className="tools-badge rn-badge">📱 REACT NATIVE CLI STARTER</div>
+              <div className="tools-body">
+                <div className="tools-info">
+                  <h2 className="tools-title">📱 React Native Quick Start &amp; Boilerplate</h2>
+                  <p className="tools-desc">
+                    Launch production-ready mobile apps with my battle-tested React Native CLI starter. Features strict TypeScript, Zustand + RTK Query dual-state architecture, React Navigation v7, Reanimated 3, and instant copyable setup scripts!
+                  </p>
+                  <div className="tools-tags">
+                    <span className="tag">🚀 Bare CLI Workflow</span>
+                    <span className="tag">🛡️ Strict TypeScript</span>
+                    <span className="tag">⚡ Zustand + RTK Query</span>
+                    <span className="tag">📋 Copyable Clone URL</span>
+                  </div>
+                </div>
+                <div className="tools-action">
+                  <Link 
+                    href="/resources/react-native-starter"
+                    className="launch-btn rn-launch-btn"
+                  >
+                    <span>📱 Open Quick Start</span>
+                    <small>Push button to open dedicated starter guide</small>
                   </Link>
                 </div>
               </div>
@@ -650,6 +684,25 @@ const ToolsSection = styled.div`
 
     &:hover {
       background: #ffbe0b !important;
+    }
+  }
+
+  .rn-card {
+    background: linear-gradient(135deg, #00f0ff 0%, #00b4d8 100%);
+    margin-top: 30px;
+
+    .rn-badge {
+      background: #000000;
+      color: #00f0ff;
+    }
+  }
+
+  .rn-launch-btn {
+    background: #FFE600 !important;
+    color: #000000 !important;
+
+    &:hover {
+      background: #ffd000 !important;
     }
   }
 `;
