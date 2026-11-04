@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 import styled from "styled-components";
 import { useHomeTheme } from "@/context/HomeThemeContext";
 
@@ -52,6 +53,15 @@ const Card = () => {
           >
             Want the CV?
           </button>
+          {"   "}
+          <Link
+            href="/arbaz-cv"
+            className="button"
+            title="Open interactive retro poster CV"
+            style={{ textDecoration: "none", display: "inline-block" }}
+          >
+            Stylish CV ↗
+          </Link>
         </div>
       </div>
       {modalVisible && (
